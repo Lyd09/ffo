@@ -4,7 +4,7 @@ import { ArrowRight } from 'lucide-react';
 export default function Home() {
   return (
     <div className="bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212] min-h-screen flex flex-col text-white">
-      <header className="flex items-center px-8 pt-6 max-w-[1440px] mx-auto w-full space-x-12">
+      <header className="flex items-center justify-between px-8 pt-6 max-w-[1440px] mx-auto w-full">
         <div className="w-8 h-8 flex-shrink-0">
           <Image
             alt="Red diamond shaped logo"
@@ -16,7 +16,7 @@ export default function Home() {
             data-ai-hint="diamond logo"
           />
         </div>
-        <nav className="flex space-x-12 text-white text-xs font-semibold tracking-wide">
+        <nav className="flex-1 flex justify-center space-x-12 text-white text-sm font-semibold tracking-wide uppercase">
           <a className="relative group" href="#">
             Sobre
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
@@ -30,6 +30,7 @@ export default function Home() {
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
           </a>
         </nav>
+        <div className="w-8 h-8" /> 
       </header>
       <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 py-12 relative items-center gap-8">
         <section className="flex flex-col justify-center max-w-xl text-white drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] relative z-10">
