@@ -35,7 +35,7 @@ export default function Home() {
       </header>
       <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 py-12 relative items-center gap-8">
         <section className="flex flex-col justify-center max-w-xl text-white drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] relative z-10">
-          <p className="text-sm font-semibold mb-1 tracking-wide">VÍDEO É MAIS QUE IMAGEM</p>
+          <p className="text-sm font-semibold mb-4 tracking-wide">VÍDEO É MAIS QUE IMAGEM</p>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">EDIÇÃO</h1>
           <p className="text-sm font-normal mb-8 max-w-md leading-relaxed">
             Corte, ritmo e cor. Cada segundo é ajustado pra emocionar, surpreender e contar sua história da maneira mais impactante.
