@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { ArrowRight } from 'lucide-react';
+import LogoBox from '@/components/custom/LogoBox';
 
 export default function Home() {
   return (
@@ -53,26 +54,7 @@ export default function Home() {
         </section>
 
         <section className="flex-1 flex justify-center md:justify-end items-center relative">
-          <div className="relative w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px]">
-            <Image
-              alt="Large red circle behind statue"
-              className="rounded-full object-cover"
-              src="https://storage.googleapis.com/a1aa/image/fe0d4a70-78ac-43ed-ee0e-c40c0b2a9fcc.jpg"
-              fill
-              priority
-              sizes="(max-width: 640px) 300px, (max-width: 1024px) 400px, 600px"
-              data-ai-hint="red circle"
-            />
-            <Image
-              alt="Statue of a muscular bearded man"
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 mix-blend-multiply w-auto h-auto max-w-[100%] max-h-[133%] object-contain"
-              height={800}
-              src="https://storage.googleapis.com/a1aa/image/d6e3b7fa-23df-4b9a-a3c7-44e98884d04d.jpg"
-              width={600}
-              priority
-              data-ai-hint="statue man"
-            />
-          </div>
+          <LogoBox />
         </section>
       </main>
     </div>
