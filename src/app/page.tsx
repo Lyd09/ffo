@@ -18,13 +18,13 @@ export default function Home() {
         </div>
         <nav className="flex space-x-12 text-white text-xs font-semibold tracking-wide">
           <a className="hover:underline" href="#">
-            ABOUT
+            Sobre
           </a>
           <a className="hover:underline" href="#">
-            GALLERY
+            Portfólio
           </a>
           <a className="hover:underline" href="#">
-            CONTACTS
+            Contato
           </a>
         </nav>
       </header>
