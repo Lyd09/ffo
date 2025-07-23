@@ -19,6 +19,10 @@ export default function Home() {
         </div>
         <nav className="flex-1 flex justify-start pl-24 space-x-12 text-white text-sm font-semibold tracking-wide uppercase">
           <a className="relative group" href="#">
+            Início
+            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
+          </a>
+          <a className="relative group" href="#">
             Sobre
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
           </a>
