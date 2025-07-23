@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { ArrowRight } from 'lucide-react';
 import LogoBox from '@/components/custom/LogoBox';
+import LearnMoreButton from '@/components/custom/LearnMoreButton';
 
 export default function Home() {
   return (
@@ -31,7 +31,7 @@ export default function Home() {
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
           </a>
         </nav>
-        <div className="w-12 h-12" /> 
+        <div className="w-12 h-12" />
       </header>
       <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 py-12 relative items-center gap-8">
         <section className="flex flex-col justify-center max-w-xl text-white drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] relative z-10">
@@ -41,15 +41,7 @@ export default function Home() {
             Our hobby is a modern and convenient design, the key to successful communication with the client.
           </p>
           <div className="flex items-center space-x-4">
-            <button
-              aria-label="See More"
-              className="group flex items-center space-x-3 text-white font-semibold text-sm"
-            >
-              <span className="relative w-10 h-10 rounded-full border border-white/20 flex items-center justify-center transition-colors group-hover:bg-white/10">
-                <ArrowRight className="w-4 h-4 text-white" />
-              </span>
-              <span>See More</span>
-            </button>
+            <LearnMoreButton />
           </div>
         </section>
 
