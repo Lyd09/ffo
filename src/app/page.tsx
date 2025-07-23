@@ -35,7 +35,7 @@ export default function Home() {
       </header>
       <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 py-12 relative items-center gap-8">
         <section className="flex flex-col justify-center max-w-xl text-white drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] relative z-10">
-          <p className="text-xs font-semibold mb-2 tracking-wide">OUR VERSION</p>
+          <p className="text-sm font-semibold mb-1 tracking-wide">OUR VERSION</p>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">DESIGN</h1>
           <p className="text-sm font-normal mb-8 max-w-md leading-relaxed">
             Our hobby is a modern and convenient design, the key to successful communication with the client.
