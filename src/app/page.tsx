@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div className="bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212] min-h-screen flex flex-col text-white">
       <header className="flex items-center justify-between px-8 pt-6 max-w-[1440px] mx-auto w-full">
-        <div className="w-12 h-12 flex-shrink-0">
+        <a href="/" className="w-12 h-12 flex-shrink-0">
           <Image
             alt="Red diamond shaped logo"
             className="w-full h-full object-contain"
@@ -16,9 +16,9 @@ export default function Home() {
             priority
             data-ai-hint="diamond logo"
           />
-        </div>
+        </a>
         <nav className="flex-1 flex justify-start pl-24 space-x-12 text-white text-sm font-semibold tracking-wide uppercase">
-          <a className="relative group" href="#">
+          <a className="relative group" href="/">
             Início
             <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
           </a>
