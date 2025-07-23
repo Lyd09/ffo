@@ -17,14 +17,17 @@ export default function Home() {
           />
         </div>
         <nav className="flex space-x-12 text-white text-xs font-semibold tracking-wide">
-          <a className="hover:underline" href="#">
+          <a className="relative group" href="#">
             Sobre
+            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
           </a>
-          <a className="hover:underline" href="#">
+          <a className="relative group" href="#">
             Portfólio
+            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
           </a>
-          <a className="hover:underline" href="#">
+          <a className="relative group" href="#">
             Contato
+            <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
           </a>
         </nav>
       </header>
