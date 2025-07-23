@@ -10,7 +10,7 @@ export default function Home() {
             alt="Red diamond shaped logo"
             className="w-full h-full object-contain"
             height={32}
-            src="https://storage.googleapis.com/a1aa/image/99521c9f-cd56-48d8-9250-fa00044201df.jpg"
+            src="/FF-SITE-ICON.svg"
             width={32}
             priority
             data-ai-hint="diamond logo"
