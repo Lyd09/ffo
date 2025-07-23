@@ -133,7 +133,6 @@
 /* Adaptação para o tema escuro */
 .dark .blob {
   background-color: hsl(var(--primary));
-  opacity: 0.5;
 }
 
 @keyframes blob-bounce {
