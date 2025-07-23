@@ -38,7 +38,7 @@ export default function Home() {
           <p className="text-sm font-semibold mb-4 tracking-wide">VÍDEO É MAIS QUE IMAGEM</p>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">EDIÇÃO</h1>
           <p className="text-sm font-normal mb-8 max-w-md leading-relaxed">
-            Corte, ritmo e cor. Cada segundo é ajustado pra emocionar, surpreender e contar sua história da maneira mais impactante.
+            Se o visual prende, o som envolve. E a gente trata os dois com o mesmo cuidado. Afinal, audiovisual é uma experiência completa.
           </p>
           <div className="flex items-center space-x-4">
             <LearnMoreButton />
