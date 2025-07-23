@@ -53,7 +53,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="flex-1 flex justify-center md:justify-end items-center relative">
+        <section className="flex-1 flex justify-center items-center relative">
           <LogoBox />
         </section>
       </main>
