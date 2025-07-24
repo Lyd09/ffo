@@ -43,7 +43,7 @@ export default function Home() {
         </header>
         <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 py-48 relative items-center gap-8">
           <section className="flex flex-col justify-center max-w-xl text-white drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] relative z-10">
-            <p className="text-sm font-semibold mb-6 tracking-wide">VÍDEO É MAIS QUE IMAGEM</p>
+            <p className="text-sm font-semibold mb-5 tracking-wide">VÍDEO É MAIS QUE IMAGEM</p>
             <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">EDIÇÃO</h1>
             <p className="text-sm font-normal mb-8 max-w-md leading-relaxed">
               Se o visual prende, o som envolve. E a gente trata os dois com o mesmo cuidado. Afinal, audiovisual é uma experiência completa.
@@ -62,7 +62,7 @@ export default function Home() {
       <section className="bg-[#1a1a1a] py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col">
-            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-6">Nossos Serviços</p>
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Serviços</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4">
               O que nós <span className="text-primary">Fazemos</span>
               <span className="text-white">.</span>
@@ -144,7 +144,7 @@ export default function Home() {
       <section className="bg-[#121212] py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <p className="text-sm font-semibold text-primary tracking-wider uppercase">Nossos Equipamentos</p>
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Equipamentos</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative mt-6 pb-4 inline-block">
               Tecnologia de <span className="text-primary">Ponta</span>
               <span className="text-white">.</span>
