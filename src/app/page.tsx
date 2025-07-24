@@ -145,7 +145,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Equipamentos</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative mt-6 pb-4 inline-block">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
               Tecnologia de <span className="text-primary">Ponta</span>
               <span className="text-white">.</span>
               <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-primary"></span>
