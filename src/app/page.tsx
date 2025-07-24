@@ -62,8 +62,8 @@ export default function Home() {
       <section className="bg-[#1a1a1a] py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col">
-            <p className="text-sm font-semibold text-primary tracking-wider uppercase">Nossos Serviços</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative mt-6 pb-4">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-6">Nossos Serviços</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4">
               O que nós <span className="text-primary">Fazemos</span>
               <span className="text-white">.</span>
               <span className="absolute bottom-0 left-0 w-24 h-1 bg-primary"></span>
