@@ -2,7 +2,8 @@ import Image from 'next/image';
 import LogoBox from '@/components/custom/LogoBox';
 import LearnMoreButton from '@/components/custom/LearnMoreButton';
 import { Button } from '@/components/ui/button';
-import { Camera, Clapperboard, Music, ArrowRight, Video, Monitor, Wind, Code, Film } from 'lucide-react';
+import { Camera, Film, Clapperboard, ArrowRight, Monitor, Code } from 'lucide-react';
+import DroneIcon from '@/components/custom/DroneIcon';
 
 export default function Home() {
   return (
@@ -87,7 +88,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 2 */}
-            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-to-b from-primary via-secondary/80 to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Film className="h-8 w-8" />
               </div>
@@ -97,7 +98,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 3 */}
-            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-to-b from-primary via-secondary/80 to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Clapperboard className="h-8 w-8" />
               </div>
@@ -109,7 +110,7 @@ export default function Home() {
             {/* Card 4 */}
             <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
-                <Wind className="h-8 w-8" />
+                <DroneIcon className="h-8 w-8" />
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Vídeos de Drone</h3>
@@ -127,7 +128,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 6 */}
-            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-to-b from-primary via-secondary/80 to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Monitor className="h-8 w-8" />
               </div>
