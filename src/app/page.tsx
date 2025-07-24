@@ -2,7 +2,7 @@ import Image from 'next/image';
 import LogoBox from '@/components/custom/LogoBox';
 import LearnMoreButton from '@/components/custom/LearnMoreButton';
 import { Button } from '@/components/ui/button';
-import { Camera, Clapperboard, Music, ArrowRight } from 'lucide-react';
+import { Camera, Clapperboard, Music, ArrowRight, Video, Monitor, Wind, Code } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -62,41 +62,71 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col gap-6">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase">Nossos Serviços</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight">O que nós fazemos.</h2>
-            <p className="text-muted-foreground leading-relaxed">
-              Da concepção à entrega final, oferecemos um leque completo de serviços audiovisuais para garantir que seu projeto tenha o impacto que merece.
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-2">
+              O que nós fazemos.
+              <span className="absolute bottom-0 left-0 w-24 h-1 bg-primary"></span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mt-4">
+              Da concepção à entrega final, oferecemos um leque completo de serviços audiovisuais e digitais para garantir que seu projeto tenha o impacto que merece.
             </p>
-            <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105">
-              Fale Conosco
+            <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-4">
+              Veja nosso portifólio
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
-          <div className="grid grid-cols-1 gap-8">
-            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex items-start gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
                 <Clapperboard className="h-8 w-8" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Edição de Vídeo</h3>
-                <p className="text-muted-foreground">Corte, ritmo e cor. Cada segundo é ajustado para emocionar, surpreender e contar sua história.</p>
+                <h3 className="text-xl font-bold mb-2">Edição</h3>
+                <p className="text-muted-foreground text-sm">Corte, ritmo e cor para contar sua história de forma impactante.</p>
               </div>
             </div>
-            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex items-start gap-6">
+            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
                 <Camera className="h-8 w-8" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Motion Graphics</h3>
-                <p className="text-muted-foreground">Adicionamos vida e dinamismo ao seu conteúdo com animações e elementos gráficos em movimento.</p>
+                <h3 className="text-xl font-bold mb-2">Gravação</h3>
+                <p className="text-muted-foreground text-sm">Captação de imagem e som com alta qualidade para seus projetos.</p>
               </div>
             </div>
-            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex items-start gap-6">
+            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
-                <Music className="h-8 w-8" />
+                <Video className="h-8 w-8" />
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Sound Design</h3>
-                <p className="text-muted-foreground">Se o visual prende, o som envolve. Criamos a atmosfera sonora perfeita para cada cena.</p>
+                <h3 className="text-xl font-bold mb-2">Produção de Vídeo</h3>
+                <p className="text-muted-foreground text-sm">Serviço completo, da gravação à edição final do seu vídeo.</p>
+              </div>
+            </div>
+            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+              <div className="bg-primary/10 text-primary p-3 rounded-xl">
+                <Wind className="h-8 w-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">Vídeos de Drone</h3>
+                <p className="text-muted-foreground text-sm">Imagens aéreas cinematográficas para uma nova perspectiva.</p>
+              </div>
+            </div>
+             <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+              <div className="bg-primary/10 text-primary p-3 rounded-xl">
+                <Monitor className="h-8 w-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">Sites</h3>
+                <p className="text-muted-foreground text-sm">Desenvolvimento de sites modernos, responsivos e otimizados.</p>
+              </div>
+            </div>
+            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+              <div className="bg-primary/10 text-primary p-3 rounded-xl">
+                <Code className="h-8 w-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">Softwares</h3>
+                <p className="text-muted-foreground text-sm">Criação de soluções de software personalizadas para seu negócio.</p>
               </div>
             </div>
           </div>
