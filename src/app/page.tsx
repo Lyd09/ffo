@@ -94,7 +94,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Produção de Vídeo</h3>
-                <p className="text-muted-foreground text-sm">Serviço completo, da gravação à edição final do seu vídeo.</p>
+                <p className="text-foreground text-sm">Serviço completo, da gravação à edição final do seu vídeo.</p>
               </div>
             </div>
             {/* Card 3 */}
@@ -104,7 +104,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Edição</h3>
-                <p className="text-muted-foreground text-sm">Corte, ritmo e cor para contar sua história de forma impactante.</p>
+                <p className="text-foreground text-sm">Corte, ritmo e cor para contar sua história de forma impactante.</p>
               </div>
             </div>
             {/* Card 4 */}
@@ -134,7 +134,7 @@ export default function Home() {
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Sites</h3>
-                <p className="text-muted-foreground text-sm">Desenvolvimento de sites modernos, responsivos e otimizados.</p>
+                <p className="text-foreground text-sm">Desenvolvimento de sites modernos, responsivos e otimizados.</p>
               </div>
             </div>
           </div>
