@@ -75,7 +75,7 @@ export default function Home() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
                 <Clapperboard className="h-8 w-8" />
@@ -86,7 +86,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
-              <div className="bg-primary/10 text-primary p-3 rounded-xl">
+              <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Camera className="h-8 w-8" />
               </div>
               <div>
@@ -95,7 +95,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
-              <div className="bg-primary/10 text-primary p-3 rounded-xl">
+              <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Video className="h-8 w-8" />
               </div>
               <div>
@@ -122,7 +122,7 @@ export default function Home() {
               </div>
             </div>
             <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
-              <div className="bg-primary/10 text-primary p-3 rounded-xl">
+              <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Code className="h-8 w-8" />
               </div>
               <div>
