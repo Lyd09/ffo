@@ -156,7 +156,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
               Tecnologia de <span className="text-primary">Ponta</span>
               <span className="text-white">.</span>
-              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-48 h-1 bg-primary"></span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[13.75rem] h-1 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
               Utilizamos equipamentos de última geração para garantir a máxima qualidade em cada projeto, da captação à finalização.
