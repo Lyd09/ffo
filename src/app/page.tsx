@@ -2,7 +2,7 @@ import Image from 'next/image';
 import LogoBox from '@/components/custom/LogoBox';
 import LearnMoreButton from '@/components/custom/LearnMoreButton';
 import { Button } from '@/components/ui/button';
-import { Camera, Film, Clapperboard, ArrowRight, Monitor, Code } from 'lucide-react';
+import { Camera, Film, ArrowRight, Monitor, Code, Clapperboard } from 'lucide-react';
 import DroneIcon from '@/components/custom/DroneIcon';
 
 export default function Home() {
@@ -15,7 +15,7 @@ export default function Home() {
               alt="Red diamond shaped logo"
               className="w-full h-full object-contain"
               height={48}
-              src="/FF-SITE-ICON.svg"
+              src="/index/FF-SITE-ICON.svg"
               width={48}
               priority
               data-ai-hint="diamond logo"
@@ -88,7 +88,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 2 */}
-            <div className="bg-gradient-to-b from-primary via-secondary/80 to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-to-t from-primary to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Film className="h-8 w-8" />
               </div>
@@ -98,7 +98,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 3 */}
-            <div className="bg-gradient-to-b from-primary via-secondary/80 to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-to-t from-primary to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Clapperboard className="h-8 w-8" />
               </div>
@@ -128,7 +128,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 6 */}
-            <div className="bg-gradient-to-b from-primary via-secondary/80 to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-to-t from-primary to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Monitor className="h-8 w-8" />
               </div>

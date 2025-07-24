@@ -6,7 +6,7 @@ const LogoBox: React.FC = () => {
     <div className="card" aria-label="Logotipo da Empresa">
       <div className="bg">
         <Image
-          src="/logoFF.svg"
+          src="/index/logoFF.svg"
           alt="Logotipo da Empresa"
           width={250}
           height={320}
