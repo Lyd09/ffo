@@ -140,6 +140,57 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <section className="bg-[#121212] py-20 sm:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase">Nossos Equipamentos</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative mt-6 pb-4 inline-block">
+              Tecnologia de <span className="text-primary">Ponta</span>
+              <span className="text-white">.</span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-primary"></span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
+              Utilizamos equipamentos de última geração para garantir a máxima qualidade em cada projeto, da captação à finalização.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            {/* Equipment Card 1 */}
+            <div className="bg-secondary rounded-2xl shadow-lg overflow-hidden group">
+              <Image src="https://placehold.co/400x300.png" width={400} height={300} alt="Câmera Profissional" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-ai-hint="professional camera" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold">Câmera Profissional</h3>
+                <p className="text-muted-foreground text-sm mt-2">Imagens nítidas e cinematográficas.</p>
+              </div>
+            </div>
+             {/* Equipment Card 2 */}
+            <div className="bg-secondary rounded-2xl shadow-lg overflow-hidden group">
+              <Image src="https://placehold.co/400x300.png" width={400} height={300} alt="Drone 4K" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-ai-hint="camera drone" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold">Drone 4K</h3>
+                <p className="text-muted-foreground text-sm mt-2">Perspectivas aéreas impressionantes.</p>
+              </div>
+            </div>
+             {/* Equipment Card 3 */}
+            <div className="bg-secondary rounded-2xl shadow-lg overflow-hidden group">
+              <Image src="https://placehold.co/400x300.png" width={400} height={300} alt="Estabilizador Gimbal" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-ai-hint="camera gimbal" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold">Estabilizador Gimbal</h3>
+                <p className="text-muted-foreground text-sm mt-2">Movimentos de câmera suaves e fluidos.</p>
+              </div>
+            </div>
+             {/* Equipment Card 4 */}
+            <div className="bg-secondary rounded-2xl shadow-lg overflow-hidden group">
+              <Image src="https://placehold.co/400x300.png" width={400} height={300} alt="Iluminação de Estúdio" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-ai-hint="studio lighting" />
+              <div className="p-6">
+                <h3 className="text-xl font-bold">Iluminação de Estúdio</h3>
+                <p className="text-muted-foreground text-sm mt-2">Controle total sobre a luz e sombra.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
     </div>
   );
 }
