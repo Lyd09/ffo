@@ -63,10 +63,10 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Serviços</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
               O que nós <span className="text-primary">Fazemos</span>
               <span className="text-white">.</span>
-              <span className="absolute bottom-0 left-0 w-full h-1 bg-primary"></span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[13.75rem] h-1 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-8">
               Da concepção à entrega final, oferecemos um leque completo de serviços audiovisuais e digitais para garantir que seu projeto tenha o impacto que merece.
