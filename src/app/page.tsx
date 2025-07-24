@@ -63,7 +63,7 @@ export default function Home() {
           <div className="flex flex-col gap-6">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase">Nossos Serviços</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4">
-              O que nós fazemos.
+              O que nós <span className="text-primary">Fazemos.</span>
               <span className="absolute bottom-0 left-0 w-24 h-1 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4">
