@@ -245,6 +245,6 @@
 
 @layer utilities {
   .bg-gradient-secondary-primary {
-    background-image: linear-gradient(to top, hsl(var(--secondary)) 70%, hsl(var(--primary)));
+    background-image: linear-gradient(to bottom, hsl(var(--primary)), hsl(var(--secondary)) 70%);
   }
 }
