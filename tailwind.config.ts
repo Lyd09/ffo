@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      margin: {
+        '-15': '-15px',
+      },
       fontFamily: {
         body: ['Montserrat', 'sans-serif'],
         headline: ['Montserrat', 'sans-serif'],
