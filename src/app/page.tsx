@@ -2,7 +2,7 @@ import Image from 'next/image';
 import LogoBox from '@/components/custom/LogoBox';
 import LearnMoreButton from '@/components/custom/LearnMoreButton';
 import { Button } from '@/components/ui/button';
-import { Camera, Film, ArrowRight, Monitor, Code, Clapperboard } from 'lucide-react';
+import { Camera, ArrowRight, Monitor, Code, Clapperboard, Film } from 'lucide-react';
 import DroneIcon from '@/components/custom/DroneIcon';
 
 export default function Home() {
@@ -88,7 +88,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 2 */}
-            <div className="bg-gradient-to-t from-primary to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Film className="h-8 w-8" />
               </div>
@@ -98,7 +98,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 3 */}
-            <div className="bg-gradient-to-t from-primary to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Clapperboard className="h-8 w-8" />
               </div>
@@ -128,7 +128,7 @@ export default function Home() {
               </div>
             </div>
             {/* Card 6 */}
-            <div className="bg-gradient-to-t from-primary to-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Monitor className="h-8 w-8" />
               </div>
@@ -153,6 +153,10 @@ export default function Home() {
             <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
               Utilizamos equipamentos de última geração para garantir a máxima qualidade em cada projeto, da captação à finalização.
             </p>
+            <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-8">
+              Ver todos os equipamentos
+              <ArrowRight className="ml-2 h-5 w-5" />
+            </Button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             {/* Equipment Card 1 */}
