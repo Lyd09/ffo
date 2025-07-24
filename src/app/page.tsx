@@ -1,16 +1,30 @@
+
+'use client';
+
 import Image from 'next/image';
+import { useState } from 'react';
 import LogoBox from '@/components/custom/LogoBox';
 import LearnMoreButton from '@/components/custom/LearnMoreButton';
 import { Button } from '@/components/ui/button';
-import { Camera, ArrowRight, Monitor, Code, Clapperboard, Film } from 'lucide-react';
+import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Menu, Camera, ArrowRight, Monitor, Code, Clapperboard, Film } from 'lucide-react';
 import DroneIcon from '@/components/custom/DroneIcon';
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { href: '/', label: 'Início' },
+    { href: '#', label: 'Sobre' },
+    { href: '#', label: 'Portfólio' },
+    { href: '#', label: 'Contato' },
+  ];
+
   return (
     <div className="flex flex-col min-h-screen text-white">
       <div className="bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
         <header className="flex items-center justify-between px-8 pt-6 max-w-[1440px] mx-auto w-full">
-          <a href="/" className="w-12 h-12 flex-shrink-0">
+          <a href="/" className="w-12 h-12 flex-shrink-0 z-50">
             <Image
               alt="Red diamond shaped logo"
               className="w-full h-full object-contain"
@@ -21,25 +35,44 @@ export default function Home() {
               data-ai-hint="diamond logo"
             />
           </a>
-          <nav className="flex-1 flex justify-start pl-24 space-x-12 text-white text-sm font-semibold tracking-wide uppercase">
-            <a className="relative group" href="/">
-              Início
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
-            </a>
-            <a className="relative group" href="#">
-              Sobre
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
-            </a>
-            <a className="relative group" href="#">
-              Portfólio
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
-            </a>
-            <a className="relative group" href="#">
-              Contato
-              <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
-            </a>
+          
+          {/* Desktop Navigation */}
+          <nav className="hidden md:flex flex-1 justify-start pl-24 space-x-12 text-white text-sm font-semibold tracking-wide uppercase">
+            {navLinks.map((link) => (
+              <a key={link.label} className="relative group" href={link.href}>
+                {link.label}
+                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
+              </a>
+            ))}
           </nav>
-          <div className="w-12 h-12" />
+          <div className="hidden md:flex w-12 h-12" />
+
+          {/* Mobile Navigation */}
+          <div className="md:hidden z-50">
+            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+              <SheetTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <Menu className="h-6 w-6 text-white" />
+                  <span className="sr-only">Abrir menu</span>
+                </Button>
+              </SheetTrigger>
+              <SheetContent side="right" className="bg-background border-l-0">
+                <nav className="flex flex-col items-center justify-center h-full space-y-8 text-white text-xl font-semibold tracking-wide uppercase">
+                  {navLinks.map((link) => (
+                    <a 
+                      key={link.label} 
+                      href={link.href} 
+                      onClick={() => setIsMenuOpen(false)}
+                      className="relative group"
+                    >
+                      {link.label}
+                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
+                    </a>
+                  ))}
+                </nav>
+              </SheetContent>
+            </Sheet>
+          </div>
         </header>
         <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-36 pb-48 relative items-center gap-8">
           <section className="flex flex-col justify-center max-w-xl text-white relative z-10">
