@@ -43,7 +43,7 @@ export default function Home() {
         </header>
         <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-36 pb-48 relative items-center gap-8">
           <section className="flex flex-col justify-center max-w-xl text-white drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] relative z-10">
-            <p className="text-sm font-semibold mb-5 tracking-wide">VÍDEO É MAIS QUE IMAGEM</p>
+            <p className="text-sm font-semibold mb-5 tracking-wider uppercase text-primary">VÍDEO É MAIS QUE IMAGEM</p>
             <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">EDIÇÃO</h1>
             <p className="text-sm font-normal mb-8 max-w-md leading-relaxed">
               Se o visual prende, o som envolve. E a gente trata os dois com o mesmo cuidado. Afinal, audiovisual é uma experiência completa.
