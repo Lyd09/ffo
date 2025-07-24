@@ -63,7 +63,8 @@ export default function Home() {
           <div className="flex flex-col gap-6">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase">Nossos Serviços</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4">
-              O que nós <span className="text-primary">Fazemos</span>.
+              O que nós <span className="text-primary">Fazemos</span>
+              <span className="text-white">.</span>
               <span className="absolute bottom-0 left-0 w-24 h-1 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4">
@@ -74,7 +75,7 @@ export default function Home() {
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
             <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
                 <Clapperboard className="h-8 w-8" />
@@ -84,7 +85,7 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm">Corte, ritmo e cor para contar sua história de forma impactante.</p>
               </div>
             </div>
-            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
                 <Camera className="h-8 w-8" />
               </div>
@@ -93,7 +94,7 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm">Captação de imagem e som com alta qualidade para seus projetos.</p>
               </div>
             </div>
-            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
                 <Video className="h-8 w-8" />
               </div>
@@ -120,7 +121,7 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm">Desenvolvimento de sites modernos, responsivos e otimizados.</p>
               </div>
             </div>
-            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
                 <Code className="h-8 w-8" />
               </div>

@@ -242,3 +242,9 @@
 .learn-more-button:hover .button-text {
  color: hsl(var(--primary-foreground));
 }
+
+@layer utilities {
+  .bg-gradient-secondary-primary {
+    background-image: linear-gradient(to top, hsl(var(--primary)), hsl(var(--secondary)));
+  }
+}
