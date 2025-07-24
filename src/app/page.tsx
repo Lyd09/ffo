@@ -42,8 +42,8 @@ export default function Home() {
           <div className="w-12 h-12" />
         </header>
         <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-36 pb-48 relative items-center gap-8">
-          <section className="flex flex-col justify-center max-w-xl text-white drop-shadow-[0_0_6px_rgba(0,0,0,0.8)] relative z-10">
-            <p className="text-sm font-semibold mb-5 tracking-wider uppercase text-primary">VÍDEO É MAIS QUE IMAGEM</p>
+          <section className="flex flex-col justify-center max-w-xl text-white relative z-10">
+            <p className="text-sm font-semibold mb-5 tracking-wider uppercase text-primary drop-shadow-[0_1px_1px_rgba(255,255,255,0.2)]">VÍDEO É MAIS QUE IMAGEM</p>
             <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">EDIÇÃO</h1>
             <p className="text-sm font-normal mb-8 max-w-md leading-relaxed">
               Se o visual prende, o som envolve. E a gente trata os dois com o mesmo cuidado. Afinal, audiovisual é uma experiência completa.
@@ -141,9 +141,17 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#121212] py-20 sm:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
+      <section className="relative bg-[#121212] py-20 sm:py-24">
+        <Image 
+          src="/index/equipmentWALLPAPER.png" 
+          alt="Various professional camera equipment on a table"
+          layout="fill"
+          objectFit="cover"
+          className="absolute inset-0 z-0 opacity-20"
+          data-ai-hint="camera equipment"
+        />
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Equipamentos</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
               Tecnologia de <span className="text-primary">Ponta</span>
@@ -157,40 +165,6 @@ export default function Home() {
               Ver todos os equipamentos
               <ArrowRight className="ml-2 h-5 w-5" />
             </Button>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-            {/* Equipment Card 1 */}
-            <div className="bg-secondary rounded-2xl shadow-lg overflow-hidden group">
-              <Image src="https://placehold.co/400x300.png" width={400} height={300} alt="Câmera Profissional" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-ai-hint="professional camera" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Câmera Profissional</h3>
-                <p className="text-muted-foreground text-sm mt-2">Imagens nítidas e cinematográficas.</p>
-              </div>
-            </div>
-             {/* Equipment Card 2 */}
-            <div className="bg-secondary rounded-2xl shadow-lg overflow-hidden group">
-              <Image src="https://placehold.co/400x300.png" width={400} height={300} alt="Drone 4K" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-ai-hint="camera drone" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Drone 4K</h3>
-                <p className="text-muted-foreground text-sm mt-2">Perspectivas aéreas impressionantes.</p>
-              </div>
-            </div>
-             {/* Equipment Card 3 */}
-            <div className="bg-secondary rounded-2xl shadow-lg overflow-hidden group">
-              <Image src="https://placehold.co/400x300.png" width={400} height={300} alt="Estabilizador Gimbal" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-ai-hint="camera gimbal" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Estabilizador Gimbal</h3>
-                <p className="text-muted-foreground text-sm mt-2">Movimentos de câmera suaves e fluidos.</p>
-              </div>
-            </div>
-             {/* Equipment Card 4 */}
-            <div className="bg-secondary rounded-2xl shadow-lg overflow-hidden group">
-              <Image src="https://placehold.co/400x300.png" width={400} height={300} alt="Iluminação de Estúdio" className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" data-ai-hint="studio lighting" />
-              <div className="p-6">
-                <h3 className="text-xl font-bold">Iluminação de Estúdio</h3>
-                <p className="text-muted-foreground text-sm mt-2">Controle total sobre a luz e sombra.</p>
-              </div>
-            </div>
           </div>
         </div>
       </section>
