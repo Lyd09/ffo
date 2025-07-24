@@ -62,7 +62,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col gap-6">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase">Nossos Serviços</p>
-            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-2">
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4">
               O que nós fazemos.
               <span className="absolute bottom-0 left-0 w-24 h-1 bg-primary"></span>
             </h2>
