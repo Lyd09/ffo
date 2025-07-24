@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Camera, ArrowRight, Monitor, Code, Clapperboard, Film } from 'lucide-react';
 import DroneIcon from '@/components/custom/DroneIcon';
+import { Separator } from '@/components/ui/separator';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -24,55 +25,62 @@ export default function Home() {
     <div className="flex flex-col min-h-screen text-white">
       <div className="bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
         <header className="flex items-center justify-between px-8 pt-6 max-w-[1440px] mx-auto w-full">
-          <a href="/" className="w-12 h-12 flex-shrink-0 z-50">
-            <Image
-              alt="Red diamond shaped logo"
-              className="w-full h-full object-contain"
-              height={48}
-              src="/index/FF-SITE-ICON.svg"
-              width={48}
-              priority
-              data-ai-hint="diamond logo"
-            />
-          </a>
+          <div className="flex items-center gap-4">
+            <a href="/" className="w-12 h-12 flex-shrink-0 z-50">
+              <Image
+                alt="Red diamond shaped logo"
+                className="w-full h-full object-contain"
+                height={48}
+                src="/index/FF-SITE-ICON.svg"
+                width={48}
+                priority
+                data-ai-hint="diamond logo"
+              />
+            </a>
+            {/* Mobile Navigation Trigger */}
+            <div className="md:hidden z-50">
+              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6 text-white" />
+                    <span className="sr-only">Abrir menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="bg-background border-r-0 w-3/4">
+                  <nav className="flex flex-col items-center justify-center h-full text-white text-xl font-semibold tracking-wide uppercase">
+                    {navLinks.map((link, index) => (
+                      <div key={link.label} className="w-full text-center">
+                        <a 
+                          href={link.href} 
+                          onClick={() => setIsMenuOpen(false)}
+                          className="relative group block py-4"
+                        >
+                          {link.label}
+                          <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2/3 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
+                        </a>
+                        {index < navLinks.length - 1 && <Separator className="bg-border/50" />}
+                      </div>
+                    ))}
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
+          </div>
           
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex flex-1 justify-start pl-24 space-x-12 text-white text-sm font-semibold tracking-wide uppercase">
-            {navLinks.map((link) => (
-              <a key={link.label} className="relative group" href={link.href}>
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
-              </a>
-            ))}
+          <nav className="hidden md:flex flex-1 justify-center items-center text-white text-sm font-semibold tracking-wide uppercase">
+            <div className="flex justify-center space-x-12">
+                {navLinks.map((link) => (
+                <a key={link.label} className="relative group" href={link.href}>
+                    {link.label}
+                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
+                </a>
+                ))}
+            </div>
           </nav>
-          <div className="hidden md:flex w-12 h-12" />
 
-          {/* Mobile Navigation */}
-          <div className="md:hidden z-50">
-            <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-              <SheetTrigger asChild>
-                <Button variant="ghost" size="icon">
-                  <Menu className="h-6 w-6 text-white" />
-                  <span className="sr-only">Abrir menu</span>
-                </Button>
-              </SheetTrigger>
-              <SheetContent side="right" className="bg-background border-l-0">
-                <nav className="flex flex-col items-center justify-center h-full space-y-8 text-white text-xl font-semibold tracking-wide uppercase">
-                  {navLinks.map((link) => (
-                    <a 
-                      key={link.label} 
-                      href={link.href} 
-                      onClick={() => setIsMenuOpen(false)}
-                      className="relative group"
-                    >
-                      {link.label}
-                      <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
-                    </a>
-                  ))}
-                </nav>
-              </SheetContent>
-            </Sheet>
-          </div>
+          {/* This div is to balance the header for desktop */}
+          <div className="hidden md:flex w-12 h-12 flex-shrink-0" />
         </header>
         <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-36 pb-48 relative items-center gap-8">
           <section className="flex flex-col justify-center max-w-xl text-white relative z-10">
