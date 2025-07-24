@@ -26,17 +26,6 @@ export default function Home() {
       <div className="bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
         <header className="flex items-center justify-between px-8 pt-6 max-w-[1440px] mx-auto w-full">
           <div className="flex items-center gap-4">
-            <a href="/" className="w-12 h-12 flex-shrink-0 z-50">
-              <Image
-                alt="Red diamond shaped logo"
-                className="w-full h-full object-contain"
-                height={48}
-                src="/index/FF-SITE-ICON.svg"
-                width={48}
-                priority
-                data-ai-hint="diamond logo"
-              />
-            </a>
             {/* Mobile Navigation Trigger */}
             <div className="md:hidden z-50">
               <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
@@ -50,8 +39,8 @@ export default function Home() {
                   <nav className="flex flex-col items-center justify-center h-full text-white text-xl font-semibold tracking-wide uppercase">
                     {navLinks.map((link, index) => (
                       <div key={link.label} className="w-full text-center">
-                        <a 
-                          href={link.href} 
+                        <a
+                          href={link.href}
                           onClick={() => setIsMenuOpen(false)}
                           className="relative group block py-4"
                         >
@@ -65,17 +54,28 @@ export default function Home() {
                 </SheetContent>
               </Sheet>
             </div>
+            <a href="/" className="w-12 h-12 flex-shrink-0 z-50">
+              <Image
+                alt="Red diamond shaped logo"
+                className="w-full h-full object-contain"
+                height={48}
+                src="/index/FF-SITE-ICON.svg"
+                width={48}
+                priority
+                data-ai-hint="diamond logo"
+              />
+            </a>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="hidden md:flex flex-1 justify-center items-center text-white text-sm font-semibold tracking-wide uppercase">
             <div className="flex justify-center space-x-12">
-                {navLinks.map((link) => (
+              {navLinks.map((link) => (
                 <a key={link.label} className="relative group" href={link.href}>
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
                 </a>
-                ))}
+              ))}
             </div>
           </nav>
 
@@ -183,8 +183,8 @@ export default function Home() {
       </section>
 
       <section className="relative bg-[#121212] py-20 sm:py-24">
-        <Image 
-          src="/index/equipmentWALLPAPER.png" 
+        <Image
+          src="/index/equipmentWALLPAPER.png"
           alt="Various professional camera equipment on a table"
           layout="fill"
           objectFit="cover"
