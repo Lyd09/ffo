@@ -2,7 +2,7 @@ import Image from 'next/image';
 import LogoBox from '@/components/custom/LogoBox';
 import LearnMoreButton from '@/components/custom/LearnMoreButton';
 import { Button } from '@/components/ui/button';
-import { Camera, Clapperboard, Music, ArrowRight, Video, Monitor, Wind, Code } from 'lucide-react';
+import { Camera, Clapperboard, Music, ArrowRight, Video, Monitor, Wind, Code, Film } from 'lucide-react';
 
 export default function Home() {
   return (
@@ -76,17 +76,9 @@ export default function Home() {
             </Button>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {/* Card 1 */}
             <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
-                <Clapperboard className="h-8 w-8" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Edição</h3>
-                <p className="text-muted-foreground text-sm">Corte, ritmo e cor para contar sua história de forma impactante.</p>
-              </div>
-            </div>
-            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
-              <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Camera className="h-8 w-8" />
               </div>
               <div>
@@ -94,15 +86,27 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm">Captação de imagem e som com alta qualidade para seus projetos.</p>
               </div>
             </div>
+            {/* Card 2 */}
             <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-white p-3 rounded-xl">
-                <Video className="h-8 w-8" />
+                <Film className="h-8 w-8" />
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Produção de Vídeo</h3>
                 <p className="text-muted-foreground text-sm">Serviço completo, da gravação à edição final do seu vídeo.</p>
               </div>
             </div>
+            {/* Card 3 */}
+            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+              <div className="bg-primary/10 text-white p-3 rounded-xl">
+                <Clapperboard className="h-8 w-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">Edição</h3>
+                <p className="text-muted-foreground text-sm">Corte, ritmo e cor para contar sua história de forma impactante.</p>
+              </div>
+            </div>
+            {/* Card 4 */}
             <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
                 <Wind className="h-8 w-8" />
@@ -112,22 +116,24 @@ export default function Home() {
                 <p className="text-muted-foreground text-sm">Imagens aéreas cinematográficas para uma nova perspectiva.</p>
               </div>
             </div>
-             <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+            {/* Card 5 */}
+            <div className="bg-secondary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
               <div className="bg-primary/10 text-primary p-3 rounded-xl">
-                <Monitor className="h-8 w-8" />
-              </div>
-              <div>
-                <h3 className="text-xl font-bold mb-2">Sites</h3>
-                <p className="text-muted-foreground text-sm">Desenvolvimento de sites modernos, responsivos e otimizados.</p>
-              </div>
-            </div>
-            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
-              <div className="bg-primary/10 text-white p-3 rounded-xl">
                 <Code className="h-8 w-8" />
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">Softwares</h3>
                 <p className="text-muted-foreground text-sm">Criação de soluções de software personalizadas para seu negócio.</p>
+              </div>
+            </div>
+            {/* Card 6 */}
+            <div className="bg-gradient-secondary-primary p-8 rounded-2xl shadow-lg flex flex-col items-start gap-4">
+              <div className="bg-primary/10 text-white p-3 rounded-xl">
+                <Monitor className="h-8 w-8" />
+              </div>
+              <div>
+                <h3 className="text-xl font-bold mb-2">Sites</h3>
+                <p className="text-muted-foreground text-sm">Desenvolvimento de sites modernos, responsivos e otimizados.</p>
               </div>
             </div>
           </div>
