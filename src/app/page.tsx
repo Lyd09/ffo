@@ -66,7 +66,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4">
               O que nós <span className="text-primary">Fazemos</span>
               <span className="text-white">.</span>
-              <span className="absolute bottom-0 left-0 w-24 h-1 bg-primary"></span>
+              <span className="absolute bottom-0 left-0 w-full h-1 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-8">
               Da concepção à entrega final, oferecemos um leque completo de serviços audiovisuais e digitais para garantir que seu projeto tenha o impacto que merece.
