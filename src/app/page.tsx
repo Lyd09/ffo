@@ -214,7 +214,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossa Equipe</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
-            Quem <span className="text-primary">Faz</span> Acontecer
+            Quem Faz Acontecer
             <span className="text-white">.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
@@ -227,10 +227,10 @@ export default function Home() {
                 alt="Foto do Membro da Equipe"
                 width={160}
                 height={160}
-                className="rounded-full border-4 border-secondary"
+                className="rounded-full border-4 border-secondary drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]"
                 data-ai-hint="man portrait"
               />
-              <h3 className="mt-6 text-2xl font-bold">Lucas "Luke" F.</h3>
+              <h3 className="mt-6 text-2xl font-bold text-primary">Lucas "Luke" F.</h3>
               <p className="text-muted-foreground">CEO & Editor Chefe</p>
             </div>
             <div className="flex flex-col items-center">
@@ -239,10 +239,10 @@ export default function Home() {
                 alt="Foto do Membro da Equipe"
                 width={160}
                 height={160}
-                className="rounded-full border-4 border-secondary"
+                className="rounded-full border-4 border-secondary drop-shadow-[0_4px_10px_rgba(0,0,0,0.4)]"
                 data-ai-hint="woman portrait"
               />
-              <h3 className="mt-6 text-2xl font-bold">Ana "Anix" G.</h3>
+              <h3 className="mt-6 text-2xl font-bold text-primary">Ana "Anix" G.</h3>
               <p className="text-muted-foreground">Diretora de Arte & Colorista</p>
             </div>
           </div>
@@ -263,3 +263,4 @@ export default function Home() {
     
 
     
+
