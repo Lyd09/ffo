@@ -232,10 +232,7 @@ export default function Home() {
               />
               <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
               <p className="text-muted-foreground text-center">
-                Co-Fundador
-                <br />
-                &
-                <br />
+                Co-Fundador &<br />
                 Diretor Criativo
               </p>
             </div>
@@ -250,10 +247,7 @@ export default function Home() {
               />
               <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
               <p className="text-muted-foreground text-center">
-                Co-Fundador
-                <br />
-                &
-                <br />
+                Co-Fundador &<br />
                 Diretor de Produção
               </p>
             </div>
@@ -289,3 +283,4 @@ export default function Home() {
     
 
     
+
