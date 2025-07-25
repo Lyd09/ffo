@@ -210,7 +210,65 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="bg-[#1a1a1a] py-20 sm:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossa Equipe</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
+            Quem <span className="text-primary">Faz</span> Acontecer
+            <span className="text-white">.</span>
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[13.75rem] h-1 bg-primary"></span>
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
+            Conheça as mentes criativas por trás dos projetos incríveis que entregamos.
+          </p>
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="flex flex-col items-center">
+              <Image
+                src="https://placehold.co/160x160.png"
+                alt="Foto do Membro da Equipe"
+                width={160}
+                height={160}
+                className="rounded-full border-4 border-secondary"
+                data-ai-hint="man portrait"
+              />
+              <h3 className="mt-6 text-2xl font-bold">Lucas "Luke" F.</h3>
+              <p className="text-muted-foreground">CEO & Editor Chefe</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="https://placehold.co/160x160.png"
+                alt="Foto do Membro da Equipe"
+                width={160}
+                height={160}
+                className="rounded-full border-4 border-secondary"
+                data-ai-hint="woman portrait"
+              />
+              <h3 className="mt-6 text-2xl font-bold">Ana "Anix" G.</h3>
+              <p className="text-muted-foreground">Diretora de Arte & Colorista</p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Image
+                src="https://placehold.co/160x160.png"
+                alt="Foto do Membro da Equipe"
+                width={160}
+                height={160}
+                className="rounded-full border-4 border-secondary"
+                data-ai-hint="man portrait face"
+              />
+              <h3 className="mt-6 text-2xl font-bold">Carlos "Carl" P.</h3>
+              <p className="text-muted-foreground">Motion Designer & Editor</p>
+            </div>
+          </div>
+          <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-16">
+            Ver toda a equipe
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+        </div>
+      </section>
+
     </div>
   );
+
+    
 
     
