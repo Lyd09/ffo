@@ -54,13 +54,13 @@ export default function Home() {
                 </SheetContent>
               </Sheet>
             </div>
-            <a href="/" className="w-12 h-12 flex-shrink-0 z-50">
+            <a href="/" className="w-24 h-24 flex-shrink-0 z-50">
               <Image
                 alt="Red diamond shaped logo"
                 className="w-full h-full object-contain"
-                height={48}
+                height={96}
                 src="/index/FF-SITE-ICON.svg"
-                width={48}
+                width={96}
                 priority
                 data-ai-hint="diamond logo"
               />
@@ -80,7 +80,7 @@ export default function Home() {
           </nav>
 
           {/* This div is to balance the header for desktop */}
-          <div className="hidden md:flex w-12 h-12 flex-shrink-0" />
+          <div className="hidden md:flex w-24 h-24 flex-shrink-0" />
         </header>
         <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-36 pb-48 relative items-center gap-8">
           <section className="flex flex-col justify-center max-w-xl text-white relative z-10">
