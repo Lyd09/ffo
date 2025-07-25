@@ -231,7 +231,7 @@ export default function Home() {
                 data-ai-hint="man portrait"
               />
               <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
-              <p className="text-muted-foreground">CEO & Fundador</p>
+              <p className="text-muted-foreground">Co-Fundador & Diretor Criativo</p>
             </div>
             <div className="flex flex-col items-center">
               <Image
@@ -243,7 +243,7 @@ export default function Home() {
                 data-ai-hint="man portrait"
               />
               <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
-              <p className="text-muted-foreground">CEO & Fundador</p>
+              <p className="text-muted-foreground">Co-Fundador & Diretor de Produção</p>
             </div>
           </div>
           <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-16">
@@ -265,6 +265,8 @@ export default function Home() {
     
 
 
+
+    
 
     
 
