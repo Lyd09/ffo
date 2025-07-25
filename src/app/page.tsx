@@ -220,7 +220,7 @@ export default function Home() {
           <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
             Conheça as mentes criativas por trás dos projetos incríveis que entregamos.
           </p>
-          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+          <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             <div className="flex flex-col items-center">
               <Image
                 src="https://placehold.co/160x160.png"
