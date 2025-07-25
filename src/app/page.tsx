@@ -210,7 +210,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#1a1a1a] py-16 sm:py-20">
+      <section className="bg-[#1a1a1a] py-12 sm:py-16">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossa Equipe</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
@@ -265,6 +265,8 @@ export default function Home() {
     
 
 
+
+    
 
     
 
