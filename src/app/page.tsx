@@ -17,7 +17,7 @@ export default function Home() {
   const navLinks = [
     { href: '/', label: 'Início' },
     { href: '#', label: 'Sobre' },
-    { href: '#', label: 'Portfólio' },
+    { href: '#servicos', label: 'Portfólio' },
     { href: '#', label: 'Contato' },
   ];
 
@@ -100,7 +100,7 @@ export default function Home() {
         </main>
       </div>
 
-      <section className="bg-[#1a1a1a] py-20 sm:py-24">
+      <section id="servicos" className="bg-[#1a1a1a] py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
           <div className="flex flex-col">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Serviços</p>
