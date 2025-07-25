@@ -230,8 +230,8 @@ export default function Home() {
                 className="rounded-full border-4 border-secondary drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]"
                 data-ai-hint="man portrait"
               />
-              <h3 className="mt-6 text-2xl font-bold text-primary">Lucas "Luke" F.</h3>
-              <p className="text-muted-foreground">CEO & Editor Chefe</p>
+              <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
+              <p className="text-muted-foreground">CEO & Fundador</p>
             </div>
             <div className="flex flex-col items-center">
               <Image
@@ -240,10 +240,10 @@ export default function Home() {
                 width={160}
                 height={160}
                 className="rounded-full border-4 border-secondary drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]"
-                data-ai-hint="woman portrait"
+                data-ai-hint="man portrait"
               />
-              <h3 className="mt-6 text-2xl font-bold text-primary">Ana "Anix" G.</h3>
-              <p className="text-muted-foreground">Diretora de Arte & Colorista</p>
+              <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
+              <p className="text-muted-foreground">CEO & Fundador</p>
             </div>
           </div>
           <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-16">
@@ -265,6 +265,8 @@ export default function Home() {
     
 
 
+
+    
 
     
 
