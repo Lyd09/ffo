@@ -105,7 +105,7 @@ export default function Home() {
           <div className="flex flex-col">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Serviços</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
-              O que nós <span className="text-primary">Fazemos</span>
+              O que nós Fazemos
               <span className="text-white">.</span>
               <span className="absolute bottom-0 left-0 w-[13.75rem] h-1 bg-primary"></span>
             </h2>
@@ -231,7 +231,13 @@ export default function Home() {
                 data-ai-hint="man portrait"
               />
               <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
-              <p className="text-muted-foreground">Co-Fundador & Diretor Criativo</p>
+              <p className="text-muted-foreground text-center">
+                Co-Fundador
+                <br />
+                &
+                <br />
+                Diretor Criativo
+              </p>
             </div>
             <div className="flex flex-col items-center">
               <Image
@@ -243,7 +249,13 @@ export default function Home() {
                 data-ai-hint="man portrait"
               />
               <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
-              <p className="text-muted-foreground">Co-Fundador & Diretor de Produção</p>
+              <p className="text-muted-foreground text-center">
+                Co-Fundador
+                <br />
+                &
+                <br />
+                Diretor de Produção
+              </p>
             </div>
           </div>
           <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-16">
