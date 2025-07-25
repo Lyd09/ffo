@@ -220,7 +220,7 @@ export default function Home() {
           <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
             Conheça as mentes criativas por trás dos projetos incríveis que entregamos.
           </p>
-          <div className="mt-16 flex justify-center max-w-3xl mx-auto">
+          <div className="mt-16 flex justify-center max-w-3xl mx-auto gap-8">
             <div className="flex flex-col items-center">
               <Image
                 src="https://placehold.co/160x160.png"
@@ -233,7 +233,7 @@ export default function Home() {
               <h3 className="mt-6 text-2xl font-bold">Lucas "Luke" F.</h3>
               <p className="text-muted-foreground">CEO & Editor Chefe</p>
             </div>
-            <div className="flex flex-col items-center -ml-10">
+            <div className="flex flex-col items-center">
               <Image
                 src="https://placehold.co/160x160.png"
                 alt="Foto do Membro da Equipe"
