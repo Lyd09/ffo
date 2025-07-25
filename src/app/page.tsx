@@ -217,7 +217,7 @@ export default function Home() {
             Quem Faz Acontecer
             <span className="text-white">.</span>
           </h2>
-          <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
+          <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
             Conheça as mentes criativas por trás dos projetos incríveis que entregamos.
           </p>
           <div className="mt-16 flex justify-center max-w-3xl mx-auto gap-8">
@@ -284,3 +284,6 @@ export default function Home() {
 
     
 
+
+
+    
