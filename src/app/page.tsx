@@ -223,8 +223,8 @@ export default function Home() {
           <div className="mt-16 flex justify-center max-w-3xl mx-auto gap-8">
             <div className="flex flex-col items-center">
               <Image
-                src="https://placehold.co/160x160.png"
-                alt="Foto do Membro da Equipe"
+                src="/index/Equipe/samuel.jpg"
+                alt="Foto de Samuel, Co-Fundador e Diretor Criativo"
                 width={160}
                 height={160}
                 className="rounded-full border-4 border-secondary drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]"
@@ -238,8 +238,8 @@ export default function Home() {
             </div>
             <div className="flex flex-col items-center">
               <Image
-                src="https://placehold.co/160x160.png"
-                alt="Foto do Membro da Equipe"
+                src="/index/Equipe/kleuver.png"
+                alt="Foto de Kléuver, Co-Fundador e Diretor de Produção"
                 width={160}
                 height={160}
                 className="rounded-full border-4 border-secondary drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]"
@@ -285,6 +285,8 @@ export default function Home() {
     
 
 
+
+    
 
     
 
