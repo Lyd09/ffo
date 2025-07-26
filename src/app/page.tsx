@@ -227,7 +227,7 @@ export default function Home() {
                 alt="Foto de Samuel, Co-Fundador e Diretor Criativo"
                 width={160}
                 height={160}
-                className="rounded-full border-4 border-secondary drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]"
+                className="rounded-full drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]"
                 data-ai-hint="man portrait"
               />
               <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
@@ -242,7 +242,7 @@ export default function Home() {
                 alt="Foto de Kléuver, Co-Fundador e Diretor de Produção"
                 width={160}
                 height={160}
-                className="rounded-full border-4 border-secondary drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]"
+                className="rounded-full drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]"
                 data-ai-hint="man portrait"
               />
               <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
@@ -261,33 +261,4 @@ export default function Home() {
 
     </div>
   );
-
-    
-
-    
-
-    
-
-    
-
-
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-
-
-    
-
-    
-
-    
+}
