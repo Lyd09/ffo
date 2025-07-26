@@ -55,13 +55,13 @@ export default function Home() {
                   </SheetContent>
                 </Sheet>
               </div>
-              <a href="/" className="w-[105px] h-[105px] flex-shrink-0 z-50">
+              <a href="/" className="w-[80px] h-[80px] flex-shrink-0 z-50">
                 <Image
                   alt="Red diamond shaped logo"
                   className="w-full h-full object-contain"
-                  height={105}
+                  height={80}
                   src="/index/FF-SITE-ICON.svg"
-                  width={105}
+                  width={80}
                   priority
                   data-ai-hint="diamond logo"
                 />
@@ -285,5 +285,7 @@ export default function Home() {
     
 
 
+
+    
 
     
