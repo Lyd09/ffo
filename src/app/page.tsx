@@ -260,42 +260,32 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="associados" className="bg-[#1a1a1a] py-20 sm:py-24">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-          <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Associados</p>
+      <section id="associados" className="bg-[#121212] py-20 sm:py-24">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Área do Associado</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
-            Parceiros que <span className="text-primary">Confiam</span>.
+            Ferramenta Exclusiva para <span className="text-primary">Nossa Equipe</span>.
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-            Temos orgulho de colaborar com uma rede de associados talentosos e empresas que acreditam em nosso trabalho. Juntos, construímos projetos de sucesso.
+            Acreditamos na colaboração e na eficiência. Por isso, desenvolvemos um sistema interno para otimizar a gestão de projetos, a comunicação e o acesso a recursos exclusivos para nossos associados.
           </p>
-          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 items-center">
-            <div className="flex justify-center">
-              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 1" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
-            </div>
-            <div className="flex justify-center">
-              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 2" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
-            </div>
-            <div className="flex justify-center">
-              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 3" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
-            </div>
-            <div className="flex justify-center">
-              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 4" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
-            </div>
-            <div className="flex justify-center col-span-2 md:col-span-1">
-              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 5" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
-            </div>
-          </div>
-          <div className="mt-16 bg-secondary/50 border border-border rounded-xl p-6 max-w-2xl mx-auto">
-            <h3 className="text-lg font-bold text-primary">Acesso ao Sistema Interno</h3>
-            <p className="text-muted-foreground mt-2">
-              É um novo associado? Para acessar nossa ferramenta interna, por favor, solicite suas credenciais de acesso entrando em contato conosco.
+          <Button 
+            className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-10"
+            onClick={() => window.open('#', '_blank')}
+          >
+            Acessar Sistema Interno
+            <ArrowRight className="ml-2 h-5 w-5" />
+          </Button>
+          <div className="mt-12 bg-secondary/30 border border-border rounded-xl p-6 max-w-2xl mx-auto">
+            <h3 className="text-lg font-bold text-primary">É um novo associado?</h3>
+            <p className="text-muted-foreground mt-2 text-sm">
+              Para acessar nossa ferramenta interna, por favor, solicite suas credenciais de acesso entrando em contato com a nossa equipe de produção.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="contato" className="bg-[#121212] py-20 sm:py-24">
+      <section id="contato" className="bg-[#1a1a1a] py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">ENTRE EM CONTATO</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
