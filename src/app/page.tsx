@@ -98,9 +98,8 @@ export default function Home() {
             </div>
       </header>
       <main className="flex-1">
-        <div className="relative">
-          
-          <div className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-12 pb-48 relative items-center gap-8">
+        <div className="relative min-h-screen flex items-center">
+          <div className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 py-24 relative items-center gap-8">
             <section className="flex flex-col justify-center max-w-xl text-white relative z-10">
               <p className="text-sm font-semibold mb-5 tracking-wider uppercase text-white">VÍDEO É MAIS QUE IMAGEM</p>
               <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight text-primary">EDIÇÃO</h1>
