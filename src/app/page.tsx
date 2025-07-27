@@ -36,9 +36,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen text-white bg-background">
-      <main className="flex-1">
-        <div className="relative bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
-          <header className="absolute top-0 left-0 right-0 z-50 w-full bg-transparent backdrop-blur-sm">
+      <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
             <div className="flex items-center justify-between px-8 py-4 max-w-[1440px] mx-auto w-full">
               {/* Left side */}
               <div className="flex items-center gap-4 flex-1">
@@ -98,9 +96,11 @@ export default function Home() {
                 </div>
               </div>
             </div>
-          </header>
+      </header>
+      <main className="flex-1 bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
+        <div className="relative">
           
-          <div className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-36 pb-48 relative items-center gap-8">
+          <div className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-12 pb-48 relative items-center gap-8">
             <section className="flex flex-col justify-center max-w-xl text-white relative z-10">
               <p className="text-sm font-semibold mb-5 tracking-wider uppercase text-white">VÍDEO É MAIS QUE IMAGEM</p>
               <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight text-primary">EDIÇÃO</h1>
@@ -352,3 +352,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
