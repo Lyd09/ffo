@@ -36,62 +36,64 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen text-white">
-      <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b border-border">
+      <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
         <div className="flex items-center justify-between px-8 py-4 max-w-[1440px] mx-auto w-full">
-          <div className="flex items-center gap-8">
-            <div className="flex items-center gap-4">
-              {/* Mobile Navigation Trigger */}
-              <div className="md:hidden">
-                <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
-                  <SheetTrigger asChild>
-                    <Button variant="ghost" size="icon">
-                      <Menu className="h-6 w-6 text-white" />
-                      <span className="sr-only">Abrir menu</span>
-                    </Button>
-                  </SheetTrigger>
-                  <SheetContent side="left" className="bg-background border-r-0 w-3/4">
-                    <nav className="flex flex-col items-center justify-center h-full text-white text-xl font-semibold tracking-wide uppercase">
-                      {navLinks.map((link, index) => (
-                        <div key={link.label} className="w-full text-center">
-                          <a
-                            href={link.href}
-                            onClick={() => setIsMenuOpen(false)}
-                            className="relative group block py-4"
-                          >
-                            {link.label}
-                            <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2/3 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
-                          </a>
-                          {index < navLinks.length - 1 && <Separator className="bg-border/50" />}
-                        </div>
-                      ))}
-                    </nav>
-                  </SheetContent>
-                </Sheet>
-              </div>
-              <a href="/" className="w-[80px] h-[80px] flex-shrink-0">
-                <Image
-                  alt="Red diamond shaped logo"
-                  className="w-full h-full object-contain"
-                  height={80}
-                  src="/index/FF-SITE-ICON.svg"
-                  width={80}
-                  priority
-                  data-ai-hint="diamond logo"
-                />
-              </a>
-            </div>
+          {/* Left side */}
+          <div className="flex items-center gap-4 flex-1">
+            <a href="/" className="w-[80px] h-[80px] flex-shrink-0">
+              <Image
+                alt="Red diamond shaped logo"
+                className="w-full h-full object-contain"
+                height={80}
+                src="/index/FF-SITE-ICON.svg"
+                width={80}
+                priority
+                data-ai-hint="diamond logo"
+              />
+            </a>
+          </div>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center text-white text-sm font-semibold tracking-wide uppercase">
-              <div className="flex items-center space-x-12">
-                {navLinks.map((link) => (
-                  <a key={link.label} className="relative group" href={link.href}>
-                    {link.label}
-                    <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
-                  </a>
-                ))}
-              </div>
-            </nav>
+          {/* Center (Desktop Navigation) */}
+          <nav className="hidden md:flex items-center justify-center text-white text-sm font-semibold tracking-wide uppercase flex-1">
+            <div className="flex items-center space-x-12">
+              {navLinks.map((link) => (
+                <a key={link.label} className="relative group" href={link.href}>
+                  {link.label}
+                  <span className="absolute -bottom-1 left-0 w-full h-0.5 bg-white scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
+                </a>
+              ))}
+            </div>
+          </nav>
+          
+          {/* Right side (for spacing) and Mobile Menu */}
+          <div className="flex items-center justify-end gap-4 flex-1">
+            <div className="md:hidden">
+              <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
+                <SheetTrigger asChild>
+                  <Button variant="ghost" size="icon">
+                    <Menu className="h-6 w-6 text-white" />
+                    <span className="sr-only">Abrir menu</span>
+                  </Button>
+                </SheetTrigger>
+                <SheetContent side="left" className="bg-background border-r-0 w-3/4">
+                  <nav className="flex flex-col items-center justify-center h-full text-white text-xl font-semibold tracking-wide uppercase">
+                    {navLinks.map((link, index) => (
+                      <div key={link.label} className="w-full text-center">
+                        <a
+                          href={link.href}
+                          onClick={() => setIsMenuOpen(false)}
+                          className="relative group block py-4"
+                        >
+                          {link.label}
+                          <span className="absolute -bottom-1 left-1/2 -translate-x-1/2 w-2/3 h-0.5 bg-primary scale-x-0 group-hover:scale-x-100 transition-transform origin-center duration-300 ease-in-out"></span>
+                        </a>
+                        {index < navLinks.length - 1 && <Separator className="bg-border/50" />}
+                      </div>
+                    ))}
+                  </nav>
+                </SheetContent>
+              </Sheet>
+            </div>
           </div>
         </div>
       </header>
@@ -348,5 +350,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
