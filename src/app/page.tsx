@@ -264,7 +264,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">ENTRE EM CONTATO</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
-              Vamos dar o próximo passo<span className="text-primary">?</span>
+              Vamos dar o <span className="text-primary">próximo passo</span>?
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
              Tem uma ideia ou um projeto em mente? Adoraríamos ouvir sobre ele. Entre em contato e vamos transformar sua visão em realidade.
