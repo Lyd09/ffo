@@ -7,9 +7,23 @@ import LogoBox from '@/components/custom/LogoBox';
 import LearnMoreButton from '@/components/custom/LearnMoreButton';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Camera, ArrowRight, Monitor, Code, Clapperboard, Film } from 'lucide-react';
+import { Menu, Camera, ArrowRight, Monitor, Code, Clapperboard, Film, Instagram } from 'lucide-react';
 import DroneIcon from '@/components/custom/DroneIcon';
 import { Separator } from '@/components/ui/separator';
+
+const WhatsAppIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    {...props}
+  >
+    <path
+      fill="currentColor"
+      d="M19.05 4.94A10 10 0 0 0 12 2a10 10 0 0 0-7.07 17.07l-1.9 1.9a1 1 0 0 0 .3 1.7A10 10 0 0 0 12 22a10 10 0 0 0 7.07-2.93 10 10 0 0 0 0-14.14M12 20a8 8 0 0 1-4.2-1.16l-.2-.12-2.83 1 1-2.83-.12-.2A8 8 0 0 1 12 4a8 8 0 0 1 5.66 14.34A7.9 7.9 0 0 1 12 20m4.5-6.55c-.27-.13-1.64-.81-1.9-0.91s-.45-.13-.64.13-.72.91-.88 1.1s-.33.18-.61.05a7.33 7.33 0 0 1-2.2-1.36c-.53-.47-1-1.12-1.12-1.31s0-.28.13-.39a5.84 5.84 0 0 1 .4-.5c.08-.13.13-.22.18-.37a.36.36 0 0 0 0-.37C10 8.9 9.05 6.6 8.65 5.8c-.4-.8-.81-.75-.98-.75h-.5a1 1 0 0 0-1 1c0 .68.34 1.38.48 1.58s.9 2.2.9 2.2a13.2 13.2 0 0 0 3.6 5.1c1.2.5 1.7.6 2.4.6.9 0 1.63-.68 1.88-1.36.25-.68.25-1.25.18-1.36c-.07-.12-.27-.2-.54-.33"
+    ></path>
+  </svg>
+);
+
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,7 +32,7 @@ export default function Home() {
     { href: '/', label: 'Início' },
     { href: '#equipe', label: 'Sobre' },
     { href: '#servicos', label: 'Portfólio' },
-    { href: '#', label: 'Contato' },
+    { href: '#contato', label: 'Contato' },
   ];
 
   return (
@@ -214,7 +228,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossa Equipe</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
-            Quem <span className="text-primary">Faz</span> Acontecer
+            Quem Faz Acontecer
             <span className="text-white">.</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
@@ -258,7 +272,28 @@ export default function Home() {
           </Button>
         </div>
       </section>
-
+      
+      <section id="contato" className="bg-[#121212] py-20 sm:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">ENTRE EM CONTATO</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
+              Vamos dar o próximo passo<span className="text-primary">?</span>
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
+             Tem uma ideia ou um projeto em mente? Adoraríamos ouvir sobre ele. Entre em contato e vamos transformar sua visão em realidade.
+            </p>
+            <div className="mt-12 flex justify-center gap-4">
+                <a href="#" className="contact-button whatsapp">
+                    <WhatsAppIcon className="h-8 w-8 text-white" />
+                </a>
+                <a href="#" className="contact-button instagram">
+                    <Instagram className="h-8 w-8 text-white" />
+                </a>
+            </div>
+        </div>
+      </section>
     </div>
   );
 }
+
+    
