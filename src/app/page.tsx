@@ -361,10 +361,12 @@ export default function Home() {
                 data-ai-hint="logo"
               />
               <p className="font-bold font-body">FastFilms</p>
-              <p className="font-normal font-body text-sm text-muted-foreground mt-1">CADA MOMENTO MERECE UM BOM TAKE!</p>
+              <p className="font-normal font-body text-sm text-muted-foreground mt-1 max-w-[200px] leading-snug">
+                CADA MOMENTO<br />MERECE UM BOM TAKE!
+              </p>
             </div>
-            <div className="flex items-start gap-12">
-              <div>
+            <div className="flex items-start gap-12 text-center">
+              <div className="flex flex-col items-center">
                 <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-3">Redes Sociais</h4>
                 <div className="flex items-center gap-4">
                   <a href="#" aria-label="WhatsApp" className="hover:text-primary transition-colors">
@@ -379,7 +381,7 @@ export default function Home() {
                   </a>
                 </div>
               </div>
-              <div>
+              <div className="flex flex-col items-center">
                 <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-3">Associados</h4>
                 <AlertDialog>
                   <AlertDialogTrigger asChild>
@@ -414,5 +416,4 @@ export default function Home() {
       </footer>
     </div>
   );
-
-    
+}
