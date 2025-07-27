@@ -10,6 +10,17 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu, Camera, ArrowRight, Monitor, Code, Clapperboard, Film, Instagram } from 'lucide-react';
 import DroneIcon from '@/components/custom/DroneIcon';
 import { Separator } from '@/components/ui/separator';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "@/components/ui/alert-dialog"
 
 
 export default function Home() {
@@ -264,18 +275,35 @@ export default function Home() {
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Área do Associado</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
-            Ferramenta Exclusiva para <span className="text-primary">Nossa Equipe</span>.
+            <span className="text-primary">Ferramenta Exclusiva</span> para Nossa Equipe.
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
             Acreditamos na colaboração e na eficiência. Por isso, desenvolvemos um sistema interno para otimizar a gestão de projetos, a comunicação e o acesso a recursos exclusivos para nossos associados.
           </p>
-          <Button 
-            className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-10"
-            onClick={() => window.open('#', '_blank')}
-          >
-            Acessar Sistema Interno
-            <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
+          
+          <AlertDialog>
+            <AlertDialogTrigger asChild>
+              <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-10">
+                Acessar Sistema Interno
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </AlertDialogTrigger>
+            <AlertDialogContent>
+              <AlertDialogHeader>
+                <AlertDialogTitle>Acesso Restrito</AlertDialogTitle>
+                <AlertDialogDescription>
+                  Esta ferramenta é de uso exclusivo para associados e colaboradores autorizados. Você será redirecionado para uma página de login.
+                </AlertDialogDescription>
+              </AlertDialogHeader>
+              <AlertDialogFooter>
+                <AlertDialogCancel>Cancelar</AlertDialogCancel>
+                <AlertDialogAction onClick={() => window.open('#', '_blank')}>
+                  Continuar
+                </AlertDialogAction>
+              </AlertDialogFooter>
+            </AlertDialogContent>
+          </AlertDialog>
+
           <div className="mt-12 bg-secondary/30 border border-border rounded-xl p-6 max-w-2xl mx-auto">
             <h3 className="text-lg font-bold text-primary">É um novo associado?</h3>
             <p className="text-muted-foreground mt-2 text-sm">
@@ -317,5 +345,3 @@ export default function Home() {
     </div>
   );
 }
-
-    
