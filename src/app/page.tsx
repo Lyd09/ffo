@@ -30,6 +30,7 @@ export default function Home() {
     { href: '/', label: 'Início' },
     { href: '#equipe', label: 'Sobre' },
     { href: '#servicos', label: 'Portfólio' },
+    { href: '#associados', label: 'Associados' },
     { href: '#contato', label: 'Contato' },
   ];
 
