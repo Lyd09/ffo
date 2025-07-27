@@ -283,7 +283,7 @@ export default function Home() {
               <span className="text-primary">Ferramenta Exclusiva</span> para Nossa Equipe.
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-              Acreditamos na colaboração e na eficiência. Por isso, desenvolvemos um sistema interno para otimizar a gestão de projetos, a comunicação e o acesso a recursos exclusivos para nossos associados.
+              Para garantir a máxima eficiência e transparência, desenvolvemos o <strong>Projetex</strong>, nosso sistema de gestão proprietário. Esta ferramenta centraliza a comunicação, organiza prazos e simplifica o acompanhamento de cada projeto, do briefing à entrega final. Para nossa equipe, isso significa menos tempo em planilhas e mais tempo para criar.
             </p>
             
             <AlertDialog>
@@ -365,7 +365,7 @@ export default function Home() {
                 CADA MOMENTO<br />MERECE UM BOM TAKE!
               </p>
             </div>
-            <div className="flex items-start gap-12 text-center">
+            <div className="flex items-start gap-12 text-center md:text-left">
               <div className="flex flex-col items-center">
                 <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-3">Redes Sociais</h4>
                 <div className="flex items-center gap-4">
