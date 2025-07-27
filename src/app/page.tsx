@@ -350,7 +350,7 @@ export default function Home() {
       </main>
       <footer className="bg-[#121212] border-t border-border/50 text-white py-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-start items-center gap-16">
+          <div className="flex flex-col md:flex-row justify-center items-center gap-16">
             <div className="flex flex-col items-center text-center">
               <Image
                 src="/index/FF-SITE-ICON.svg"
