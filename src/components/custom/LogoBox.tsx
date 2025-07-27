@@ -12,6 +12,7 @@ const LogoBox: React.FC = () => {
           height={320}
           className="object-contain"
           data-ai-hint="company logo"
+          priority
         />
       </div>
       <div className="blob"></div>
