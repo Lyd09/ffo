@@ -260,6 +260,41 @@ export default function Home() {
         </div>
       </section>
 
+      <section id="associados" className="bg-[#1a1a1a] py-20 sm:py-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+          <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Associados</p>
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
+            Parceiros que <span className="text-primary">Confiam</span>.
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
+            Temos orgulho de colaborar com uma rede de associados talentosos e empresas que acreditam em nosso trabalho. Juntos, construímos projetos de sucesso.
+          </p>
+          <div className="mt-16 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-x-8 gap-y-12 items-center">
+            <div className="flex justify-center">
+              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 1" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
+            </div>
+            <div className="flex justify-center">
+              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 2" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
+            </div>
+            <div className="flex justify-center">
+              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 3" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
+            </div>
+            <div className="flex justify-center">
+              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 4" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
+            </div>
+            <div className="flex justify-center col-span-2 md:col-span-1">
+              <Image src="https://placehold.co/150x70.png" alt="Logo Associado 5" width={150} height={70} className="opacity-60 hover:opacity-100 transition-opacity" data-ai-hint="company logo" />
+            </div>
+          </div>
+          <div className="mt-16 bg-secondary/50 border border-border rounded-xl p-6 max-w-2xl mx-auto">
+            <h3 className="text-lg font-bold text-primary">Acesso ao Sistema Interno</h3>
+            <p className="text-muted-foreground mt-2">
+              É um novo associado? Para acessar nossa ferramenta interna, por favor, solicite suas credenciais de acesso entrando em contato conosco.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="contato" className="bg-[#121212] py-20 sm:py-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">ENTRE EM CONTATO</p>
@@ -292,3 +327,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
