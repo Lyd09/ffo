@@ -36,12 +36,12 @@ export default function Home() {
 
   return (
     <div className="flex flex-col min-h-screen text-white">
-      <div className="bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
-        <header className="flex items-center justify-between px-8 pt-6 max-w-[1440px] mx-auto w-full">
+      <header className="sticky top-0 z-50 w-full bg-background/80 backdrop-blur-sm border-b border-border">
+        <div className="flex items-center justify-between px-8 py-4 max-w-[1440px] mx-auto w-full">
           <div className="flex items-center gap-8">
             <div className="flex items-center gap-4">
               {/* Mobile Navigation Trigger */}
-              <div className="md:hidden z-50">
+              <div className="md:hidden">
                 <Sheet open={isMenuOpen} onOpenChange={setIsMenuOpen}>
                   <SheetTrigger asChild>
                     <Button variant="ghost" size="icon">
@@ -68,7 +68,7 @@ export default function Home() {
                   </SheetContent>
                 </Sheet>
               </div>
-              <a href="/" className="w-[80px] h-[80px] flex-shrink-0 z-50">
+              <a href="/" className="w-[80px] h-[80px] flex-shrink-0">
                 <Image
                   alt="Red diamond shaped logo"
                   className="w-full h-full object-contain"
@@ -93,8 +93,10 @@ export default function Home() {
               </div>
             </nav>
           </div>
-
-        </header>
+        </div>
+      </header>
+      
+      <div className="bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
         <main className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-36 pb-48 relative items-center gap-8">
           <section className="flex flex-col justify-center max-w-xl text-white relative z-10">
             <p className="text-sm font-semibold mb-5 tracking-wider uppercase text-white">VÍDEO É MAIS QUE IMAGEM</p>
@@ -346,3 +348,5 @@ export default function Home() {
     </div>
   );
 }
+
+    
