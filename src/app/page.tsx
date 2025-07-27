@@ -287,6 +287,11 @@ export default function Home() {
                 <span className="BG"></span>
               </button>
             </div>
+            <div className="group mt-4">
+              <p className="text-xs text-muted-foreground transition-colors group-hover:text-primary">
+                [LOG] Passe o mouse sobre um botão
+              </p>
+          </div>
         </div>
       </section>
     </div>

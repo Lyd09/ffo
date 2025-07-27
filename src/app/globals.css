@@ -292,7 +292,6 @@
 .social-btn:hover .BG {
   transform: rotate(35deg);
   transform-origin: bottom;
-  background: hsl(var(--primary));
 }
 
 .social-btn:hover .svgContainer {
@@ -306,10 +305,18 @@
   background: #25D366;
 }
 
+.whatsapp-btn:hover .BG {
+  background: hsl(var(--primary));
+}
+
 /* Instagram Button */
 .instagram-btn .BG {
   background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888',GradientType=1);
+}
+
+.instagram-btn:hover .BG {
+  background: hsl(var(--primary));
 }
