@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen text-white bg-background">
+    <div className="flex flex-col min-h-screen text-white bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
       <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
             <div className="flex items-center justify-between px-8 py-4 max-w-[1440px] mx-auto w-full">
               {/* Left side */}
@@ -98,7 +98,7 @@ export default function Home() {
             </div>
       </header>
       <main className="flex-1">
-        <div className="relative min-h-screen flex items-center justify-center bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
+        <div className="relative min-h-screen flex items-center justify-center">
           <div className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 py-24 relative items-center gap-8">
             <section className="flex flex-col justify-center max-w-xl text-white relative z-10">
               <p className="text-sm font-semibold mb-5 tracking-wider uppercase text-white">VÍDEO É MAIS QUE IMAGEM</p>
@@ -350,7 +350,7 @@ export default function Home() {
       </main>
       <footer className="bg-[#121212] border-t border-border/50 text-white py-8">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row justify-center items-center text-center md:items-start gap-16 md:gap-12">
+          <div className="flex flex-col md:flex-row justify-center items-center text-center md:items-center gap-16 md:gap-12">
             <div className="flex flex-col items-center text-center">
               <Image
                 src="/index/FF-SITE-ICON.svg"
