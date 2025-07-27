@@ -248,29 +248,4 @@
     background-image: linear-gradient(to top, hsl(var(--primary)), hsl(var(--secondary)) 70%);
   }
 }
-
-.contact-button {
-    @apply h-16 w-16 rounded-full flex items-center justify-center transition-all duration-300;
-}
-
-.contact-button svg {
-    @apply transition-transform duration-300;
-}
-
-.contact-button:hover svg {
-    @apply rotate-[360deg];
-}
-
-.contact-button.whatsapp {
-    background-color: #25D366;
-}
-
-.contact-button.instagram {
-    background-color: hsl(var(--secondary));
-}
-
-.contact-button:hover {
-    background-color: hsl(var(--primary));
-}
-
     
