@@ -35,7 +35,7 @@ export default function Home() {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen text-white bg-background">
+    <div className="flex flex-col min-h-screen text-white bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
       <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
             <div className="flex items-center justify-between px-8 py-4 max-w-[1440px] mx-auto w-full">
               {/* Left side */}
@@ -97,7 +97,7 @@ export default function Home() {
               </div>
             </div>
       </header>
-      <main className="flex-1 bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212]">
+      <main className="flex-1">
         <div className="relative">
           
           <div className="flex flex-1 flex-col md:flex-row max-w-[1440px] mx-auto w-full px-8 pt-12 pb-48 relative items-center gap-8">
