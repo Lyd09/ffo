@@ -306,7 +306,7 @@
 }
 
 .whatsapp-btn:hover .BG {
-    background: hsl(var(--primary));
+    background: hsl(var(--primary)) !important;
 }
 
 /* Instagram Button */
@@ -319,5 +319,5 @@
 }
 
 .instagram-btn:hover .BG {
-    background: hsl(var(--primary));
+    background: hsl(var(--primary)) !important;
 }
