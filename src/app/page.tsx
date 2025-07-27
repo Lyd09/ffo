@@ -40,13 +40,13 @@ export default function Home() {
         <div className="flex items-center justify-between px-8 py-4 max-w-[1440px] mx-auto w-full">
           {/* Left side */}
           <div className="flex items-center gap-4 flex-1">
-            <a href="/" className="w-[80px] h-[80px] flex-shrink-0">
+            <a href="/" className="w-[60px] h-[60px] flex-shrink-0">
               <Image
                 alt="Red diamond shaped logo"
                 className="w-full h-full object-contain"
-                height={80}
+                height={60}
                 src="/index/FF-SITE-ICON.svg"
-                width={80}
+                width={60}
                 priority
                 data-ai-hint="diamond logo"
               />
