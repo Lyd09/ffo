@@ -38,7 +38,7 @@ export default function Home() {
     { href: '#equipe', label: 'Sobre' },
     { href: '#servicos', label: 'Portfólio' },
     { href: '#associados', label: 'Associados' },
-    { href: '/contato', label: 'Contato' },
+    { href: '#contato', label: 'Contato' },
   ];
 
   return (
