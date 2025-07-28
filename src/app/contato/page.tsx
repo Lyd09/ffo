@@ -90,7 +90,6 @@ const formSchema = z.object({
     path: ["eventDescription"],
 });
 
-// This type must match the one defined internally in the flow.
 type GenerateWhatsAppMessageInput = {
     name: string;
     email: string;
@@ -138,6 +137,8 @@ export default function ContatoPage() {
       references: "",
       isEvent: false,
       droneOption: false,
+      eventDescription: "",
+      recordingLocation: "",
     },
   })
 
