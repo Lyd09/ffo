@@ -4,15 +4,13 @@
  * @fileOverview Flow to generate a personalized WhatsApp message from contact form data.
  *
  * - generateWhatsAppMessage - A function that takes form data and returns a WhatsApp message string.
- * - GenerateWhatsAppMessageInput - The input type for the generateWhatsAppMessage function.
  */
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 
-// This schema defines the data structure the AI flow expects.
-// The form-facing validation schema is now in `contato/page.tsx`.
-export const GenerateWhatsAppMessageInputSchema = z.object({
+// This schema defines the data structure the AI flow expects internally.
+const GenerateWhatsAppMessageInputSchema = z.object({
   name: z.string().describe('The full name of the potential client.'),
   email: z.string().email().describe('The email address of the potential client.'),
   phone: z.string().describe('The WhatsApp phone number of the potential client.'),
@@ -27,7 +25,7 @@ export const GenerateWhatsAppMessageInputSchema = z.object({
   references: z.string().optional().describe('Optional links to references or inspirations provided by the client.'),
 });
 
-export type GenerateWhatsAppMessageInput = z.infer<typeof GenerateWhatsAppMessageInputSchema>;
+type GenerateWhatsAppMessageInput = z.infer<typeof GenerateWhatsAppMessageInputSchema>;
 
 const serviceTypeMap: Record<string, string> = {
     gravacao: "Gravação",

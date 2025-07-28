@@ -34,7 +34,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Toaster, toast } from 'sonner';
-import { generateWhatsAppMessage, GenerateWhatsAppMessageInput } from '@/ai/flows/contact-flow';
+import { generateWhatsAppMessage } from '@/ai/flows/contact-flow';
 
 
 const formSchema = z.object({
@@ -89,6 +89,23 @@ const formSchema = z.object({
     message: "Por favor, descreva o evento com mais detalhes.",
     path: ["eventDescription"],
 });
+
+// This type must match the one defined internally in the flow.
+type GenerateWhatsAppMessageInput = {
+    name: string;
+    email: string;
+    phone: string;
+    serviceType: "gravacao" | "producao" | "edicao" | "drone" | "software" | "site" | "outro";
+    droneOption?: boolean | undefined;
+    projectType: "reels" | "youtube" | "institucional" | "casamento" | "outro";
+    recordingDate?: string | undefined;
+    recordingLocation?: string | undefined;
+    isEvent: boolean;
+    eventDescription?: string | undefined;
+    projectDetails: string;
+    references?: string | undefined;
+}
+
 
 const serviceOptions = {
     "gravacao": { title: "Gravação", description: "Foco na captação de imagem e som de alta qualidade." },
