@@ -312,7 +312,7 @@ export default function Home() {
             <div className="mt-12 bg-secondary/30 border border-border rounded-xl p-6 max-w-2xl mx-auto">
               <h3 className="text-lg font-bold text-primary">É um novo associado?</h3>
               <p className="text-muted-foreground mt-2 text-sm">
-                Para acessar nossa ferramenta interna, por favor, solicite suas credenciais de acesso entrando em contato com a nossa equipe de produção.
+                Para acessar nossa ferramenta interna, por favor, solicite suas credenciais de acesso entrando em contato com a nossa equipe.
               </p>
             </div>
           </div>
