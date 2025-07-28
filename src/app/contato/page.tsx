@@ -32,6 +32,7 @@ import { Switch } from '@/components/ui/switch';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
+import { Checkbox } from '@/components/ui/checkbox';
 
 
 const formSchema = z.object({
@@ -47,6 +48,7 @@ const formSchema = z.object({
   serviceType: z.enum(["gravacao", "producao", "edicao", "drone", "software", "site", "outro"], {
     required_error: "Você precisa selecionar um tipo de serviço.",
   }),
+  droneOption: z.boolean().default(false).optional(),
   projectType: z.enum(["reels", "youtube", "institucional", "casamento", "outro"], {
     required_error: "Você precisa selecionar um tipo de projeto.",
   }),
@@ -85,14 +87,25 @@ const formSchema = z.object({
     path: ["eventDescription"],
 });
 
+const serviceOptions = {
+    "gravacao": { title: "Gravação", description: "Foco na captação de imagem e som de alta qualidade." },
+    "producao": { title: "Produção de Vídeo", description: "Serviço completo, do roteiro à edição final. Pode incluir drone." },
+    "edicao": { title: "Edição", description: "Pós-produção de um material que você já gravou." },
+    "drone": { title: "Vídeos de Drone", description: "Contratação apenas para captação de imagens aéreas." },
+    "software": { title: "Desenvolvimento de Software", description: "Criação de soluções de software personalizadas." },
+    "site": { title: "Criação de Site", description: "Desenvolvimento de sites e landing pages." },
+    "outro": { title: "Outro", description: "Se sua necessidade é diferente, descreva no campo de projeto." },
+};
+
 const ServiceSelectItem = ({ value, title, description }: { value: string, title: string, description: string }) => (
-    <SelectItem value={value}>
+    <SelectItem value={value} className="focus:bg-accent">
       <div className="flex flex-col">
         <span className="font-semibold">{title}</span>
         <span className="text-xs text-muted-foreground">{description}</span>
       </div>
     </SelectItem>
 );
+
 
 export default function ContatoPage() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -103,12 +116,15 @@ export default function ContatoPage() {
       phone: "",
       projectDetails: "",
       isEvent: false,
+      droneOption: false,
     },
   })
 
   const serviceType = form.watch("serviceType");
   const isEvent = form.watch("isEvent");
   const showRecordingFields = serviceType === 'gravacao' || serviceType === 'producao';
+  const showDroneOption = serviceType === 'producao';
+
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Por enquanto, apenas exibimos os dados.
@@ -198,17 +214,15 @@ export default function ContatoPage() {
                             <Select onValueChange={field.onChange} defaultValue={field.value}>
                                 <FormControl>
                                     <SelectTrigger>
-                                    <SelectValue placeholder="Selecione o serviço desejado" />
+                                        <SelectValue placeholder="Selecione o serviço desejado">
+                                            {field.value ? serviceOptions[field.value as keyof typeof serviceOptions]?.title : "Selecione o serviço desejado"}
+                                        </SelectValue>
                                     </SelectTrigger>
                                 </FormControl>
                                 <SelectContent>
-                                    <ServiceSelectItem value="gravacao" title="Gravação" description="Foco na captação de imagem e som de alta qualidade." />
-                                    <ServiceSelectItem value="producao" title="Produção de Vídeo" description="Serviço completo, do roteiro à edição final. Pode incluir drone." />
-                                    <ServiceSelectItem value="edicao" title="Edição" description="Pós-produção de um material que você já gravou." />
-                                    <ServiceSelectItem value="drone" title="Vídeos de Drone" description="Contratação apenas para captação de imagens aéreas." />
-                                    <ServiceSelectItem value="software" title="Desenvolvimento de Software" description="Criação de soluções de software personalizadas." />
-                                    <ServiceSelectItem value="site" title="Criação de Site" description="Desenvolvimento de sites e landing pages." />
-                                    <ServiceSelectItem value="outro" title="Outro" description="Se sua necessidade é diferente, descreva no campo de projeto." />
+                                    {Object.entries(serviceOptions).map(([key, { title, description }]) => (
+                                        <ServiceSelectItem key={key} value={key} title={title} description={description} />
+                                    ))}
                                 </SelectContent>
                             </Select>
                             <FormMessage />
@@ -241,6 +255,30 @@ export default function ContatoPage() {
                         </FormItem>
                       )}
                     />
+                    {showDroneOption && (
+                        <FormField
+                            control={form.control}
+                            name="droneOption"
+                            render={({ field }) => (
+                                <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
+                                <FormControl>
+                                    <Checkbox
+                                    checked={field.value}
+                                    onCheckedChange={field.onChange}
+                                    />
+                                </FormControl>
+                                <div className="space-y-1 leading-none">
+                                    <FormLabel>
+                                        Incluir captação com drone?
+                                    </FormLabel>
+                                    <FormDescription>
+                                        Adiciona um custo extra ao orçamento.
+                                    </FormDescription>
+                                </div>
+                                </FormItem>
+                            )}
+                        />
+                    )}
                  </div>
                  {showRecordingFields && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -375,5 +413,3 @@ export default function ContatoPage() {
     </div>
   );
 }
-
-    
