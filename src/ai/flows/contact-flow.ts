@@ -105,7 +105,7 @@ const generateWhatsAppMessageFlow = ai.defineFlow(
     };
     
     const { output } = await messageGenerationPrompt(mappedInput);
-    return output!;
+    return output ?? '';
   }
 );
 
