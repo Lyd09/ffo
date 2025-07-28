@@ -84,6 +84,15 @@ const formSchema = z.object({
     path: ["eventDescription"],
 });
 
+const ServiceSelectItem = ({ value, title, description }: { value: string, title: string, description: string }) => (
+    <SelectItem value={value}>
+      <div className="flex flex-col">
+        <span className="font-semibold">{title}</span>
+        <span className="text-xs text-muted-foreground">{description}</span>
+      </div>
+    </SelectItem>
+);
+
 export default function ContatoPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -180,30 +189,30 @@ export default function ContatoPage() {
                       )}
                     />
                     <FormField
-                      control={form.control}
-                      name="serviceType"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Tipo de Serviço</FormLabel>
-                           <Select onValueChange={field.onChange} defaultValue={field.value}>
-                              <FormControl>
-                                <SelectTrigger>
-                                  <SelectValue placeholder="Selecione o serviço desejado" />
-                                </SelectTrigger>
-                              </FormControl>
-                              <SelectContent>
-                                <SelectItem value="gravacao">Gravação</SelectItem>
-                                <SelectItem value="producao">Produção de Vídeo</SelectItem>
-                                <SelectItem value="edicao">Edição</SelectItem>
-                                <SelectItem value="drone">Vídeos de Drone</SelectItem>
-                                <SelectItem value="software">Desenvolvimento de Software</SelectItem>
-                                <SelectItem value="site">Criação de Site</SelectItem>
-                                <SelectItem value="outro">Outro</SelectItem>
-                              </SelectContent>
+                        control={form.control}
+                        name="serviceType"
+                        render={({ field }) => (
+                            <FormItem>
+                            <FormLabel>Tipo de Serviço</FormLabel>
+                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                                <FormControl>
+                                    <SelectTrigger>
+                                    <SelectValue placeholder="Selecione o serviço desejado" />
+                                    </SelectTrigger>
+                                </FormControl>
+                                <SelectContent>
+                                    <ServiceSelectItem value="gravacao" title="Gravação" description="Foco na captação de imagem e som de alta qualidade." />
+                                    <ServiceSelectItem value="producao" title="Produção de Vídeo" description="Serviço completo, do roteiro à edição final. Pode incluir drone." />
+                                    <ServiceSelectItem value="edicao" title="Edição" description="Pós-produção de um material que você já gravou." />
+                                    <ServiceSelectItem value="drone" title="Vídeos de Drone" description="Contratação apenas para captação de imagens aéreas." />
+                                    <ServiceSelectItem value="software" title="Desenvolvimento de Software" description="Criação de soluções de software personalizadas." />
+                                    <ServiceSelectItem value="site" title="Criação de Site" description="Desenvolvimento de sites e landing pages." />
+                                    <ServiceSelectItem value="outro" title="Outro" description="Se sua necessidade é diferente, descreva no campo de projeto." />
+                                </SelectContent>
                             </Select>
-                          <FormMessage />
-                        </FormItem>
-                      )}
+                            <FormMessage />
+                            </FormItem>
+                        )}
                     />
                  </div>
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -217,7 +226,7 @@ export default function ContatoPage() {
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Selecione o tipo de projeto" />
-                              </SelectTrigger>
+                              </Trigger>
                             </FormControl>
                             <SelectContent>
                               <SelectItem value="reels">Reels / TikTok</SelectItem>
