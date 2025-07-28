@@ -237,7 +237,7 @@ export default function Home() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossa Equipe</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
-              Quem Faz Acontecer
+              Quem <span className="text-primary">Faz</span> Acontecer
               <span className="text-white">.</span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
