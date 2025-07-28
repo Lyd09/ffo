@@ -1,7 +1,7 @@
 
 'use client';
 
-import { ArrowLeft, Bot, Calendar as CalendarIcon, Send } from 'lucide-react';
+import { ArrowLeft, Bot, Calendar as CalendarIcon } from 'lucide-react';
 import Link from 'next/link';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
@@ -61,6 +61,7 @@ const formSchema = z.object({
   }).max(2000, {
     message: "A descrição não pode exceder 2000 caracteres.",
   }),
+  references: z.string().optional(),
 }).refine(data => {
     if ((data.serviceType === 'gravacao' || data.serviceType === 'producao') && !data.recordingDate) {
         return false;
@@ -106,7 +107,6 @@ const ServiceSelectItem = ({ value, title, description }: { value: string, title
     </SelectItem>
 );
 
-
 export default function ContatoPage() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -115,6 +115,7 @@ export default function ContatoPage() {
       email: "",
       phone: "",
       projectDetails: "",
+      references: "",
       isEvent: false,
       droneOption: false,
     },
@@ -122,9 +123,10 @@ export default function ContatoPage() {
 
   const serviceType = form.watch("serviceType");
   const isEvent = form.watch("isEvent");
+
   const showRecordingFields = serviceType === 'gravacao' || serviceType === 'producao';
   const showDroneOption = serviceType === 'producao';
-
+  const showEventSwitch = serviceType !== 'site' && serviceType !== 'software';
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Por enquanto, apenas exibimos os dados.
@@ -338,28 +340,30 @@ export default function ContatoPage() {
                         />
                     </div>
                  )}
-                 <FormField
-                    control={form.control}
-                    name="isEvent"
-                    render={({ field }) => (
-                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
-                            <div className="space-y-0.5">
-                                <FormLabel className="text-base">
-                                O projeto é para um evento específico?
-                                </FormLabel>
-                                <FormDescription>
-                                Marque se o projeto for para um casamento, festa, congresso, etc.
-                                </FormDescription>
-                            </div>
-                            <FormControl>
-                                <Switch
-                                checked={field.value}
-                                onCheckedChange={field.onChange}
-                                />
-                            </FormControl>
-                        </FormItem>
-                    )}
-                />
+                 {showEventSwitch && (
+                    <FormField
+                        control={form.control}
+                        name="isEvent"
+                        render={({ field }) => (
+                            <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                                <div className="space-y-0.5">
+                                    <FormLabel className="text-base">
+                                    O projeto é para um evento específico?
+                                    </FormLabel>
+                                    <FormDescription>
+                                    Marque se o projeto for para um casamento, festa, congresso, etc.
+                                    </FormDescription>
+                                </div>
+                                <FormControl>
+                                    <Switch
+                                    checked={field.value}
+                                    onCheckedChange={field.onChange}
+                                    />
+                                </FormControl>
+                            </FormItem>
+                        )}
+                    />
+                  )}
                 {isEvent && (
                      <FormField
                         control={form.control}
@@ -399,6 +403,26 @@ export default function ContatoPage() {
                     </FormItem>
                   )}
                 />
+                 <FormField
+                  control={form.control}
+                  name="references"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Referências (Opcional)</FormLabel>
+                      <FormControl>
+                        <Textarea
+                          placeholder="Cole aqui links de vídeos, sites ou outras inspirações que ajudem a gente a entender melhor seu projeto."
+                          className="resize-y"
+                          {...field}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        Links para YouTube, Vimeo, Instagram ou qualquer outro site são bem-vindos.
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
                 <div className="flex justify-end">
                   <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-transform hover:scale-105">
                      Analisar com IA e Gerar Mensagem
@@ -412,4 +436,3 @@ export default function ContatoPage() {
       </main>
     </div>
   );
-}
