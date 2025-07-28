@@ -160,7 +160,7 @@ export default function ContatoPage() {
         recordingLocation: "São Paulo, SP",
         isEvent: false,
         eventDescription: "",
-        projectDetails: "Este é um teste para a IA.",
+        projectDetails: "Queria fazer um vídeo diferente para a minha marca. Pensei em algo moderno, com uma pegada cinematográfica, talvez mostrando um pouco dos bastidores. A ideia é postar nas redes, mas quem sabe usar em outros lugares depois. O que vocês sugerem?",
         references: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     });
   }
@@ -276,7 +276,7 @@ export default function ContatoPage() {
                         render={({ field }) => (
                             <FormItem>
                             <FormLabel>Tipo de Serviço</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isLoading}>
+                            <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value} disabled={isLoading}>
                                 <FormControl>
                                     <SelectTrigger>
                                         <SelectValue placeholder="Selecione o serviço desejado">
@@ -302,7 +302,7 @@ export default function ContatoPage() {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>Tipo de Projeto</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isLoading}>
+                          <Select onValueChange={field.onChange} value={field.value} defaultValue={field.value} disabled={isLoading}>
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Selecione o tipo de projeto" />
@@ -523,3 +523,4 @@ export default function ContatoPage() {
   );
 }
 
+    
