@@ -177,6 +177,8 @@ export default function ContatoPage() {
         const aiInput: GenerateWhatsAppMessageInput = {
             ...values,
             recordingDate: formattedDate,
+            references: values.references || undefined,
+            eventDescription: values.eventDescription || undefined,
         };
 
         const response = await generateWhatsAppMessage(aiInput);
@@ -523,4 +525,5 @@ export default function ContatoPage() {
   );
 }
 
+    
     
