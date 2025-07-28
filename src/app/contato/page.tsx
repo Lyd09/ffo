@@ -1,10 +1,11 @@
 'use client';
 
-import { ArrowLeft, Bot, Send } from 'lucide-react';
+import { ArrowLeft, Bot, Calendar as CalendarIcon, Send } from 'lucide-react';
 import Link from 'next/link';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
+import { format } from "date-fns"
 
 import { Button } from "@/components/ui/button"
 import {
@@ -26,6 +27,10 @@ import {
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
 import { toast } from "@/hooks/use-toast"
+import { Switch } from '@/components/ui/switch';
+import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
+import { Calendar } from '@/components/ui/calendar';
+import { cn } from '@/lib/utils';
 
 
 const formSchema = z.object({
@@ -41,12 +46,43 @@ const formSchema = z.object({
   serviceType: z.enum(["gravacao", "producao", "edicao", "drone", "software", "site", "outro"], {
     required_error: "Você precisa selecionar um tipo de serviço.",
   }),
+  projectType: z.enum(["reels", "youtube", "institucional", "casamento", "outro"], {
+    required_error: "Você precisa selecionar um tipo de projeto.",
+  }),
+  recordingDate: z.date().optional(),
+  recordingLocation: z.string().optional(),
+  isEvent: z.boolean().default(false),
+  eventDescription: z.string().optional(),
   projectDetails: z.string().min(30, {
     message: "Descreva seu projeto com pelo menos 30 caracteres.",
   }).max(2000, {
     message: "A descrição não pode exceder 2000 caracteres.",
   }),
-})
+}).refine(data => {
+    if ((data.serviceType === 'gravacao' || data.serviceType === 'producao') && !data.recordingDate) {
+        return false;
+    }
+    return true;
+    }, {
+    message: "A data da gravação é obrigatória para este serviço.",
+    path: ["recordingDate"],
+}).refine(data => {
+    if ((data.serviceType === 'gravacao' || data.serviceType === 'producao') && !data.recordingLocation) {
+        return false;
+    }
+    return true;
+    }, {
+    message: "O local da gravação é obrigatório para este serviço.",
+    path: ["recordingLocation"],
+}).refine(data => {
+    if (data.isEvent && (!data.eventDescription || data.eventDescription.length < 10)) {
+        return false;
+    }
+    return true;
+    }, {
+    message: "Por favor, descreva o evento com mais detalhes.",
+    path: ["eventDescription"],
+});
 
 export default function ContatoPage() {
   const form = useForm<z.infer<typeof formSchema>>({
@@ -56,8 +92,13 @@ export default function ContatoPage() {
       email: "",
       phone: "",
       projectDetails: "",
+      isEvent: false,
     },
   })
+
+  const serviceType = form.watch("serviceType");
+  const isEvent = form.watch("isEvent");
+  const showRecordingFields = serviceType === 'gravacao' || serviceType === 'producao';
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     // Por enquanto, apenas exibimos os dados.
@@ -165,6 +206,131 @@ export default function ContatoPage() {
                       )}
                     />
                  </div>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <FormField
+                      control={form.control}
+                      name="projectType"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Tipo de Projeto</FormLabel>
+                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <FormControl>
+                              <SelectTrigger>
+                                <SelectValue placeholder="Selecione o tipo de projeto" />
+                              </SelectTrigger>
+                            </FormControl>
+                            <SelectContent>
+                              <SelectItem value="reels">Reels / TikTok</SelectItem>
+                              <SelectItem value="youtube">Vídeo para YouTube</SelectItem>
+                              <SelectItem value="institucional">Vídeo Institucional</SelectItem>
+                              <SelectItem value="casamento">Casamento / Evento Social</SelectItem>
+                              <SelectItem value="outro">Outro</SelectItem>
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                 </div>
+                 {showRecordingFields && (
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <FormField
+                            control={form.control}
+                            name="recordingDate"
+                            render={({ field }) => (
+                                <FormItem className="flex flex-col">
+                                <FormLabel>Data da Gravação</FormLabel>
+                                <Popover>
+                                    <PopoverTrigger asChild>
+                                    <FormControl>
+                                        <Button
+                                        variant={"outline"}
+                                        className={cn(
+                                            "w-full pl-3 text-left font-normal",
+                                            !field.value && "text-muted-foreground"
+                                        )}
+                                        >
+                                        {field.value ? (
+                                            format(field.value, "dd/MM/yyyy")
+                                        ) : (
+                                            <span>Escolha uma data</span>
+                                        )}
+                                        <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                                        </Button>
+                                    </FormControl>
+                                    </PopoverTrigger>
+                                    <PopoverContent className="w-auto p-0" align="start">
+                                    <Calendar
+                                        mode="single"
+                                        selected={field.value}
+                                        onSelect={field.onChange}
+                                        disabled={(date) =>
+                                            date < new Date() || date < new Date("1900-01-01")
+                                        }
+                                        initialFocus
+                                    />
+                                    </PopoverContent>
+                                </Popover>
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                         <FormField
+                            control={form.control}
+                            name="recordingLocation"
+                            render={({ field }) => (
+                                <FormItem>
+                                <FormLabel>Local da Gravação</FormLabel>
+                                <FormControl>
+                                    <Input placeholder="Cidade / Estado" {...field} />
+                                </FormControl>
+                                <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+                 )}
+                 <FormField
+                    control={form.control}
+                    name="isEvent"
+                    render={({ field }) => (
+                        <FormItem className="flex flex-row items-center justify-between rounded-lg border p-4">
+                            <div className="space-y-0.5">
+                                <FormLabel className="text-base">
+                                O projeto é para um evento específico?
+                                </FormLabel>
+                                <FormDescription>
+                                Marque se o projeto for para um casamento, festa, congresso, etc.
+                                </FormDescription>
+                            </div>
+                            <FormControl>
+                                <Switch
+                                checked={field.value}
+                                onCheckedChange={field.onChange}
+                                />
+                            </FormControl>
+                        </FormItem>
+                    )}
+                />
+                {isEvent && (
+                     <FormField
+                        control={form.control}
+                        name="eventDescription"
+                        render={({ field }) => (
+                            <FormItem>
+                            <FormLabel>Descreva o Evento</FormLabel>
+                            <FormControl>
+                                <Textarea
+                                placeholder="Nos conte sobre o evento: tipo, data, local, número de convidados, etc."
+                                className="resize-y min-h-[100px]"
+                                {...field}
+                                />
+                            </FormControl>
+                            <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+                )}
                 <FormField
                   control={form.control}
                   name="projectDetails"
