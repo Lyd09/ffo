@@ -1,12 +1,13 @@
 
 'use client';
 
-import { ArrowLeft, Bot, Calendar as CalendarIcon } from 'lucide-react';
+import { ArrowLeft, Bot, Calendar as CalendarIcon, Loader2 } from 'lucide-react';
 import Link from 'next/link';
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { format } from "date-fns"
+import { useState } from 'react';
 
 import { Button } from "@/components/ui/button"
 import {
@@ -27,12 +28,13 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/hooks/use-toast"
 import { Switch } from '@/components/ui/switch';
 import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover';
 import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
+import { Toaster, toast } from 'sonner';
+import { generateWhatsAppMessage, GenerateWhatsAppMessageInput } from '@/ai/flows/contact-flow';
 
 
 const formSchema = z.object({
@@ -108,6 +110,7 @@ const ServiceSelectItem = ({ value, title, description }: { value: string, title
 );
 
 export default function ContatoPage() {
+  const [isLoading, setIsLoading] = useState(false);
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -128,21 +131,47 @@ export default function ContatoPage() {
   const showDroneOption = serviceType === 'producao';
   const showEventSwitch = serviceType !== 'site' && serviceType !== 'software';
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    // Por enquanto, apenas exibimos os dados.
-    // No próximo passo, vamos integrar a IA aqui.
-    toast({
-      title: "Formulário Enviado (Simulação)",
-      description: (
-        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-          <code className="text-white">{JSON.stringify(values, null, 2)}</code>
-        </pre>
-      ),
-    })
+  async function onSubmit(values: z.infer<typeof formSchema>) {
+    setIsLoading(true);
+    const toastId = toast.loading("Analisando sua solicitação...", {
+        description: "Nossa IA está gerando uma mensagem personalizada para você. Isso pode levar alguns segundos.",
+    });
+
+    try {
+        const formattedDate = values.recordingDate ? format(values.recordingDate, "dd/MM/yyyy") : undefined;
+
+        const aiInput: GenerateWhatsAppMessageInput = {
+            ...values,
+            recordingDate: formattedDate,
+        };
+
+        const response = await generateWhatsAppMessage(aiInput);
+
+        const whatsappUrl = `https://wa.me/55${values.phone.replace(/\D/g, '')}?text=${encodeURIComponent(response)}`;
+        
+        toast.success("Mensagem gerada com sucesso!", {
+            id: toastId,
+            description: "Você será redirecionado para o WhatsApp em breve.",
+        });
+
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+        }, 2000);
+
+    } catch (error) {
+        console.error("Erro ao gerar mensagem:", error);
+        toast.error("Erro ao gerar mensagem", {
+            id: toastId,
+            description: "Houve um problema ao contatar a IA. Por favor, tente novamente.",
+        });
+    } finally {
+        setIsLoading(false);
+    }
   }
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212] text-white">
+      <Toaster richColors theme="dark" />
       <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
         <div className="flex items-center justify-between px-8 py-4 max-w-5xl mx-auto w-full">
           <Link href="/" className="flex items-center gap-2 text-white hover:text-primary transition-colors">
@@ -173,7 +202,7 @@ export default function ContatoPage() {
                       <FormItem>
                         <FormLabel>Nome Completo</FormLabel>
                         <FormControl>
-                          <Input placeholder="Seu nome" {...field} />
+                          <Input placeholder="Seu nome" {...field} disabled={isLoading} />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -186,7 +215,7 @@ export default function ContatoPage() {
                       <FormItem>
                         <FormLabel>Email</FormLabel>
                         <FormControl>
-                          <Input placeholder="seu@email.com" {...field} />
+                          <Input placeholder="seu@email.com" {...field} disabled={isLoading}/>
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -201,7 +230,7 @@ export default function ContatoPage() {
                         <FormItem>
                           <FormLabel>Telefone (WhatsApp)</FormLabel>
                           <FormControl>
-                            <Input placeholder="(XX) XXXXX-XXXX" {...field} />
+                            <Input placeholder="(XX) XXXXX-XXXX" {...field} disabled={isLoading}/>
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -213,7 +242,7 @@ export default function ContatoPage() {
                         render={({ field }) => (
                             <FormItem>
                             <FormLabel>Tipo de Serviço</FormLabel>
-                            <Select onValueChange={field.onChange} defaultValue={field.value}>
+                            <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isLoading}>
                                 <FormControl>
                                     <SelectTrigger>
                                         <SelectValue placeholder="Selecione o serviço desejado">
@@ -239,7 +268,7 @@ export default function ContatoPage() {
                       render={({ field }) => (
                         <FormItem>
                           <FormLabel>Tipo de Projeto</FormLabel>
-                          <Select onValueChange={field.onChange} defaultValue={field.value}>
+                          <Select onValueChange={field.onChange} defaultValue={field.value} disabled={isLoading}>
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Selecione o tipo de projeto" />
@@ -268,6 +297,7 @@ export default function ContatoPage() {
                                       checked={field.value}
                                       onCheckedChange={field.onChange}
                                       id="drone-option"
+                                      disabled={isLoading}
                                       />
                                   </FormControl>
                                   <div className="grid gap-1.5 leading-none">
@@ -303,6 +333,7 @@ export default function ContatoPage() {
                                             "w-full pl-3 text-left font-normal",
                                             !field.value && "text-muted-foreground"
                                         )}
+                                        disabled={isLoading}
                                         >
                                         {field.value ? (
                                             format(field.value, "dd/MM/yyyy")
@@ -336,7 +367,7 @@ export default function ContatoPage() {
                                 <FormItem className="flex flex-col justify-end">
                                 <FormLabel>Local da Gravação</FormLabel>
                                 <FormControl>
-                                    <Input placeholder="Cidade / Estado" {...field} />
+                                    <Input placeholder="Cidade / Estado" {...field} disabled={isLoading}/>
                                 </FormControl>
                                 <FormMessage />
                                 </FormItem>
@@ -362,6 +393,7 @@ export default function ContatoPage() {
                                     <Switch
                                     checked={field.value}
                                     onCheckedChange={field.onChange}
+                                    disabled={isLoading}
                                     />
                                 </FormControl>
                             </FormItem>
@@ -380,6 +412,7 @@ export default function ContatoPage() {
                                 placeholder="Nos conte sobre o evento: tipo, data, local, número de convidados, etc."
                                 className="resize-y min-h-[100px]"
                                 {...field}
+                                disabled={isLoading}
                                 />
                             </FormControl>
                             <FormMessage />
@@ -398,6 +431,7 @@ export default function ContatoPage() {
                           placeholder="Nos conte o máximo de detalhes possível sobre sua ideia, incluindo objetivos, referências e o que você espera do resultado final."
                           className="resize-y min-h-[120px]"
                           {...field}
+                          disabled={isLoading}
                         />
                       </FormControl>
                       <FormDescription>
@@ -418,6 +452,7 @@ export default function ContatoPage() {
                           placeholder="Cole aqui links de vídeos, sites ou outras inspirações que ajudem a gente a entender melhor seu projeto."
                           className="resize-y"
                           {...field}
+                          disabled={isLoading}
                         />
                       </FormControl>
                       <FormDescription>
@@ -428,9 +463,18 @@ export default function ContatoPage() {
                   )}
                 />
                 <div className="flex justify-end">
-                  <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-transform hover:scale-105">
-                     Analisar com IA e Gerar Mensagem
-                    <Bot className="ml-2 h-5 w-5" />
+                  <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-transform hover:scale-105" disabled={isLoading}>
+                    {isLoading ? (
+                        <>
+                            <Loader2 className="mr-2 h-5 w-5 animate-spin" />
+                            Analisando...
+                        </>
+                    ) : (
+                        <>
+                            Analisar com IA e Gerar Mensagem
+                            <Bot className="ml-2 h-5 w-5" />
+                        </>
+                    )}
                   </Button>
                 </div>
               </form>
