@@ -58,8 +58,8 @@ const formSchema = z.object({
   recordingLocation: z.string().optional(),
   isEvent: z.boolean().default(false),
   eventDescription: z.string().optional(),
-  projectDetails: z.string().min(30, {
-    message: "Descreva seu projeto com pelo menos 30 caracteres.",
+  projectDetails: z.string().min(10, {
+    message: "Descreva seu projeto com pelo menos 10 caracteres.",
   }).max(2000, {
     message: "A descrição não pode exceder 2000 caracteres.",
   }),
@@ -147,6 +147,23 @@ export default function ContatoPage() {
   const showRecordingFields = serviceType === 'gravacao' || serviceType === 'producao';
   const showDroneOption = serviceType === 'producao';
   const showEventSwitch = serviceType !== 'site' && serviceType !== 'software';
+
+  function handlePrefill() {
+    form.reset({
+        name: "Cliente Teste",
+        email: "teste@fastfilms.com",
+        phone: "11999998888",
+        serviceType: "producao",
+        projectType: "institucional",
+        droneOption: true,
+        recordingDate: new Date(),
+        recordingLocation: "São Paulo, SP",
+        isEvent: false,
+        eventDescription: "",
+        projectDetails: "Este é um teste para a IA.",
+        references: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    });
+  }
 
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
@@ -479,7 +496,10 @@ export default function ContatoPage() {
                     </FormItem>
                   )}
                 />
-                <div className="flex justify-end">
+                <div className="flex justify-end items-center gap-4">
+                  <Button type="button" variant="outline" size="lg" onClick={handlePrefill} disabled={isLoading}>
+                    Preencher para Teste
+                  </Button>
                   <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-transform hover:scale-105" disabled={isLoading}>
                     {isLoading ? (
                         <>
@@ -502,3 +522,4 @@ export default function ContatoPage() {
     </div>
   );
 }
+
