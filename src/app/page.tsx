@@ -302,7 +302,7 @@ export default function Home() {
                 </AlertDialogHeader>
                 <AlertDialogFooter>
                   <AlertDialogCancel>Cancelar</AlertDialogCancel>
-                  <AlertDialogAction onClick={() => window.open('#', '_blank')}>
+                  <AlertDialogAction onClick={() => window.open('https://projetex.netlify.app/', '_blank')}>
                     Continuar
                   </AlertDialogAction>
                 </AlertDialogFooter>
@@ -401,7 +401,7 @@ export default function Home() {
                     </AlertDialogHeader>
                     <AlertDialogFooter>
                       <AlertDialogCancel>Cancelar</AlertDialogCancel>
-                      <AlertDialogAction onClick={() => window.open('#', '_blank')}>
+                      <AlertDialogAction onClick={() => window.open('https://projetex.netlify.app/', '_blank')}>
                         Continuar
                       </AlertDialogAction>
                     </AlertDialogFooter>
