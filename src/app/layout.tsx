@@ -4,7 +4,7 @@ import './buttons.css';
 import { Toaster } from '@/components/ui/toaster';
 
 export const metadata: Metadata = {
-  title: 'Redshift Design',
+  title: 'FastFilms',
   description: 'Our hobby is a modern and convenient design, the key to successful communication with the client.',
 };
 
