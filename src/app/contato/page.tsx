@@ -262,21 +262,25 @@ export default function ContatoPage() {
                             control={form.control}
                             name="droneOption"
                             render={({ field }) => (
-                                <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4 self-end h-14">
-                                <FormControl>
-                                    <Checkbox
-                                    checked={field.value}
-                                    onCheckedChange={field.onChange}
-                                    />
-                                </FormControl>
-                                <div className="space-y-1 leading-none">
-                                    <FormLabel>
-                                        Incluir captação com drone?
-                                    </FormLabel>
-                                    <FormDescription>
-                                        Adiciona um custo extra ao orçamento.
-                                    </FormDescription>
-                                </div>
+                                <FormItem className="flex flex-row items-center space-x-3 rounded-md border p-4 justify-center">
+                                  <FormControl>
+                                      <Checkbox
+                                      checked={field.value}
+                                      onCheckedChange={field.onChange}
+                                      id="drone-option"
+                                      />
+                                  </FormControl>
+                                  <div className="grid gap-1.5 leading-none">
+                                      <label
+                                      htmlFor="drone-option"
+                                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                      >
+                                      Incluir captação com drone?
+                                      </label>
+                                      <p className="text-sm text-muted-foreground">
+                                       Adiciona um custo extra ao orçamento.
+                                      </p>
+                                  </div>
                                 </FormItem>
                             )}
                         />
