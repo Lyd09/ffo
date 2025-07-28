@@ -33,7 +33,7 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
-import { Toaster, toast } from 'sonner';
+import { toast } from 'sonner';
 import { generateWhatsAppMessage } from '@/ai/flows/contact-flow';
 
 
@@ -207,7 +207,6 @@ export default function ContatoPage() {
 
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212] text-white">
-      <Toaster richColors theme="dark" />
       <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
         <div className="flex items-center justify-between px-8 py-4 max-w-5xl mx-auto w-full">
           <Link href="/" className="flex items-center gap-2 text-white hover:text-primary transition-colors">
@@ -308,7 +307,7 @@ export default function ContatoPage() {
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Selecione o tipo de projeto" />
-                              </SelectTrigger>
+                              </Trigger>
                             </FormControl>
                             <SelectContent>
                               <SelectItem value="reels">Reels / TikTok</SelectItem>
@@ -524,6 +523,3 @@ export default function ContatoPage() {
     </div>
   );
 }
-
-    
-    
