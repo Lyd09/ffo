@@ -1,3 +1,4 @@
+
 'use client';
 
 import { ArrowLeft, Bot, Calendar as CalendarIcon, Send } from 'lucide-react';
@@ -226,7 +227,7 @@ export default function ContatoPage() {
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Selecione o tipo de projeto" />
-                              </Trigger>
+                              </SelectTrigger>
                             </FormControl>
                             <SelectContent>
                               <SelectItem value="reels">Reels / TikTok</SelectItem>
@@ -374,3 +375,5 @@ export default function ContatoPage() {
     </div>
   );
 }
+
+    
