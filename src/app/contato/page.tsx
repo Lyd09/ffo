@@ -262,7 +262,7 @@ export default function ContatoPage() {
                             control={form.control}
                             name="droneOption"
                             render={({ field }) => (
-                                <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4">
+                                <FormItem className="flex flex-row items-end space-x-3 rounded-md border p-4 self-end h-14">
                                 <FormControl>
                                     <Checkbox
                                     checked={field.value}
@@ -288,7 +288,7 @@ export default function ContatoPage() {
                             control={form.control}
                             name="recordingDate"
                             render={({ field }) => (
-                                <FormItem className="flex flex-col">
+                                <FormItem className="flex flex-col justify-end">
                                 <FormLabel>Data da Gravação</FormLabel>
                                 <Popover>
                                     <PopoverTrigger asChild>
@@ -329,7 +329,7 @@ export default function ContatoPage() {
                             control={form.control}
                             name="recordingLocation"
                             render={({ field }) => (
-                                <FormItem>
+                                <FormItem className="flex flex-col justify-end">
                                 <FormLabel>Local da Gravação</FormLabel>
                                 <FormControl>
                                     <Input placeholder="Cidade / Estado" {...field} />
@@ -436,3 +436,4 @@ export default function ContatoPage() {
       </main>
     </div>
   );
+}
