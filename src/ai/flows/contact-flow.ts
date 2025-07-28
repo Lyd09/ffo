@@ -1,3 +1,4 @@
+
 'use server';
 /**
  * @fileOverview Flow to generate a personalized WhatsApp message from contact form data.
@@ -9,7 +10,8 @@
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
 
-// Corresponds to the form schema in `src/app/contato/page.tsx`
+// This schema defines the data structure the AI flow expects.
+// The form-facing validation schema is now in `contato/page.tsx`.
 export const GenerateWhatsAppMessageInputSchema = z.object({
   name: z.string().describe('The full name of the potential client.'),
   email: z.string().email().describe('The email address of the potential client.'),
