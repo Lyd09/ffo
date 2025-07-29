@@ -2,6 +2,7 @@
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import type { LucideProps } from 'lucide-react';
+import React from 'react';
 
 interface EquipmentCardProps {
   category: string;
@@ -12,7 +13,7 @@ interface EquipmentCardProps {
   description: string;
 }
 
-export default function EquipmentCard({ category, icon: Icon, name, imageUrl, dataAiHint, description }: EquipmentCardProps) {
+export default function EquipmentCard({ icon: Icon, name, imageUrl, dataAiHint, description }: EquipmentCardProps) {
   return (
     <Card className="overflow-hidden text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/20 hover:shadow-lg bg-secondary/30 border-border">
       <CardHeader className="items-center pb-4">

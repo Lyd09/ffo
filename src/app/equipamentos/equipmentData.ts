@@ -21,7 +21,7 @@ import {
 
 export const workstationData = [
   {
-    title: 'Workstation de Edição',
+    title: 'Workstation AMD Ryzen 5 5600G',
     description: 'Montado para renderização pesada e multitarefa intensiva, garantindo fluidez em 4K.',
     specs: [
       { icon: Cpu, label: 'Processador', value: 'Ryzen 5 5600G' },
@@ -36,7 +36,7 @@ export const workstationData = [
     ],
   },
   {
-    title: 'Workstation Multitarefa',
+    title: 'Workstation Intel Core i5 12400F',
     description: 'Focado em estabilidade e velocidade de resposta para edições ágeis e gerenciamento de projetos.',
     specs: [
       { icon: Cpu, label: 'Processador', value: 'Intel Core i5 12400F' },
@@ -51,7 +51,7 @@ export const workstationData = [
     ],
   },
   {
-    title: 'Mobilidade com Samsung',
+    title: 'Samsung Galaxy Book4 (Core i5)',
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'samsung laptop',
     description: 'A workstation portátil para edições em campo e apresentações, sem sacrificar performance.',
@@ -64,7 +64,7 @@ export const workstationData = [
     ],
   },
   {
-    title: 'Ecossistema Apple',
+    title: 'MacBook Air (Apple M1)',
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'macbook air',
     description: 'O padrão de mercado para agilidade, design e integração perfeita com softwares criativos.',
@@ -107,32 +107,24 @@ export const fieldEquipmentData = [
 
 export const softwareData = [
     {
-      category: 'Software',
-      icon: Scissors,
       name: 'Adobe Premiere Pro',
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'software logo',
       description: 'Se tem play no final, é porque teve Premiere no começo.',
     },
     {
-      category: 'Software',
-      icon: Sparkles,
       name: 'Adobe After Effects',
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'software logo',
       description: 'A mágica visual que o público vê, mas não imagina como foi feita.',
     },
     {
-      category: 'Software',
-      icon: Layers,
       name: 'Adobe Photoshop',
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'software logo',
       description: 'Para deixar tudo exatamente como imaginamos — ou melhor.',
     },
     {
-      category: 'Software',
-      icon: ImageIcon,
       name: 'Adobe Lightroom',
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'software logo',
