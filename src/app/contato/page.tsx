@@ -176,10 +176,12 @@ export default function ContatoPage() {
           eventDescription: values.eventDescription || undefined,
           recordingLocation: values.recordingLocation || undefined,
         };
+        
+        console.log("DEBUG: Dados enviados para a IA (aiInput):", JSON.stringify(aiInput, null, 2));
 
         const response = await generateWhatsAppMessage(aiInput);
 
-        console.log("Resposta da IA recebida no Frontend:", response);
+        console.log("DEBUG: Resposta da IA recebida no Frontend:", response);
 
         if (!response) {
             toast.error("A IA não retornou uma mensagem.", {
@@ -543,5 +545,3 @@ export default function ContatoPage() {
     </div>
   );
 }
-
-    
