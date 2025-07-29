@@ -83,19 +83,13 @@ const generateWhatsAppMessageFlow = ai.defineFlow(
     outputSchema: z.string(),
   },
   async (input) => {
-    console.log('DEBUG: [IA Flow] Dados recebidos:', JSON.stringify(input, null, 2));
-
     const mappedInput = {
         ...input,
         serviceType: serviceTypeMap[input.serviceType as keyof typeof serviceTypeMap] || input.serviceType,
         projectType: projectTypeMap[input.projectType as keyof typeof projectTypeMap] || input.projectType,
     };
     
-    console.log('DEBUG: [IA Flow] Dados mapeados enviados para o prompt:', JSON.stringify(mappedInput, null, 2));
-
     const { output } = await messageGenerationPrompt(mappedInput);
-    
-    console.log('DEBUG: [IA Flow] Resposta bruta da IA:', output);
     
     if (!output) {
       console.error('ERROR: [IA Flow] A IA retornou uma resposta nula ou vazia.');

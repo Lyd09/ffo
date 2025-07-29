@@ -34,7 +34,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
-import { generateWhatsAppMessage, GenerateWhatsAppMessageInput } from '@/ai/flows/contact-flow';
+import { summarizeAndStructureInquiry, InquiryInput } from '@/ai/flows/summarize-flow';
 
 
 const formSchema = z.object({
@@ -165,26 +165,19 @@ export default function ContatoPage() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     const toastId = toast.loading("Analisando sua solicitação...", {
-        description: "Nossa IA está gerando uma mensagem personalizada para você. Isso pode levar alguns segundos.",
+        description: "Nossa IA está preparando um resumo para agilizar seu atendimento.",
     });
 
     try {
-        const aiInput: GenerateWhatsAppMessageInput = {
+        const aiInput: InquiryInput = {
           ...values,
           recordingDate: values.recordingDate ? format(values.recordingDate, "dd/MM/yyyy") : undefined,
-          references: values.references || undefined,
-          eventDescription: values.eventDescription || undefined,
-          recordingLocation: values.recordingLocation || undefined,
         };
-        
-        console.log("DEBUG: Dados enviados para a IA (aiInput):", JSON.stringify(aiInput, null, 2));
 
-        const response = await generateWhatsAppMessage(aiInput);
+        const structuredData = await summarizeAndStructureInquiry(aiInput);
 
-        console.log("DEBUG: Resposta da IA recebida no Frontend:", response);
-
-        if (!response) {
-            toast.error("A IA não retornou uma mensagem.", {
+        if (!structuredData || !structuredData.primaryService) {
+            toast.error("A IA não conseguiu processar sua solicitação.", {
                 id: toastId,
                 description: "Por favor, verifique os dados e tente novamente ou contate o suporte.",
             });
@@ -192,11 +185,24 @@ export default function ContatoPage() {
             return;
         }
 
-        const whatsappUrl = `https://wa.me/553172208560?text=${encodeURIComponent(response)}`;
+        const messageParts = [
+            `Olá, ${structuredData.clientName}! Tudo bem? 😊 Aqui é da equipe FastFilms.`,
+            `Recebemos sua solicitação de orçamento e agradecemos pelo seu contato!`,
+            ``,
+            `Vi que você está interessado em nosso serviço de *${structuredData.primaryService}*.`,
+            `Aqui estão os detalhes que resumimos para nossa conversa:`,
+            ...structuredData.keyDetails.map(detail => `- ${detail}`),
+            ``,
+            `Adoraríamos conversar mais para entender todos os detalhes e te ajudar a tirar essa ideia do papel.`,
+            `Quando seria um bom momento para você?`
+        ];
+
+        const finalMessage = messageParts.join('\n');
+        const whatsappUrl = `https://wa.me/553172208560?text=${encodeURIComponent(finalMessage)}`;
         
-        toast.success("Mensagem gerada com sucesso!", {
+        toast.success("Resumo gerado com sucesso!", {
             id: toastId,
-            description: "Você será redirecionado para o WhatsApp em breve.",
+            description: "Você será redirecionado para o WhatsApp para iniciar a conversa.",
         });
 
         setTimeout(() => {
@@ -204,10 +210,10 @@ export default function ContatoPage() {
         }, 2000);
 
     } catch (error) {
-        console.error("Erro ao gerar mensagem:", error);
-        toast.error("Erro ao gerar mensagem", {
+        console.error("Erro ao gerar resumo com IA:", error);
+        toast.error("Erro ao contatar a IA", {
             id: toastId,
-            description: "Houve um problema ao contatar a IA. Por favor, tente novamente.",
+            description: "Houve um problema ao processar sua solicitação. Por favor, tente novamente.",
         });
     } finally {
         setIsLoading(false);
@@ -531,7 +537,7 @@ export default function ContatoPage() {
                         </>
                     ) : (
                         <>
-                            Analisar com IA e Gerar Mensagem
+                            Analisar com IA e Iniciar Conversa
                             <Bot className="ml-2 h-5 w-5" />
                         </>
                     )}
