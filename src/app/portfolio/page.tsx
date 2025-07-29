@@ -47,7 +47,7 @@ const portfolioProjects = [
 export default function PortfolioPage() {
   return (
     <>
-      <section className="py-20 sm:py-24 text-center">
+      <section className="pt-12 pb-20 sm:pt-16 sm:pb-24 text-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">NOSSO PORTFÓLIO</p>
             <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight relative pb-4 inline-block">
