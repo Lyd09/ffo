@@ -34,7 +34,7 @@ const { serviceTypeMap, projectTypeMap } = mappings;
 const messageGenerationPrompt = ai.definePrompt({
     name: 'messageGenerationPrompt',
     input: { schema: GenerateWhatsAppMessageInputSchema },
-    output: { schema: z.string() },
+    output: { schema: z.string().nullable() },
     prompt: `Você é um assistente virtual da FastFilms, uma produtora de vídeo e desenvolvedora de software. Sua tarefa é criar uma mensagem de saudação amigável e profissional para iniciar uma conversa no WhatsApp, com base nos dados do formulário de contato preenchido pelo cliente.
 
 A mensagem deve ser:
@@ -96,7 +96,13 @@ const generateWhatsAppMessageFlow = ai.defineFlow(
     const { output } = await messageGenerationPrompt(mappedInput);
     
     console.log('DEBUG: [IA Flow] Resposta bruta da IA:', output);
-    return output ?? '';
+    
+    if (!output) {
+      console.error('ERROR: [IA Flow] A IA retornou uma resposta nula ou vazia.');
+      return `Olá, ${input.name}! Aqui é da FastFilms. Recebemos sua solicitação, mas não consegui gerar a mensagem personalizada. Poderia nos contar um pouco sobre o seu projeto?`;
+    }
+
+    return output;
   }
 );
 
