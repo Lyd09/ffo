@@ -26,7 +26,7 @@ export default function EquipamentosPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-center relative inline-block">
-              Nossas Workstations
+              Nossas <span className="text-primary">Workstations</span>
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
@@ -34,9 +34,15 @@ export default function EquipamentosPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 justify-items-center">
-            {workstationData.map((ws) => (
-              <WorkstationCard key={ws.title} {...ws} />
-            ))}
+            {workstationData.map((ws) => {
+               const [brand, ...rest] = ws.title.split(' ');
+               const title = (
+                <>
+                  <span className="text-primary">{brand}</span> {rest.join(' ')}
+                </>
+               );
+              return <WorkstationCard key={ws.title} {...ws} title={title} />
+            })}
           </div>
         </div>
       </section>
@@ -46,7 +52,7 @@ export default function EquipamentosPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-center relative inline-block">
-              Equipamentos de Campo
+              Equipamentos de <span className="text-primary">Campo</span>
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
@@ -109,7 +115,7 @@ export default function EquipamentosPage() {
       {/* Ato IV: O Arsenal Completo */}
       <section className="pb-20 sm:pb-24">
         <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <Separator className="my-12 bg-border/50" />
+          <Separator className="my-12 bg-white/50" />
           <div className="flex flex-col items-center text-center">
             <Card className="bg-secondary/30 border-border p-4 inline-flex items-center gap-4 rounded-xl mb-4">
               <div className="bg-primary/10 text-primary p-3 rounded-lg">

@@ -11,7 +11,7 @@ interface Spec {
 }
 
 interface WorkstationCardProps {
-  title: string;
+  title: React.ReactNode;
   description: string;
   specs: Spec[];
   imageUrl?: string;
@@ -22,7 +22,7 @@ export default function WorkstationCard({ title, description, specs, imageUrl, d
   return (
     <Card className="w-full max-w-lg bg-secondary/30 border-border shadow-lg">
       <CardHeader>
-        <CardTitle className="text-2xl text-primary">{title}</CardTitle>
+        <CardTitle className="text-2xl">{title}</CardTitle>
         <CardDescription>{description}</CardDescription>
       </CardHeader>
       <CardContent>
@@ -30,7 +30,7 @@ export default function WorkstationCard({ title, description, specs, imageUrl, d
           <div className="mb-6 relative aspect-video w-full overflow-hidden rounded-lg">
             <Image
               src={imageUrl}
-              alt={title}
+              alt={title as string}
               fill
               className="object-cover"
               data-ai-hint={dataAiHint}
