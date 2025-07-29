@@ -7,7 +7,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { format } from "date-fns"
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { Button } from "@/components/ui/button"
 import {
@@ -115,6 +115,12 @@ const ServiceSelectItem = ({ value, title, description }: { value: string, title
 
 export default function ContatoPage() {
   const [isLoading, setIsLoading] = useState(false);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -391,9 +397,7 @@ export default function ContatoPage() {
                                         mode="single"
                                         selected={field.value}
                                         onSelect={field.onChange}
-                                        disabled={(date) =>
-                                            date < new Date() || date < new Date("1900-01-01")
-                                        }
+                                        disabled={isClient ? (date) => date < new Date() || date < new Date("1900-01-01") : undefined}
                                         initialFocus
                                     />
                                     </PopoverContent>
