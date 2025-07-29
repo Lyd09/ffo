@@ -24,16 +24,16 @@ const portfolioProjects = [
         dataAiHint: 'nature cinematic',
     },
     {
-        title: 'Gravação de uma casa de R$15.000.000,00 no Condomínio Estâncias das Amendoeiras',
-        imageUrl: '/index/Portfolio/CASA-15M.png',
-        videoUrl: 'https://www.instagram.com/p/DGipg9IRg5g/',
-        dataAiHint: 'luxury real estate',
-    },
-    {
         title: 'Gravação no mercado imobiliário no Condomínio Retiro das Águas',
         imageUrl: '/index/Portfolio/IMOBILIARIO.png',
         videoUrl: 'https://www.instagram.com/p/DHlmBdQRDy3/',
         dataAiHint: 'real estate videography',
+    },
+    {
+        title: 'Gravação de uma casa de R$15.000.000,00 no Condomínio Estâncias das Amendoeiras',
+        imageUrl: '/index/Portfolio/CASA-15M.png',
+        videoUrl: 'https://www.instagram.com/p/DGipg9IRg5g/',
+        dataAiHint: 'luxury real estate',
     },
     {
         title: 'Dia de gravação no Condomínio Estância das Amendoeiras',
@@ -89,3 +89,5 @@ export default function PortfolioPage() {
     </>
   );
 }
+
+    
