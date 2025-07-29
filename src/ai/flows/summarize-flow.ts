@@ -15,7 +15,7 @@ import mappings from './mappings.json';
 const { serviceTypeMap, projectTypeMap } = mappings;
 
 // Schema for the raw input from the form
-export const InquiryInputSchema = z.object({
+const InquiryInputSchema = z.object({
   name: z.string(),
   serviceType: z.enum(["gravacao", "producao", "edicao", "drone", "software", "site", "outro"]),
   droneOption: z.boolean().optional(),
@@ -30,7 +30,7 @@ export const InquiryInputSchema = z.object({
 export type InquiryInput = z.infer<typeof InquiryInputSchema>;
 
 // Schema for the structured output we want from the AI
-export const StructuredInquiryOutputSchema = z.object({
+const StructuredInquiryOutputSchema = z.object({
     clientName: z.string().describe("The client's full name."),
     primaryService: z.string().describe("The main service the client is interested in, translated to Portuguese."),
     keyDetails: z.array(z.string()).describe("A bullet-point-style list of the most important project details, summarized for a quick overview. Include quantity, project type, location, dates, and other critical info."),

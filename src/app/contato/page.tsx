@@ -34,8 +34,24 @@ import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
-import { summarizeAndStructureInquiry, InquiryInput } from '@/ai/flows/summarize-flow';
+import { summarizeAndStructureInquiry } from '@/ai/flows/summarize-flow';
 
+// This type is needed for both the form and the AI function call.
+export type InquiryInput = {
+    name: string;
+    email: string;
+    phone: string;
+    serviceType: "gravacao" | "producao" | "edicao" | "drone" | "software" | "site" | "outro";
+    droneOption?: boolean | undefined;
+    projectType: "reels" | "youtube" | "institucional" | "casamento" | "outro";
+    quantity: number;
+    recordingDate?: string | undefined;
+    recordingLocation?: string | undefined;
+    isEvent: boolean;
+    eventDescription?: string | undefined;
+    projectDetails: string;
+    references?: string | undefined;
+};
 
 const formSchema = z.object({
   name: z.string().min(2, {
