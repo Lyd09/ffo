@@ -173,13 +173,19 @@ export default function ContatoPage() {
     });
 
     try {
-        const formattedDate = values.recordingDate ? format(values.recordingDate, "dd/MM/yyyy") : undefined;
-
         const aiInput: GenerateWhatsAppMessageInput = {
-            ...values,
-            recordingDate: formattedDate,
-            references: values.references || undefined,
-            eventDescription: values.eventDescription || undefined,
+            name: values.name,
+            email: values.email,
+            phone: values.phone,
+            serviceType: values.serviceType,
+            projectType: values.projectType,
+            isEvent: values.isEvent,
+            projectDetails: values.projectDetails,
+            ...(values.droneOption && { droneOption: values.droneOption }),
+            ...(values.recordingDate && { recordingDate: format(values.recordingDate, "dd/MM/yyyy") }),
+            ...(values.recordingLocation && { recordingLocation: values.recordingLocation }),
+            ...(values.eventDescription && { eventDescription: values.eventDescription }),
+            ...(values.references && { references: values.references }),
         };
 
         const response = await generateWhatsAppMessage(aiInput);
@@ -524,5 +530,3 @@ export default function ContatoPage() {
     </div>
   );
 }
-
-    
