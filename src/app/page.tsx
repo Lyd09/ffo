@@ -181,7 +181,7 @@ export default function Home() {
                 />
                 <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
                 <p className="text-muted-foreground text-center">
-                  Co-Fundador & Diretor Criativo
+                  Co-Fundador & <br /> Diretor Criativo
                 </p>
               </div>
               <div className="flex flex-col items-center">
@@ -195,7 +195,7 @@ export default function Home() {
                 />
                 <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
                 <p className="text-muted-foreground text-center">
-                  Co-Fundador & Diretor de Produção
+                  Co-Fundador & <br /> Diretor de Produção
                 </p>
               </div>
             </div>

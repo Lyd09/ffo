@@ -12,13 +12,13 @@ const teamData = {
   founders: [
     {
       name: 'Samuel',
-      role: 'Co-Fundador & Diretor Criativo',
+      role: ['Co-Fundador &', 'Diretor Criativo'],
       imageUrl: '/index/Equipe/samuel.jpg',
       dataAiHint: 'man portrait',
     },
     {
       name: 'Kléuver',
-      role: 'Co-Fundador & Diretor de Produção',
+      role: ['Co-Fundador &', 'Diretor de Produção'],
       imageUrl: '/index/Equipe/kleuver.png',
       dataAiHint: 'man portrait',
     },
@@ -68,7 +68,7 @@ const sectionTitles: { [key: string]: string } = {
     filmmakers: 'Filmmakers',
 };
 
-const ProfileCard = ({ name, role, imageUrl, dataAiHint }: { name: string; role: string; imageUrl: string; dataAiHint: string; }) => (
+const ProfileCard = ({ name, role, imageUrl, dataAiHint }: { name: string; role: string | string[]; imageUrl: string; dataAiHint: string; }) => (
   <Card className="overflow-hidden text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/20 hover:shadow-lg w-[280px]">
     <CardContent className="p-0">
       <div className="relative aspect-square w-full">
@@ -82,7 +82,13 @@ const ProfileCard = ({ name, role, imageUrl, dataAiHint }: { name: string; role:
       </div>
       <div className="p-4">
         <h3 className="text-xl font-bold text-foreground">{name}</h3>
-        <p className="text-sm text-primary">{role}</p>
+        <div className="text-sm text-primary">
+          {Array.isArray(role) ? (
+            role.map((line, index) => <p key={index}>{line}</p>)
+          ) : (
+            <p>{role}</p>
+          )}
+        </div>
       </div>
     </CardContent>
   </Card>
