@@ -259,7 +259,7 @@ export default function Home() {
               Vamos dar o <span className="text-primary">próximo passo</span>?
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
-              Tem uma ideia ou um projeto em mente? Adoraríamos ouvir sobre ele. Entre em contato e vamos transformar sua visão em realidade.
+              Quando <span className="text-primary">cada momento merece um bom take</span>, não dá pra deixar sua ideia no banco de reservas. Vamos colocar seu projeto no palco principal, com direito a aplausos!
             </p>
             <div className="flex justify-center items-center gap-4 mt-8">
               <Link href="/contato" passHref>
