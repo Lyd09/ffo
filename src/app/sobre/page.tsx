@@ -121,10 +121,12 @@ export default function SobrePage() {
                             {sectionTitles[sectionKey]}
                             <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary"></span>
                         </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
-                            {members.map(member => (
-                                <ProfileCard key={member.name} {...member} />
-                            ))}
+                        <div className="flex justify-center">
+                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                                {members.map(member => (
+                                    <ProfileCard key={member.name} {...member} />
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
