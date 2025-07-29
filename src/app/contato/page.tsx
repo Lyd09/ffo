@@ -308,7 +308,7 @@ export default function ContatoPage() {
                             <FormControl>
                               <SelectTrigger>
                                 <SelectValue placeholder="Selecione o tipo de projeto" />
-                              </Trigger>
+                              </SelectTrigger>
                             </FormControl>
                             <SelectContent>
                               <SelectItem value="reels">Reels / TikTok</SelectItem>
@@ -524,3 +524,5 @@ export default function ContatoPage() {
     </div>
   );
 }
+
+    
