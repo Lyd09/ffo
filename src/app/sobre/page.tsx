@@ -78,7 +78,7 @@ const sectionTitles: { [key: string]: string } = {
 };
 
 const ProfileCard = ({ name, role, imageUrl, dataAiHint }: { name: string; role: string; imageUrl: string; dataAiHint: string; }) => (
-  <Card className="overflow-hidden text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/20 hover:shadow-lg">
+  <Card className="overflow-hidden text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/20 hover:shadow-lg w-[280px]">
     <CardContent className="p-0">
       <div className="relative aspect-square w-full">
         <Image
@@ -121,12 +121,10 @@ export default function SobrePage() {
                             {sectionTitles[sectionKey]}
                             <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary"></span>
                         </h2>
-                        <div className="flex justify-center">
-                            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                                {members.map(member => (
-                                    <ProfileCard key={member.name} {...member} />
-                                ))}
-                            </div>
+                        <div className="flex flex-wrap justify-center gap-8">
+                            {members.map(member => (
+                                <ProfileCard key={member.name} {...member} />
+                            ))}
                         </div>
                     </div>
                 </section>
