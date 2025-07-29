@@ -55,7 +55,7 @@ export default function PortfolioPage() {
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-primary"></span>
             </h1>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
-                Explore alguns dos nossos trabalhos recentes e veja como transformamos ideias em vídeos impactantes.
+                Tudo aqui passou pelo nosso crivo criativo (e por umas boas horas de render)
             </p>
         </div>
       </section>
@@ -89,5 +89,3 @@ export default function PortfolioPage() {
     </>
   );
 }
-
-    
