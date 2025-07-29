@@ -96,7 +96,7 @@ export default function SobrePage() {
                 <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">CADA UM COM SUA ESPECIALIDADE</p>
                 <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight relative pb-4 inline-block">
                     Mas todo mundo <span className="text-primary">resolve</span>.
-                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-primary"></span>
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-primary"></span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
                     Tem quem grava, quem edita, quem anima. Mas na dúvida, todo mundo põe a mão onde for preciso.
@@ -107,10 +107,10 @@ export default function SobrePage() {
         <div className="pb-20 sm:pb-24">
             {Object.entries(teamData).map(([sectionKey, members]) => (
                  <section key={sectionKey} className="mb-16">
-                    <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                        <h2 className="text-3xl font-bold text-center mb-10 relative inline-block left-1/2 -translate-x-1/2">
+                    <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+                        <h2 className="text-3xl font-bold text-center mb-12 relative inline-block">
                             {sectionTitles[sectionKey]}
-                            <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary"></span>
+                            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
                         </h2>
                         <div className="flex flex-wrap justify-center gap-8">
                             {members.map(member => (
