@@ -142,14 +142,14 @@ export default function Home() {
           />
           <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
             <div className="text-center">
-              <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Nossos Equipamentos</p>
+              <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">É QUASE UM PARQUE DE DIVERSÕES</p>
               <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
-                Tecnologia de <span className="text-primary">Ponta</span>
+                Pra quem gosta de <span className="text-primary">Gear</span>
                 <span className="text-white">.</span>
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[13.75rem] h-1 bg-primary"></span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
-                Utilizamos equipamentos de última geração para garantir a máxima qualidade em cada projeto, da captação à finalização.
+                Câmeras, lentes, microfones, luzes, workstations… Tudo o que deixa a gente feliz e o projeto impecável.
               </p>
               <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-8">
                 Ver todos os equipamentos
