@@ -34,24 +34,23 @@ import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
-import { summarizeAndStructureInquiry, StructuredInquiryOutput } from '@/ai/flows/summarize-flow';
+import { summarizeAndStructureInquiry } from '@/ai/flows/summarize-flow';
 
-// This type is needed for the form. The AI flow has its own internal type.
-export type FormInput = {
-    name: string;
-    email: string;
-    phone: string;
-    serviceType: "gravacao" | "producao" | "edicao" | "drone" | "software" | "site" | "outro";
-    droneOption?: boolean | undefined;
-    projectType: "reels" | "youtube" | "institucional" | "casamento" | "outro";
-    quantity: number;
-    recordingDate?: Date | undefined;
-    recordingLocation?: string | undefined;
-    isEvent: boolean;
-    eventDescription?: string | undefined;
-    projectDetails: string;
-    references?: string | undefined;
-};
+// Schema for the structured output we want from the AI, defined in the frontend
+const StructuredInquiryOutputSchema = z.object({
+    clientName: z.string().describe("The client's full name."),
+    primaryService: z.string().describe("The main service the client is interested in, translated to Portuguese."),
+    projectType: z.string().describe("The type of project, translated to Portuguese."),
+    quantity: z.number().describe("The quantity of items for the project."),
+    hasDrone: z.boolean().optional().describe("If the client requested drone footage."),
+    recordingDate: z.string().optional().describe("The preferred recording date, if provided."),
+    recordingLocation: z.string().optional().describe("The preferred recording location, if provided."),
+    isEvent: z.boolean().describe("If the project is for an event."),
+    eventDetails: z.string().optional().describe("A summary of the event details, if provided."),
+    aiSummary: z.array(z.string()).describe("A bullet-point-style list summarizing the most important details inferred ONLY from the 'projectDetails' text. This should capture the client's needs and ideas in their own words."),
+});
+type StructuredInquiryOutput = z.infer<typeof StructuredInquiryOutputSchema>;
+
 
 const formSchema = z.object({
   name: z.string().min(2, {

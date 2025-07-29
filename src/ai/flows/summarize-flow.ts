@@ -27,8 +27,8 @@ const InquiryInputSchema = z.object({
   projectDetails: z.string(),
 });
 
-// Schema for the structured output we want from the AI
-export const StructuredInquiryOutputSchema = z.object({
+// This is the internal schema for the flow's output. The frontend will have its own definition.
+const StructuredInquiryOutputSchema = z.object({
     clientName: z.string().describe("The client's full name."),
     primaryService: z.string().describe("The main service the client is interested in, translated to Portuguese."),
     projectType: z.string().describe("The type of project, translated to Portuguese."),
@@ -40,7 +40,6 @@ export const StructuredInquiryOutputSchema = z.object({
     eventDetails: z.string().optional().describe("A summary of the event details, if provided."),
     aiSummary: z.array(z.string()).describe("A bullet-point-style list summarizing the most important details inferred ONLY from the 'projectDetails' text. This should capture the client's needs and ideas in their own words."),
 });
-export type StructuredInquiryOutput = z.infer<typeof StructuredInquiryOutputSchema>;
 
 
 const summarizePrompt = ai.definePrompt({
@@ -51,7 +50,7 @@ const summarizePrompt = ai.definePrompt({
 
 - Map the serviceType and projectType to Portuguese using the provided mappings.
 - Transfer all the structured data (name, quantity, dates, etc.) directly to the corresponding fields in the output JSON.
-- If a field like 'recordingDate' or 'recordingLocation' is present in the input, it MUST be included in the output. Do not omit it.
+- If a field like 'recordingDate' or 'recordingLocation' is present and not empty in the input, it MUST be included in the output. Do not omit it.
 - From the 'projectDetails' text field, and ONLY from that field, extract the core needs and ideas and summarize them into a concise bullet-point list for the 'aiSummary' field.
 
 Client Data:
@@ -116,6 +115,6 @@ const summarizeFlow = ai.defineFlow(
 );
 
 // Wrapper function to be called from the frontend
-export async function summarizeAndStructureInquiry(input: any): Promise<StructuredInquiryOutput> {
+export async function summarizeAndStructureInquiry(input: any): Promise<any> {
     return await summarizeFlow(input);
 }
