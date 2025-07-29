@@ -34,7 +34,7 @@ const { serviceTypeMap, projectTypeMap } = mappings;
 const messageGenerationPrompt = ai.definePrompt({
     name: 'messageGenerationPrompt',
     input: { schema: GenerateWhatsAppMessageInputSchema },
-    output: { schema: z.string().nullable() },
+    output: { schema: z.string() },
     prompt: `Você é um assistente virtual da FastFilms, uma produtora de vídeo e desenvolvedora de software. Sua tarefa é criar uma mensagem de saudação amigável e profissional para iniciar uma conversa no WhatsApp, com base nos dados do formulário de contato preenchido pelo cliente.
 
 A mensagem deve ser:
