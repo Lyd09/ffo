@@ -114,7 +114,9 @@ export default function Home() {
                 Se o visual prende, o som envolve. E a gente trata os dois com o mesmo cuidado. Afinal, audiovisual é uma experiência completa.
               </p>
               <div className="flex items-center space-x-4">
-                <LearnMoreButton />
+                <Link href="/portfolio">
+                  <LearnMoreButton />
+                </Link>
               </div>
             </section>
 
@@ -136,10 +138,12 @@ export default function Home() {
               <p className="text-muted-foreground leading-relaxed mt-8">
                 Da concepção à entrega final, oferecemos um leque completo de serviços audiovisuais e digitais para garantir que seu projeto tenha o impacto que merece.
               </p>
-              <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-8">
-                Veja nosso portifólio
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link href="/portfolio">
+                <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-8">
+                  Veja nosso portifólio
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               {/* Card 1 */}
