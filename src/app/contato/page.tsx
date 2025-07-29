@@ -34,7 +34,7 @@ import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
-import { generateWhatsAppMessage } from '@/ai/flows/contact-flow';
+import { generateWhatsAppMessage, GenerateWhatsAppMessageInput } from '@/ai/flows/contact-flow';
 
 
 const formSchema = z.object({
@@ -92,22 +92,6 @@ const formSchema = z.object({
     message: "Por favor, descreva o evento com mais detalhes.",
     path: ["eventDescription"],
 });
-
-type GenerateWhatsAppMessageInput = {
-    name: string;
-    email: string;
-    phone: string;
-    serviceType: "gravacao" | "producao" | "edicao" | "drone" | "software" | "site" | "outro";
-    droneOption?: boolean | undefined;
-    projectType: "reels" | "youtube" | "institucional" | "casamento" | "outro";
-    quantity: number;
-    recordingDate?: string | undefined;
-    recordingLocation?: string | undefined;
-    isEvent: boolean;
-    eventDescription?: string | undefined;
-    projectDetails: string;
-    references?: string | undefined;
-}
 
 
 const serviceOptions = {
@@ -180,22 +164,16 @@ export default function ContatoPage() {
 
     try {
         const aiInput: GenerateWhatsAppMessageInput = {
-            name: values.name,
-            email: values.email,
-            phone: values.phone,
-            serviceType: values.serviceType,
-            projectType: values.projectType,
-            quantity: values.quantity,
-            isEvent: values.isEvent,
-            projectDetails: values.projectDetails,
-            ...(values.droneOption && { droneOption: values.droneOption }),
-            ...(values.recordingDate && { recordingDate: format(values.recordingDate, "dd/MM/yyyy") }),
-            ...(values.recordingLocation && { recordingLocation: values.recordingLocation }),
-            ...(values.eventDescription && { eventDescription: values.eventDescription }),
-            ...(values.references && { references: values.references }),
+          ...values,
+          recordingDate: values.recordingDate ? format(values.recordingDate, "dd/MM/yyyy") : undefined,
+          references: values.references || undefined,
+          eventDescription: values.eventDescription || undefined,
+          recordingLocation: values.recordingLocation || undefined,
         };
 
         const response = await generateWhatsAppMessage(aiInput);
+
+        console.log("Resposta da IA recebida no Frontend:", response);
 
         const whatsappUrl = `https://wa.me/553172208560?text=${encodeURIComponent(response)}`;
         

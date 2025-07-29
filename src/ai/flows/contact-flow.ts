@@ -17,7 +17,7 @@ const GenerateWhatsAppMessageInputSchema = z.object({
   serviceType: z.enum(["gravacao", "producao", "edicao", "drone", "software", "site", "outro"]).describe('The type of service the client is interested in.'),
   droneOption: z.boolean().optional().describe('Whether the client wants to include drone footage (only for "producao" service).'),
   projectType: z.enum(["reels", "youtube", "institucional", "casamento", "outro"]).describe('The type of project the client has in mind.'),
-  quantity: z.number().describe('The quantity of videos or items for the project.'),
+  quantity: z.coerce.number().min(1, { message: "A quantidade deve ser de pelo menos 1." }).describe('The quantity of videos or items for the project.'),
   recordingDate: z.string().optional().describe('The preferred date for recording (if applicable). Format: dd/MM/yyyy.'),
   recordingLocation: z.string().optional().describe('The location for the recording (if applicable).'),
   isEvent: z.boolean().describe('Whether the project is for a specific event.'),
@@ -26,7 +26,7 @@ const GenerateWhatsAppMessageInputSchema = z.object({
   references: z.string().optional().describe('Optional links to references or inspirations provided by the client.'),
 });
 
-type GenerateWhatsAppMessageInput = z.infer<typeof GenerateWhatsAppMessageInputSchema>;
+export type GenerateWhatsAppMessageInput = z.infer<typeof GenerateWhatsAppMessageInputSchema>;
 
 const serviceTypeMap: Record<string, string> = {
     gravacao: "Gravação",
@@ -100,6 +100,8 @@ const generateWhatsAppMessageFlow = ai.defineFlow(
     outputSchema: z.string(),
   },
   async (input) => {
+    console.log('Dados recebidos pelo fluxo de IA:', JSON.stringify(input, null, 2));
+    
     // Map the keys to human-readable values before sending to the prompt
     const mappedInput = {
         ...input,
@@ -108,6 +110,7 @@ const generateWhatsAppMessageFlow = ai.defineFlow(
     };
     
     const { output } = await messageGenerationPrompt(mappedInput);
+    console.log('Resposta gerada pela IA:', output);
     return output ?? '';
   }
 );
