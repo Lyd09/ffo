@@ -8,6 +8,7 @@
 
 import { ai } from '@/ai/genkit';
 import { z } from 'zod';
+import mappings from './mappings.json';
 
 // This schema defines the data structure the AI flow expects internally.
 const GenerateWhatsAppMessageInputSchema = z.object({
@@ -28,24 +29,7 @@ const GenerateWhatsAppMessageInputSchema = z.object({
 
 export type GenerateWhatsAppMessageInput = z.infer<typeof GenerateWhatsAppMessageInputSchema>;
 
-const serviceTypeMap: Record<string, string> = {
-    gravacao: "Gravação",
-    producao: "Produção de Vídeo",
-    edicao: "Edição",
-    drone: "Vídeos de Drone",
-    software: "Desenvolvimento de Software",
-    site: "Criação de Site",
-    outro: "Outro"
-};
-
-const projectTypeMap: Record<string, string> = {
-    reels: "Reels / TikTok",
-    youtube: "Vídeo para YouTube",
-    institucional: "Vídeo Institucional",
-    casamento: "Casamento / Evento Social",
-    outro: "Outro"
-};
-
+const { serviceTypeMap, projectTypeMap } = mappings;
 
 const messageGenerationPrompt = ai.definePrompt({
     name: 'messageGenerationPrompt',
@@ -99,17 +83,14 @@ const generateWhatsAppMessageFlow = ai.defineFlow(
     outputSchema: z.string(),
   },
   async (input) => {
-    console.log('Dados recebidos pelo fluxo de IA:', JSON.stringify(input, null, 2));
-
     // Map the keys to human-readable values before sending to the prompt
     const mappedInput = {
         ...input,
-        serviceType: serviceTypeMap[input.serviceType] || input.serviceType,
-        projectType: projectTypeMap[input.projectType] || input.projectType,
+        serviceType: serviceTypeMap[input.serviceType as keyof typeof serviceTypeMap] || input.serviceType,
+        projectType: projectTypeMap[input.projectType as keyof typeof projectTypeMap] || input.projectType,
     };
 
     const { output } = await messageGenerationPrompt(mappedInput);
-    console.log('Resposta gerada pela IA:', output);
     return output ?? '';
   }
 );
