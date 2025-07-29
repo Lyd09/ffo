@@ -4,7 +4,6 @@
  * @fileOverview Flow to summarize and structure a new client inquiry.
  *
  * - summarizeAndStructureInquiry - A function that takes form data and returns a structured summary.
- * - InquiryInput - The input type for the inquiry.
  * - StructuredInquiryOutput - The structured output from the AI.
  */
 
@@ -14,7 +13,7 @@ import mappings from './mappings.json';
 
 const { serviceTypeMap, projectTypeMap } = mappings;
 
-// Schema for the raw input from the form
+// Schema for the raw input from the form, used internally
 const InquiryInputSchema = z.object({
   name: z.string(),
   serviceType: z.enum(["gravacao", "producao", "edicao", "drone", "software", "site", "outro"]),
@@ -27,13 +26,12 @@ const InquiryInputSchema = z.object({
   eventDescription: z.string().optional(),
   projectDetails: z.string(),
 });
-export type InquiryInput = z.infer<typeof InquiryInputSchema>;
 
 // Schema for the structured output we want from the AI
 const StructuredInquiryOutputSchema = z.object({
     clientName: z.string().describe("The client's full name."),
     primaryService: z.string().describe("The main service the client is interested in, translated to Portuguese."),
-    keyDetails: z.array(z.string()).describe("A bullet-point-style list of the most important project details, summarized for a quick overview. Include quantity, project type, location, dates, and other critical info."),
+    keyDetails: z.array(z.string()).describe("A bullet-point-style list of the most important project details, summarized for a quick overview. Include quantity, project type, location, dates, and other critical info derived from the project details."),
 });
 export type StructuredInquiryOutput = z.infer<typeof StructuredInquiryOutputSchema>;
 
@@ -44,19 +42,21 @@ const summarizePrompt = ai.definePrompt({
   output: { schema: StructuredInquiryOutputSchema },
   prompt: `You are an expert project manager. Your task is to receive raw data from a new client contact form and extract the most critical information, structuring it into a clear, concise JSON object.
 
-Translate the serviceType and projectType to Portuguese using the provided mappings.
-Summarize the key details into a list of short, scannable strings.
+Your goal is to create a summary that is easy to read for the sales team.
+- Translate the serviceType and projectType to Portuguese using the provided mappings.
+- Summarize the key details from the form fields and the 'projectDetails' into a scannable list.
+- Be smart: if a field is not applicable or empty (like 'recordingDate' or 'eventDescription'), don't include it in the summary. Focus on what the client provided.
+- Infer key characteristics from the 'projectDetails' text, even if it's informal.
 
 Client Data:
 - Name: {{{name}}}
-- Service Type: {{{serviceType}}} (Translate this)
-- Project Type: {{{projectType}}} (Translate this)
+- Service Type: {{{serviceType}}}
+- Project Type: {{{projectType}}}
 - Quantity: {{{quantity}}}
 - Drone Option: {{#if droneOption}}Yes{{else}}No{{/if}}
-- Recording Date: {{{recordingDate}}}
-- Recording Location: {{{recordingLocation}}}
-- Is it an event?: {{#if isEvent}}Yes{{else}}No{{/if}}
-- Event Details: {{{eventDescription}}}
+{{#if recordingDate}}- Recording Date: {{{recordingDate}}}{{/if}}
+{{#if recordingLocation}}- Recording Location: {{{recordingLocation}}}{{/if}}
+{{#if isEvent}}- Event Details: {{{eventDescription}}}{{/if}}
 - Project Details: {{{projectDetails}}}
 
 Service Type Mapping:
@@ -104,6 +104,6 @@ const summarizeFlow = ai.defineFlow(
 );
 
 // Wrapper function to be called from the frontend
-export async function summarizeAndStructureInquiry(input: InquiryInput): Promise<StructuredInquiryOutput> {
+export async function summarizeAndStructureInquiry(input: any): Promise<StructuredInquiryOutput> {
     return await summarizeFlow(input);
 }
