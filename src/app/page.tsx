@@ -151,10 +151,14 @@ export default function Home() {
               <p className="text-muted-foreground leading-relaxed mt-8 max-w-2xl mx-auto">
                 Câmeras, lentes, microfones, luzes, workstations… Tudo o que deixa a gente feliz e o projeto impecável.
               </p>
-              <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-8">
-                Ver todos os equipamentos
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
+              <Link href="/equipamentos" passHref>
+                <Button asChild className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-8">
+                  <span>
+                    Ver todos os equipamentos
+                    <ArrowRight className="ml-2 h-5 w-5" />
+                  </span>
+                </Button>
+              </Link>
             </div>
           </div>
         </section>
