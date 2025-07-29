@@ -122,7 +122,7 @@ export default function MainLayout({
               />
               <p className="font-bold font-body">FastFilms</p>
               <p className="font-normal font-body text-sm text-muted-foreground mt-1 max-w-[200px] leading-snug">
-                CADA MOMENTO<br />MERECE UM BOM TAKE!
+                Cada momento<br />Merece um bom take!
               </p>
             </div>
             <div className="flex items-start gap-12 text-center md:text-left">
