@@ -28,10 +28,17 @@ const InquiryInputSchema = z.object({
 });
 
 // Schema for the structured output we want from the AI
-const StructuredInquiryOutputSchema = z.object({
+export const StructuredInquiryOutputSchema = z.object({
     clientName: z.string().describe("The client's full name."),
     primaryService: z.string().describe("The main service the client is interested in, translated to Portuguese."),
-    keyDetails: z.array(z.string()).describe("A bullet-point-style list of the most important project details, summarized for a quick overview. Include quantity, project type, location, dates, and other critical info derived from the project details."),
+    projectType: z.string().describe("The type of project, translated to Portuguese."),
+    quantity: z.number().describe("The quantity of items for the project."),
+    hasDrone: z.boolean().optional().describe("If the client requested drone footage."),
+    recordingDate: z.string().optional().describe("The preferred recording date, if provided."),
+    recordingLocation: z.string().optional().describe("The preferred recording location, if provided."),
+    isEvent: z.boolean().describe("If the project is for an event."),
+    eventDetails: z.string().optional().describe("A summary of the event details, if provided."),
+    aiSummary: z.array(z.string()).describe("A bullet-point-style list summarizing the most important details inferred ONLY from the 'projectDetails' text. This should capture the client's needs and ideas in their own words."),
 });
 export type StructuredInquiryOutput = z.infer<typeof StructuredInquiryOutputSchema>;
 
@@ -40,13 +47,12 @@ const summarizePrompt = ai.definePrompt({
   name: 'summarizeInquiryPrompt',
   input: { schema: InquiryInputSchema },
   output: { schema: StructuredInquiryOutputSchema },
-  prompt: `You are an expert project manager. Your task is to receive raw data from a new client contact form and extract the most critical information, structuring it into a clear, concise JSON object.
+  prompt: `You are an expert project assistant. Your task is to receive raw data from a new client contact form and structure it into a clear JSON object. Your main goal is to accurately capture all the provided information and intelligently summarize the client's free-form project description.
 
-Your goal is to create a summary that is easy to read for the sales team.
-- Translate the serviceType and projectType to Portuguese using the provided mappings.
-- Summarize the key details from the form fields and the 'projectDetails' into a scannable list.
-- Be smart: if a field is not applicable or empty (like 'recordingDate' or 'eventDescription'), don't include it in the summary. Focus on what the client provided.
-- Infer key characteristics from the 'projectDetails' text, even if it's informal.
+- Map the serviceType and projectType to Portuguese using the provided mappings.
+- Transfer all the structured data (name, quantity, dates, etc.) directly to the corresponding fields in the output JSON.
+- If a field like 'recordingDate' or 'recordingLocation' is present in the input, it MUST be included in the output. Do not omit it.
+- From the 'projectDetails' text field, and ONLY from that field, extract the core needs and ideas and summarize them into a concise bullet-point list for the 'aiSummary' field.
 
 Client Data:
 - Name: {{{name}}}
@@ -54,10 +60,11 @@ Client Data:
 - Project Type: {{{projectType}}}
 - Quantity: {{{quantity}}}
 - Drone Option: {{#if droneOption}}Yes{{else}}No{{/if}}
-{{#if recordingDate}}- Recording Date: {{{recordingDate}}}{{/if}}
-{{#if recordingLocation}}- Recording Location: {{{recordingLocation}}}{{/if}}
-{{#if isEvent}}- Event Details: {{{eventDescription}}}{{/if}}
-- Project Details: {{{projectDetails}}}
+- Recording Date: {{{recordingDate}}}
+- Recording Location: {{{recordingLocation}}}
+- Is Event: {{#if isEvent}}Yes{{else}}No{{/if}}
+- Event Details: {{{eventDescription}}}
+- Project Details to be summarized: {{{projectDetails}}}
 
 Service Type Mapping:
 - "gravacao": "Gravação"
@@ -75,7 +82,7 @@ Project Type Mapping:
 - "casamento": "Casamento / Evento Social"
 - "outro": "Outro"
 
-Extract the information and return it in the specified JSON format.
+Return ONLY the structured JSON object.
 `,
 });
 
@@ -99,7 +106,12 @@ const summarizeFlow = ai.defineFlow(
       throw new Error("The AI failed to return a structured summary.");
     }
 
-    return output;
+    // Pass the original date and location from the input to ensure they are not lost
+    return {
+        ...output,
+        recordingDate: input.recordingDate,
+        recordingLocation: input.recordingLocation,
+    };
   }
 );
 

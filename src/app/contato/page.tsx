@@ -34,10 +34,10 @@ import { Calendar } from '@/components/ui/calendar';
 import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
-import { summarizeAndStructureInquiry } from '@/ai/flows/summarize-flow';
+import { summarizeAndStructureInquiry, StructuredInquiryOutput } from '@/ai/flows/summarize-flow';
 
-// This type is needed for both the form and the AI function call.
-export type InquiryInput = {
+// This type is needed for the form. The AI flow has its own internal type.
+export type FormInput = {
     name: string;
     email: string;
     phone: string;
@@ -45,7 +45,7 @@ export type InquiryInput = {
     droneOption?: boolean | undefined;
     projectType: "reels" | "youtube" | "institucional" | "casamento" | "outro";
     quantity: number;
-    recordingDate?: string | undefined;
+    recordingDate?: Date | undefined;
     recordingLocation?: string | undefined;
     isEvent: boolean;
     eventDescription?: string | undefined;
@@ -185,12 +185,13 @@ export default function ContatoPage() {
     });
 
     try {
-        const aiInput: InquiryInput = {
+        const aiInput = {
           ...values,
+          // Format date for the AI
           recordingDate: values.recordingDate ? format(values.recordingDate, "dd/MM/yyyy") : undefined,
         };
 
-        const structuredData = await summarizeAndStructureInquiry(aiInput);
+        const structuredData: StructuredInquiryOutput = await summarizeAndStructureInquiry(aiInput);
 
         if (!structuredData || !structuredData.primaryService) {
             toast.error("A IA não conseguiu processar sua solicitação.", {
@@ -202,16 +203,39 @@ export default function ContatoPage() {
         }
 
         const messageParts = [
-            `Olá, ${structuredData.clientName}! Tudo bem? 😊 Aqui é da equipe FastFilms.`,
-            `Recebemos sua solicitação de orçamento e agradecemos pelo seu contato!`,
+            `Olá, equipe da FastFilms! 👋`,
+            `Meu nome é *${structuredData.clientName}* e estou entrando em contato através do site para solicitar um orçamento.`,
             ``,
-            `Vi que você está interessado em nosso serviço de *${structuredData.primaryService}*.`,
-            `Aqui estão os detalhes que resumimos para nossa conversa:`,
-            ...structuredData.keyDetails.map(detail => `- ${detail}`),
-            ``,
-            `Adoraríamos conversar mais para entender todos os detalhes e te ajudar a tirar essa ideia do papel.`,
-            `Quando seria um bom momento para você?`
+            `*Resumo da minha solicitação:*`,
+            `- Serviço de Interesse: *${structuredData.primaryService}*`,
+            `- Tipo de Projeto: ${structuredData.projectType}`,
+            `- Quantidade: ${structuredData.quantity}`,
         ];
+
+        if (structuredData.hasDrone) {
+            messageParts.push(`- Adicional: Incluir filmagem com Drone`);
+        }
+        if (structuredData.recordingDate) {
+            messageParts.push(`- Data Sugerida: ${structuredData.recordingDate}`);
+        }
+        if (structuredData.recordingLocation) {
+            messageParts.push(`- Local Sugerido: ${structuredData.recordingLocation}`);
+        }
+        if (structuredData.isEvent && structuredData.eventDetails) {
+            messageParts.push(`- Detalhes do Evento: ${structuredData.eventDetails}`);
+        }
+
+        if (structuredData.aiSummary && structuredData.aiSummary.length > 0) {
+            messageParts.push(``);
+            messageParts.push(`*Observações que a IA extraiu da minha descrição:*`);
+            structuredData.aiSummary.forEach(detail => {
+                messageParts.push(`- ${detail}`);
+            });
+        }
+        
+        messageParts.push(``);
+        messageParts.push(`Fico no aguardo do contato de vocês para conversarmos mais sobre o projeto. Obrigado!`);
+
 
         const finalMessage = messageParts.join('\n');
         const whatsappUrl = `https://wa.me/553172208560?text=${encodeURIComponent(finalMessage)}`;
