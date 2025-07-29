@@ -201,10 +201,10 @@ export default function Home() {
             </div>
             <Link href="/sobre" passHref>
               <Button asChild className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-16">
-                <a>
+                <span>
                   Ver toda a equipe
                   <ArrowRight className="ml-2 h-5 w-5" />
-                </a>
+                </span>
               </Button>
             </Link>
           </div>
@@ -276,4 +276,5 @@ export default function Home() {
   );
 }
 
+    
     
