@@ -37,13 +37,15 @@ export default function WorkstationCard({ title, description, specs, imageUrl, d
             />
           </div>
         )}
-        <ul className="space-y-3">
+        <ul className="space-y-4">
           {specs.map((spec, index) => (
             <React.Fragment key={index}>
-              <li className="flex items-center gap-4 text-sm">
-                <spec.icon className="h-5 w-5 text-primary flex-shrink-0" />
-                <span className="font-semibold text-muted-foreground w-2/5">{spec.label}</span>
-                <span className="text-foreground text-right w-3/5">{spec.value}</span>
+              <li className="flex items-start gap-4 text-sm">
+                <spec.icon className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
+                <div className="flex flex-col">
+                  <span className="font-semibold text-foreground">{spec.label}</span>
+                  <span className="text-muted-foreground">{spec.value}</span>
+                </div>
               </li>
               {index < specs.length - 1 && <hr className="border-border/50" />}
             </React.Fragment>

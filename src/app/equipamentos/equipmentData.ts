@@ -21,7 +21,7 @@ import {
 
 export const workstationData = [
   {
-    title: 'Performance AMD',
+    title: 'Workstation de Edição',
     description: 'Montado para renderização pesada e multitarefa intensiva, garantindo fluidez em 4K.',
     specs: [
       { icon: Cpu, label: 'Processador', value: 'Ryzen 5 5600G' },
@@ -36,7 +36,7 @@ export const workstationData = [
     ],
   },
   {
-    title: 'Eficiência Intel',
+    title: 'Workstation Multitarefa',
     description: 'Focado em estabilidade e velocidade de resposta para edições ágeis e gerenciamento de projetos.',
     specs: [
       { icon: Cpu, label: 'Processador', value: 'Intel Core i5 12400F' },
