@@ -54,7 +54,7 @@ const teamData = {
     },
     {
         name: 'Pedro P.',
-        role: 'Filmmaker',
+        role: 'Filmaker',
         imageUrl: 'https://placehold.co/400x400.png',
         dataAiHint: 'person portrait',
     },
@@ -96,6 +96,7 @@ export default function SobrePage() {
                 <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">CADA UM COM SUA ESPECIALIDADE</p>
                 <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight relative pb-4 inline-block">
                     Mas todo mundo <span className="text-primary">resolve</span>.
+                    <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-primary"></span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
                     Tem quem grava, quem edita, quem anima. Mas na dúvida, todo mundo põe a mão onde for preciso.
