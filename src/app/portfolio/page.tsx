@@ -80,10 +80,6 @@ export default function PortfolioPage() {
                   <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <PlayCircle className="h-20 w-20 text-white drop-shadow-lg" />
                   </div>
-
-                  <div className="absolute bottom-0 left-0 p-6">
-                    <p className="text-white font-bold text-lg drop-shadow-md">{project.title}</p>
-                  </div>
                 </Card>
               </Link>
             ))}
