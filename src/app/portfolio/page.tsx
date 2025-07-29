@@ -35,6 +35,12 @@ const portfolioProjects = [
         videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
         dataAiHint: 'real estate videography',
     },
+    {
+        title: 'Dia de gravação no Condomínio Estância das Amendoeiras',
+        imageUrl: '/index/Portfolio/GRAVACAO.png',
+        videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
+        dataAiHint: 'videography session',
+    }
 ];
 
 
