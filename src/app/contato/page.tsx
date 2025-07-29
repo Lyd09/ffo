@@ -181,6 +181,15 @@ export default function ContatoPage() {
 
         console.log("Resposta da IA recebida no Frontend:", response);
 
+        if (!response) {
+            toast.error("A IA não retornou uma mensagem.", {
+                id: toastId,
+                description: "Por favor, verifique os dados e tente novamente ou contate o suporte.",
+            });
+            setIsLoading(false);
+            return;
+        }
+
         const whatsappUrl = `https://wa.me/553172208560?text=${encodeURIComponent(response)}`;
         
         toast.success("Mensagem gerada com sucesso!", {
