@@ -9,16 +9,16 @@ export const metadata: Metadata = {
 };
 
 const teamData = {
-  direction: [
+  founders: [
     {
       name: 'Samuel',
-      role: 'Diretor Criativo',
+      role: 'Co-Fundador & Diretor Criativo',
       imageUrl: '/index/Equipe/samuel.jpg',
       dataAiHint: 'man portrait',
     },
     {
       name: 'Kléuver',
-      role: 'Diretor de Produção',
+      role: 'Co-Fundador & Diretor de Produção',
       imageUrl: '/index/Equipe/kleuver.png',
       dataAiHint: 'man portrait',
     },
@@ -47,8 +47,8 @@ const teamData = {
   ],
   filmmakers: [
     {
-        name: 'Clécio Filmaker',
-        role: 'Filmmaker',
+        name: 'Clécio',
+        role: 'Filmaker',
         imageUrl: 'https://placehold.co/400x400.png',
         dataAiHint: 'person portrait',
     },
@@ -59,22 +59,13 @@ const teamData = {
         dataAiHint: 'person portrait',
     },
   ],
-  development: [
-    {
-        name: 'Associado(a) Dev',
-        role: 'Desenvolvedor(a) de Software',
-        imageUrl: 'https://placehold.co/400x400.png',
-        dataAiHint: 'person portrait',
-    }
-  ]
 };
 
 const sectionTitles: { [key: string]: string } = {
-    direction: 'Direção',
+    founders: 'Fundadores',
     paidTraffic: 'Tráfego Pago',
     editors: 'Editores',
     filmmakers: 'Filmmakers',
-    development: 'Desenvolvimento'
 };
 
 const ProfileCard = ({ name, role, imageUrl, dataAiHint }: { name: string; role: string; imageUrl: string; dataAiHint: string; }) => (
