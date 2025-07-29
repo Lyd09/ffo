@@ -35,7 +35,7 @@ export default function MainLayout({
 
   const navLinks = [
     { href: '/', label: 'Início' },
-    { href: '/sobre', label: 'Sobre' },
+    { href: '/#equipe', label: 'Sobre' },
     { href: '/#servicos', label: 'Serviços' },
     { href: '/portfolio', label: 'Portfólio' },
     { href: '/#associados', label: 'Associados' },

@@ -23,29 +23,41 @@ const teamData = {
       dataAiHint: 'man portrait',
     },
   ],
-  production: [
+  paidTraffic: [
     {
-      name: 'Associado(a) Produção',
-      role: 'Produção',
+      name: 'Kênia Michelle',
+      role: 'Gerente de Tráfego Pago',
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'person portrait',
     },
   ],
-  photography: [
+  editors: [
     {
-      name: 'Associado(a) Fotografia',
-      role: 'Diretor de Fotografia',
+      name: 'Eduardo',
+      role: 'Editor de Vídeo',
+      imageUrl: 'https://placehold.co/400x400.png',
+      dataAiHint: 'person portrait',
+    },
+    {
+      name: 'Pedro C.',
+      role: 'Editor de Vídeo',
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'person portrait',
     },
   ],
-  drone: [
+  filmmakers: [
     {
-        name: 'Associado(a) Drone',
-        role: 'Piloto de Drone',
+        name: 'Clécio Filmaker',
+        role: 'Filmmaker',
         imageUrl: 'https://placehold.co/400x400.png',
         dataAiHint: 'person portrait',
-    }
+    },
+    {
+        name: 'Pedro P.',
+        role: 'Filmmaker',
+        imageUrl: 'https://placehold.co/400x400.png',
+        dataAiHint: 'person portrait',
+    },
   ],
   development: [
     {
@@ -59,9 +71,9 @@ const teamData = {
 
 const sectionTitles: { [key: string]: string } = {
     direction: 'Direção',
-    production: 'Produção',
-    photography: 'Fotografia',
-    drone: 'Operação de Drone',
+    paidTraffic: 'Tráfego Pago',
+    editors: 'Editores',
+    filmmakers: 'Filmmakers',
     development: 'Desenvolvimento'
 };
 
@@ -109,7 +121,7 @@ export default function SobrePage() {
                             {sectionTitles[sectionKey]}
                             <span className="absolute -bottom-2 left-0 w-1/2 h-0.5 bg-primary"></span>
                         </h2>
-                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
                             {members.map(member => (
                                 <ProfileCard key={member.name} {...member} />
                             ))}

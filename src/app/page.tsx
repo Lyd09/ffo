@@ -1,5 +1,4 @@
 
-
 'use client';
 
 import Image from 'next/image';
@@ -182,7 +181,6 @@ export default function Home() {
                 />
                 <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
                 <p className="text-muted-foreground text-center">
-                  Co-Fundador &<br />
                   Diretor Criativo
                 </p>
               </div>
@@ -197,15 +195,18 @@ export default function Home() {
                 />
                 <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
                 <p className="text-muted-foreground text-center">
-                  Co-Fundador &<br />
                   Diretor de Produção
                 </p>
               </div>
             </div>
-            <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-16">
-              Ver toda a equipe
-              <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
+            <Link href="/sobre" passHref>
+              <Button asChild className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-16">
+                <a>
+                  Ver toda a equipe
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </a>
+              </Button>
+            </Link>
           </div>
         </section>
 
@@ -274,4 +275,3 @@ export default function Home() {
     </MainLayout>
   );
 }
-
