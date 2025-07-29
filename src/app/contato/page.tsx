@@ -54,6 +54,9 @@ const formSchema = z.object({
   projectType: z.enum(["reels", "youtube", "institucional", "casamento", "outro"], {
     required_error: "Você precisa selecionar um tipo de projeto.",
   }),
+  quantity: z.coerce.number().min(1, {
+    message: "A quantidade deve ser de pelo menos 1.",
+  }),
   recordingDate: z.date().optional(),
   recordingLocation: z.string().optional(),
   isEvent: z.boolean().default(false),
@@ -97,6 +100,7 @@ type GenerateWhatsAppMessageInput = {
     serviceType: "gravacao" | "producao" | "edicao" | "drone" | "software" | "site" | "outro";
     droneOption?: boolean | undefined;
     projectType: "reels" | "youtube" | "institucional" | "casamento" | "outro";
+    quantity: number;
     recordingDate?: string | undefined;
     recordingLocation?: string | undefined;
     isEvent: boolean;
@@ -133,6 +137,7 @@ export default function ContatoPage() {
       name: "",
       email: "",
       phone: "",
+      quantity: 1,
       projectDetails: "",
       references: "",
       isEvent: false,
@@ -156,6 +161,7 @@ export default function ContatoPage() {
         phone: "11999998888",
         serviceType: "producao",
         projectType: "institucional",
+        quantity: 5,
         droneOption: true,
         recordingDate: new Date(),
         recordingLocation: "São Paulo, SP",
@@ -179,6 +185,7 @@ export default function ContatoPage() {
             phone: values.phone,
             serviceType: values.serviceType,
             projectType: values.projectType,
+            quantity: values.quantity,
             isEvent: values.isEvent,
             projectDetails: values.projectDetails,
             ...(values.droneOption && { droneOption: values.droneOption }),
@@ -190,7 +197,7 @@ export default function ContatoPage() {
 
         const response = await generateWhatsAppMessage(aiInput);
 
-        const whatsappUrl = `https://wa.me/55${values.phone.replace(/\D/g, '')}?text=${encodeURIComponent(response)}`;
+        const whatsappUrl = `https://wa.me/553172208560?text=${encodeURIComponent(response)}`;
         
         toast.success("Mensagem gerada com sucesso!", {
             id: toastId,
@@ -328,36 +335,51 @@ export default function ContatoPage() {
                         </FormItem>
                       )}
                     />
-                    {showDroneOption && (
-                        <FormField
-                            control={form.control}
-                            name="droneOption"
-                            render={({ field }) => (
-                                <FormItem className="flex flex-row items-center space-x-3 rounded-md border p-4 justify-center">
-                                  <FormControl>
-                                      <Checkbox
-                                      checked={field.value}
-                                      onCheckedChange={field.onChange}
-                                      id="drone-option"
-                                      disabled={isLoading}
-                                      />
-                                  </FormControl>
-                                  <div className="grid gap-1.5 leading-none">
-                                      <label
-                                      htmlFor="drone-option"
-                                      className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
-                                      >
-                                      Incluir captação com drone?
-                                      </label>
-                                      <p className="text-sm text-muted-foreground">
-                                       Adiciona um custo extra ao orçamento.
-                                      </p>
-                                  </div>
-                                </FormItem>
-                            )}
-                        />
-                    )}
+                    <FormField
+                      control={form.control}
+                      name="quantity"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Quantidade</FormLabel>
+                          <FormControl>
+                            <Input type="number" min="1" placeholder="Nº de vídeos" {...field} disabled={isLoading} />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
                  </div>
+                 {showDroneOption && (
+                        <div className="pt-4">
+                            <FormField
+                                control={form.control}
+                                name="droneOption"
+                                render={({ field }) => (
+                                    <FormItem className="flex flex-row items-center space-x-3 rounded-md border p-4 justify-center">
+                                      <FormControl>
+                                          <Checkbox
+                                          checked={field.value}
+                                          onCheckedChange={field.onChange}
+                                          id="drone-option"
+                                          disabled={isLoading}
+                                          />
+                                      </FormControl>
+                                      <div className="grid gap-1.5 leading-none">
+                                          <label
+                                          htmlFor="drone-option"
+                                          className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+                                          >
+                                          Incluir captação com drone?
+                                          </label>
+                                          <p className="text-sm text-muted-foreground">
+                                           Adiciona um custo extra ao orçamento.
+                                          </p>
+                                      </div>
+                                    </FormItem>
+                                )}
+                            />
+                        </div>
+                    )}
                  {showRecordingFields && (
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <FormField

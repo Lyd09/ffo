@@ -17,6 +17,7 @@ const GenerateWhatsAppMessageInputSchema = z.object({
   serviceType: z.enum(["gravacao", "producao", "edicao", "drone", "software", "site", "outro"]).describe('The type of service the client is interested in.'),
   droneOption: z.boolean().optional().describe('Whether the client wants to include drone footage (only for "producao" service).'),
   projectType: z.enum(["reels", "youtube", "institucional", "casamento", "outro"]).describe('The type of project the client has in mind.'),
+  quantity: z.number().describe('The quantity of videos or items for the project.'),
   recordingDate: z.string().optional().describe('The preferred date for recording (if applicable). Format: dd/MM/yyyy.'),
   recordingLocation: z.string().optional().describe('The location for the recording (if applicable).'),
   isEvent: z.boolean().describe('Whether the project is for a specific event.'),
@@ -61,11 +62,12 @@ A mensagem deve ser:
 - Use emojis de forma moderada e profissional para tornar a mensagem mais amigável.
 
 Exemplo de estrutura:
-"Olá, [Nome]! Tudo bem? 😊 Aqui é da FastFilms. Recebemos sua solicitação de orçamento e agradecemos pelo seu contato!
+"Olá, [Nome]! Tudo bem? 😊 Aqui é da FastFilms. Recebemos sua solicitação de orçamento para o cliente [Nome] e agradecemos pelo seu contato!
 
 Vi que você está interessado em um projeto de [Tipo de Serviço] para [Tipo de Projeto].
 
 Aqui estão os detalhes que anotei:
+- Quantidade: [Quantidade]
 - ...
 - ...
 
@@ -80,6 +82,7 @@ Dados do Cliente:
 - Tipo de Serviço: {{{serviceType}}}
 {{#if droneOption}}- Opção de Drone: Sim{{/if}}
 - Tipo de Projeto: {{{projectType}}}
+- Quantidade: {{{quantity}}}
 {{#if recordingDate}}- Data da Gravação: {{{recordingDate}}}{{/if}}
 {{#if recordingLocation}}- Local da Gravação: {{{recordingLocation}}}{{/if}}
 {{#if isEvent}}- É um evento? Sim
