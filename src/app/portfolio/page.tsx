@@ -13,26 +13,26 @@ export const metadata: Metadata = {
 const portfolioProjects = [
     {
         title: 'Evento em Lagoa Santa/MG - powered by Housi',
-        imageUrl: '/index/Portfolio/CASA_INVESTIMENTO.png',
+        imageUrl: '/index/Portfolio/INVESTIMENTO.png',
         videoUrl: 'https://www.instagram.com/reel/DLaHI3LuUg7/?utm_source=ig_web_copy_link&igsh=MXdqazN3cmpnejVxMA==',
         dataAiHint: 'corporate event',
     },
     {
         title: 'Vídeo "Onde o tempo respira" para Fazenda do Moinho',
-        imageUrl: '/index/Portfolio/CASA_RESPIRA.png',
-        videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
+        imageUrl: '/index/Portfolio/RESPIRA.png',
+        videoUrl: 'https://www.instagram.com/p/DLSZ3--u8Ze/',
         dataAiHint: 'nature cinematic',
     },
     {
         title: 'Gravação de uma casa de R$15.000.000,00 no Condomínio Estâncias das Amendoeiras',
-        imageUrl: '/index/Portfolio/CASA_IMOBILIARIO.png',
-        videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
+        imageUrl: '/index/Portfolio/CASA-15M.png',
+        videoUrl: 'https://www.instagram.com/p/DGipg9IRg5g/',
         dataAiHint: 'luxury real estate',
     },
     {
         title: 'Gravação no mercado imobiliário no Condomínio Retiro das Águas',
-        imageUrl: '/index/Portfolio/CASA_GRAVACAO.png',
-        videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
+        imageUrl: '/index/Portfolio/IMOBILIARIO.png',
+        videoUrl: 'https://www.instagram.com/p/DHlmBdQRDy3/',
         dataAiHint: 'real estate videography',
     },
     {
