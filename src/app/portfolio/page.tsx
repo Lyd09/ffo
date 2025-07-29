@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -30,7 +31,7 @@ const portfolioProjects = [
     },
     {
         title: 'Gravação no mercado imobiliário no Condomínio Retiro das Águas',
-        imageUrl: '/index/Portfolio/CASA_GRAVACAO.png', // Corrected image name
+        imageUrl: '/index/Portfolio/CASA_GRAVACAO.png',
         videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
         dataAiHint: 'real estate videography',
     },
@@ -42,10 +43,12 @@ export default function PortfolioPage() {
     <>
       <section className="py-20 sm:py-24 text-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">NOSSO PORTFÓLIO</p>
+            <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight relative pb-4 inline-block">
                 Nosso <span className="text-primary">Portfólio</span>
+                <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-primary"></span>
             </h1>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
                 Explore alguns dos nossos trabalhos recentes e veja como transformamos ideias em vídeos impactantes.
             </p>
         </div>
