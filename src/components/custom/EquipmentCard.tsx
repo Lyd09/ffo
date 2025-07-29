@@ -17,10 +17,12 @@ export default function EquipmentCard({ icon: Icon, name, imageUrl, dataAiHint, 
   return (
     <Card className="overflow-hidden text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/20 hover:shadow-lg bg-secondary/30 border-border">
       <CardHeader className="items-center pb-4">
-          <div className="bg-primary/10 text-primary p-3 rounded-xl mb-2">
-            <Icon className="h-8 w-8" />
+          <div className="flex items-center gap-4">
+            <div className="bg-primary/10 text-primary p-3 rounded-xl">
+                <Icon className="h-8 w-8" />
+            </div>
+            <CardTitle className="text-2xl text-left">{name}</CardTitle>
           </div>
-          <CardTitle className="text-xl">{name}</CardTitle>
       </CardHeader>
       <CardContent>
         <div className="relative aspect-square w-full mb-4">

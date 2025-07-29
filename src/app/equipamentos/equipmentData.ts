@@ -17,12 +17,13 @@ import {
   Layers,
   Sparkles,
   Image as ImageIcon,
+  Axis3d,
 } from 'lucide-react';
 
 export const workstationData = [
   {
-    title: 'Workstation AMD Ryzen 5 5600G',
-    description: 'Montado para renderização pesada e multitarefa intensiva, garantindo fluidez em 4K.',
+    title: 'AMD Workstation',
+    description: 'Performance AMD para edição e renderização pesada.',
     specs: [
       { icon: Cpu, label: 'Processador', value: 'Ryzen 5 5600G' },
       { icon: Video, label: 'Placa de Vídeo', value: 'INNO3D NVIDIA GeForce RTX 4060 COMPACT 8GB' },
@@ -36,8 +37,8 @@ export const workstationData = [
     ],
   },
   {
-    title: 'Workstation Intel Core i5 12400F',
-    description: 'Focado em estabilidade e velocidade de resposta para edições ágeis e gerenciamento de projetos.',
+    title: 'Intel Workstation',
+    description: 'Agilidade Intel para um fluxo de trabalho criativo e versátil.',
     specs: [
       { icon: Cpu, label: 'Processador', value: 'Intel Core i5 12400F' },
       { icon: Video, label: 'Placa de Vídeo', value: 'NVIDIA GeForce RTX 4060' },
@@ -51,10 +52,10 @@ export const workstationData = [
     ],
   },
   {
-    title: 'Samsung Galaxy Book4 (Core i5)',
+    title: 'Galaxy Workstation',
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'samsung laptop',
-    description: 'A workstation portátil para edições em campo e apresentações, sem sacrificar performance.',
+    description: 'Samsung Galaxy Book4: Mobilidade e performance para gravações e edições em campo.',
     specs: [
       { icon: Cpu, label: 'Processador', value: 'Intel Core i5-120U' },
       { icon: Video, label: 'Placa de Vídeo', value: 'NVIDIA GeForce MX570 (Dedicada)' },
@@ -64,10 +65,10 @@ export const workstationData = [
     ],
   },
   {
-    title: 'MacBook Air (Apple M1)',
+    title: 'Apple Workstation',
     imageUrl: 'https://placehold.co/600x400.png',
     dataAiHint: 'macbook air',
-    description: 'O padrão de mercado para agilidade, design e integração perfeita com softwares criativos.',
+    description: 'MacBook Air M1: A eficiência e o ecossistema Apple para edições e gerenciamento de projetos em qualquer lugar',
     specs: [
       { icon: Cpu, label: 'Processador', value: 'Apple M1 (8-core CPU)' },
       { icon: Video, label: 'GPU', value: 'GPU de 7 núcleos (Integrada)' },
@@ -89,7 +90,7 @@ export const fieldEquipmentData = [
   },
   {
     category: 'Áudio',
-    icon: Radio,
+    icon: Mic,
     name: 'Hollyland LARK M2',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'wireless microphone',
@@ -97,7 +98,7 @@ export const fieldEquipmentData = [
   },
   {
     category: 'Estabilização',
-    icon: Videotape,
+    icon: Axis3d,
     name: 'Gimbal Scorp Mini',
     imageUrl: 'https://placehold.co/400x400.png',
     dataAiHint: 'camera gimbal',
@@ -108,24 +109,28 @@ export const fieldEquipmentData = [
 export const softwareData = [
     {
       name: 'Adobe Premiere Pro',
+      icon: Scissors,
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'software logo',
       description: 'Se tem play no final, é porque teve Premiere no começo.',
     },
     {
       name: 'Adobe After Effects',
+      icon: Sparkles,
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'software logo',
       description: 'A mágica visual que o público vê, mas não imagina como foi feita.',
     },
     {
       name: 'Adobe Photoshop',
+      icon: Layers,
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'software logo',
       description: 'Para deixar tudo exatamente como imaginamos — ou melhor.',
     },
     {
       name: 'Adobe Lightroom',
+      icon: ImageIcon,
       imageUrl: 'https://placehold.co/400x400.png',
       dataAiHint: 'software logo',
       description: 'Um toque nas cores, um ajuste na luz — e pronto: identidade.',

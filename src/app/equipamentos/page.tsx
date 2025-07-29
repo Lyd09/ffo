@@ -10,19 +10,12 @@ import WorkstationCard from '@/components/custom/WorkstationCard';
 import EquipmentCard from '@/components/custom/EquipmentCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Package, Scissors, Sparkles, Layers, Image as ImageIcon } from 'lucide-react';
+import { Package } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Equipamentos - FastFilms',
   description:
     'Conheça nosso arsenal técnico. Equipamentos de ponta para garantir a máxima qualidade em cada projeto.',
-};
-
-const softwareIcons = {
-    'Adobe Premiere Pro': Scissors,
-    'Adobe After Effects': Sparkles,
-    'Adobe Photoshop': Layers,
-    'Adobe Lightroom': ImageIcon,
 };
 
 export default function EquipamentosPage() {
@@ -57,7 +50,7 @@ export default function EquipamentosPage() {
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto mt-4">
-              As ferramentas que usamos na linha de frente para garantir a captura perfeita em qualquer situação.
+              Câmeras afiadas, áudio cristalino e softwares que fazem tudo ganhar forma e ritmo.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -84,22 +77,24 @@ export default function EquipamentosPage() {
                   <CardContent className="p-8">
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 justify-items-center">
                       {softwareData.map((soft) => {
-                          const Icon = softwareIcons[soft.name as keyof typeof softwareIcons];
+                          const Icon = soft.icon;
                           return (
                               <div key={soft.name} className="flex flex-col items-center text-center gap-4">
-                                  <div className="bg-primary/10 text-primary p-3 rounded-xl mb-2">
-                                      <Icon className="h-8 w-8" />
+                                  <div className="flex items-center gap-4 mb-2">
+                                    <div className="bg-primary/10 text-primary p-3 rounded-xl">
+                                        <Icon className="h-8 w-8" />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-left">{soft.name}</h3>
                                   </div>
                                   <div className="relative aspect-square w-32 mb-2">
                                       <Image
                                       src={soft.imageUrl}
                                       alt={soft.name}
                                       fill
-                                      className="object-contain"
+                                      className="object-contain rounded-full"
                                       data-ai-hint={soft.dataAiHint}
                                       />
                                   </div>
-                                  <h3 className="text-lg font-bold">{soft.name}</h3>
                                   <p className="text-muted-foreground text-sm">{soft.description}</p>
                               </div>
                           );
