@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -185,10 +184,6 @@ export default function MainLayout({
           <Separator className="my-6 bg-border/50" />
           <div className="text-center text-muted-foreground text-sm flex justify-center items-center gap-4">
             <span>© {new Date().getFullYear()} FastFilms. Todos os direitos reservados.</span>
-            <Link href="/discussao" className="text-xs hover:text-primary transition-colors flex items-center gap-1">
-                <MessageSquareQuote className="h-3 w-3" />
-                Discussão de Design
-            </Link>
           </div>
         </div>
       </footer>
