@@ -27,36 +27,36 @@ const teamData = {
     {
       name: 'Kênia Michelle',
       role: 'Gerente de Tráfego Pago',
-      imageUrl: 'https://placehold.co/400x400.png',
-      dataAiHint: 'person portrait',
+      imageUrl: '/index/Equipe/guess.svg',
+      dataAiHint: 'person portrait placeholder',
     },
   ],
   editors: [
     {
       name: 'Eduardo',
       role: 'Editor de Vídeo',
-      imageUrl: 'https://placehold.co/400x400.png',
-      dataAiHint: 'person portrait',
+      imageUrl: '/index/Equipe/guess.svg',
+      dataAiHint: 'person portrait placeholder',
     },
     {
       name: 'Pedro C.',
       role: 'Editor de Vídeo',
-      imageUrl: 'https://placehold.co/400x400.png',
-      dataAiHint: 'person portrait',
+      imageUrl: '/index/Equipe/guess.svg',
+      dataAiHint: 'person portrait placeholder',
     },
   ],
   filmmakers: [
     {
         name: 'Clécio',
         role: 'Filmaker',
-        imageUrl: 'https://placehold.co/400x400.png',
-        dataAiHint: 'person portrait',
+        imageUrl: '/index/Equipe/guess.svg',
+        dataAiHint: 'person portrait placeholder',
     },
     {
         name: 'Pedro P.',
         role: 'Filmaker',
-        imageUrl: 'https://placehold.co/400x400.png',
-        dataAiHint: 'person portrait',
+        imageUrl: '/index/Equipe/guess.svg',
+        dataAiHint: 'person portrait placeholder',
     },
   ],
 };
