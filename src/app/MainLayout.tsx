@@ -37,10 +37,9 @@ export default function MainLayout({
     { href: '/', label: 'Início' },
     { href: '/#equipe', label: 'Sobre' },
     { href: '/#servicos', label: 'Serviços' },
-    { href: '/portfolio', label: 'Portfólio' },
     { href: '/#equipamentos', label: 'Equipamentos' },
     { href: '/#associados', label: 'Associados' },
-    { href: '/contato', label: 'Contato' },
+    { href: '/#contato', label: 'Contato' },
   ];
 
   return (
