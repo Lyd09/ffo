@@ -35,7 +35,7 @@ export default function Home() {
                 Se o visual prende, o som envolve. E a gente trata os dois com o mesmo cuidado. Afinal, audiovisual é uma experiência completa.
               </p>
               <div className="flex items-center space-x-4">
-                <Link href="/#equipe">
+                <Link href="/#servicos">
                   <LearnMoreButton />
                 </Link>
               </div>
@@ -185,7 +185,7 @@ export default function Home() {
                 />
                 <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
                 <p className="text-muted-foreground text-center">
-                  Co-Fundador & <br /> Diretor Criativo
+                  Co-Fundador &lt;br /&gt; Diretor Criativo
                 </p>
               </div>
               <div className="flex flex-col items-center">
@@ -199,7 +199,7 @@ export default function Home() {
                 />
                 <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
                 <p className="text-muted-foreground text-center">
-                  Co-Fundador & <br /> Diretor de Produção
+                  Co-Fundador &lt;br /&gt; Diretor de Produção
                 </p>
               </div>
             </div>
@@ -279,3 +279,5 @@ export default function Home() {
     </MainLayout>
   );
 }
+
+    
