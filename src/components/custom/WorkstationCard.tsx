@@ -27,7 +27,7 @@ export default function WorkstationCard({ title, description, specs, imageUrl, d
       </CardHeader>
       <CardContent>
         {imageUrl && (
-          <div className="mb-6 relative aspect-video w-full overflow-hidden rounded-lg">
+          <div className="mb-6 relative aspect-video w-full overflow-hidden rounded-lg drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">
             <Image
               src={imageUrl}
               alt={title as string}
