@@ -27,8 +27,8 @@ const teamData = {
     {
       name: 'Kênia Michelle',
       role: 'Gerente de Tráfego Pago',
-      imageUrl: '/index/Equipe/guess.svg',
-      dataAiHint: 'person portrait placeholder',
+      imageUrl: '/index/Equipe/K-MICHELLE.jpg',
+      dataAiHint: 'woman portrait',
     },
   ],
   editors: [
