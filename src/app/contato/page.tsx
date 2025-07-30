@@ -35,7 +35,6 @@ import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
 import { summarizeAndStructureInquiry } from '@/ai/flows/summarize-flow';
-import MainLayout from '../MainLayout';
 
 // Schema for the structured output we want from the AI, defined in the frontend
 const StructuredInquiryOutputSchema = z.object({
@@ -261,7 +260,6 @@ export default function ContatoPage() {
   }
 
   return (
-    <MainLayout>
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-12 sm:py-16">
         <div className="max-w-5xl w-full mx-auto">
           <div className="text-center mb-10">
@@ -581,7 +579,6 @@ export default function ContatoPage() {
           </div>
         </div>
       </main>
-    </MainLayout>
   );
 }
 
