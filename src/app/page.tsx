@@ -57,7 +57,7 @@ export default function Home() {
                 <span className="absolute bottom-0 left-0 w-[21.75rem] h-1 bg-primary"></span>
               </h2>
               <p className="text-muted-foreground leading-relaxed mt-8">
-                Da concepção à entrega final, oferecemos um leque completo de serviços audiovisuais e digitais para garantir que seu projeto tenha o impacto que merece.
+                Aqui, sua ideia ganha vida em cada frame, e a cada edição transformamos seu projeto em algo que vai fazer todo mundo pedir mais.
               </p>
               <Link href="/portfolio">
                 <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-8">
@@ -285,3 +285,4 @@ export default function Home() {
     
 
     
+
