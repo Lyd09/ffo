@@ -159,24 +159,6 @@ export default function ContatoPage() {
   const showDroneOption = serviceType === 'producao';
   const showEventSwitch = serviceType !== 'site' && serviceType !== 'software';
 
-  function handlePrefill() {
-    form.reset({
-        name: "Cliente Teste",
-        email: "teste@fastfilms.com",
-        phone: "11999998888",
-        serviceType: "producao",
-        projectType: "institucional",
-        quantity: 5,
-        droneOption: true,
-        recordingDate: new Date(),
-        recordingLocation: "São Paulo, SP",
-        isEvent: false,
-        eventDescription: "",
-        projectDetails: "Queria fazer um vídeo diferente para a minha marca. Pensei em algo moderno, com uma pegada cinematográfica, talvez mostrando um pouco dos bastidores. A ideia é postar nas redes, mas quem sabe usar em outros lugares depois. O que vocês sugerem?",
-        references: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-    });
-  }
-
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     const toastId = toast.loading("Analisando sua solicitação...", {
@@ -559,9 +541,6 @@ export default function ContatoPage() {
                   )}
                 />
                 <div className="flex justify-end items-center gap-4">
-                  <Button type="button" variant="outline" size="lg" onClick={handlePrefill} disabled={isLoading}>
-                    Preencher para Teste
-                  </Button>
                   <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-transform hover:scale-105" disabled={isLoading}>
                     {isLoading ? (
                         <>
@@ -583,5 +562,3 @@ export default function ContatoPage() {
       </main>
   );
 }
-
-    
