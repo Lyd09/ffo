@@ -186,7 +186,6 @@ export default function ContatoPage() {
     try {
         const aiInput = {
           ...values,
-          // Format date for the AI
           recordingDate: values.recordingDate ? format(values.recordingDate, "dd/MM/yyyy") : undefined,
         };
 
@@ -206,22 +205,25 @@ export default function ContatoPage() {
             `Meu nome é *${structuredData.clientName}* e estou entrando em contato através do site para solicitar um orçamento.`,
             ``,
             `*Resumo da minha solicitação:*`,
-            `- Serviço de Interesse: *${structuredData.primaryService}*`,
-            `- Tipo de Projeto: ${structuredData.projectType}`,
-            `- Quantidade: ${structuredData.quantity}`,
+            `- *Serviço de Interesse:* ${structuredData.primaryService}`,
+            `- *Tipo de Projeto:* ${structuredData.projectType}`,
+            `- *Quantidade:* ${structuredData.quantity}`,
         ];
 
         if (structuredData.hasDrone) {
-            messageParts.push(`- Adicional: Incluir filmagem com Drone`);
+            messageParts.push(`- *Adicional:* Incluir filmagem com Drone`);
         }
         if (structuredData.recordingDate) {
-            messageParts.push(`- Data Sugerida: ${structuredData.recordingDate}`);
+            messageParts.push(`- *Data Sugerida:* ${structuredData.recordingDate}`);
         }
         if (structuredData.recordingLocation) {
-            messageParts.push(`- Local Sugerido: ${structuredData.recordingLocation}`);
+            messageParts.push(`- *Local Sugerido:* ${structuredData.recordingLocation}`);
         }
         if (structuredData.isEvent && structuredData.eventDetails) {
-            messageParts.push(`- Detalhes do Evento: ${structuredData.eventDetails}`);
+            messageParts.push(`- *Detalhes do Evento:* ${structuredData.eventDetails}`);
+        }
+        if (values.references) {
+            messageParts.push(`- *Referências:* ${values.references}`);
         }
 
         if (structuredData.aiSummary && structuredData.aiSummary.length > 0) {
