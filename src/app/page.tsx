@@ -32,7 +32,7 @@ export default function Home() {
               <p className="text-sm font-semibold mb-5 tracking-wider uppercase text-white">VÍDEO É MAIS QUE IMAGEM</p>
               <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight text-primary">EDIÇÃO</h1>
               <p className="text-sm font-normal mb-8 max-w-md leading-relaxed">
-                Se o visual prende, o som envolve. E a gente trata os dois com o mesmo cuidado. Afinal, audiovisual é uma experiência completa.
+                O visual chama, o som envolve, mas a edição é quem cria o ritmo e a narrativa. Audiovisual é a magia que une o que vemos e ouvimos.
               </p>
               <div className="flex items-center space-x-4">
                 <Link href="/#servicos">
@@ -279,5 +279,7 @@ export default function Home() {
     </MainLayout>
   );
 }
+
+    
 
     
