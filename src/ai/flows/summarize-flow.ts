@@ -99,18 +99,38 @@ const summarizeFlow = ai.defineFlow(
       projectType: projectTypeMap[input.projectType as keyof typeof projectTypeMap] || input.projectType,
     };
 
-    const { output } = await summarizePrompt(mappedInput);
-    
-    if (!output) {
-      throw new Error("The AI failed to return a structured summary.");
-    }
+    const maxRetries = 3;
+    let attempt = 0;
+    let delay = 1000; // start with 1 second
 
-    // Pass the original date and location from the input to ensure they are not lost
-    return {
-        ...output,
-        recordingDate: input.recordingDate,
-        recordingLocation: input.recordingLocation,
-    };
+    while (attempt < maxRetries) {
+      try {
+        const { output } = await summarizePrompt(mappedInput);
+        
+        if (!output) {
+          throw new Error("The AI failed to return a structured summary.");
+        }
+    
+        // Pass the original date and location from the input to ensure they are not lost
+        return {
+            ...output,
+            recordingDate: input.recordingDate,
+            recordingLocation: input.recordingLocation,
+        };
+      } catch (error: any) {
+        attempt++;
+        if (attempt >= maxRetries) {
+          console.error(`[AI Flow Error] Failed after ${maxRetries} attempts. Last error:`, error);
+          throw new Error("The AI service is currently unavailable. Please try again later.");
+        }
+        console.warn(`[AI Flow Warning] Attempt ${attempt} failed. Retrying in ${delay}ms. Error:`, error.message);
+        await new Promise(resolve => setTimeout(resolve, delay));
+        delay *= 2; // exponential backoff
+      }
+    }
+    
+    // This part should not be reachable, but as a fallback:
+    throw new Error("The AI service failed to process the request after multiple retries.");
   }
 );
 
