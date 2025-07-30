@@ -5,7 +5,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Briefcase } from 'lucide-react';
+import { Menu, Briefcase, MessageSquareQuote } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import {
   AlertDialog,
@@ -183,8 +183,12 @@ export default function MainLayout({
             </div>
           </div>
           <Separator className="my-6 bg-border/50" />
-          <div className="text-center text-muted-foreground text-sm">
-            © {new Date().getFullYear()} FastFilms. Todos os direitos reservados.
+          <div className="text-center text-muted-foreground text-sm flex justify-center items-center gap-4">
+            <span>© {new Date().getFullYear()} FastFilms. Todos os direitos reservados.</span>
+            <Link href="/discussao" className="text-xs hover:text-primary transition-colors flex items-center gap-1">
+                <MessageSquareQuote className="h-3 w-3" />
+                Discussão de Design
+            </Link>
           </div>
         </div>
       </footer>
