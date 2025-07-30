@@ -27,7 +27,7 @@ const teamData = {
     {
       name: 'Kênia Michelle',
       role: 'Gerente de Tráfego Pago',
-      imageUrl: '/index/Equipe/K-MICHELLE.jpg',
+      imageUrl: '/index/Equipe/K-MICHELLE1.png',
       dataAiHint: 'woman portrait',
     },
   ],
