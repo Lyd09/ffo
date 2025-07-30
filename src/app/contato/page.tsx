@@ -35,6 +35,7 @@ import { cn } from '@/lib/utils';
 import { Checkbox } from '@/components/ui/checkbox';
 import { toast } from 'sonner';
 import { summarizeAndStructureInquiry } from '@/ai/flows/summarize-flow';
+import MainLayout from '../MainLayout';
 
 // Schema for the structured output we want from the AI, defined in the frontend
 const StructuredInquiryOutputSchema = z.object({
@@ -260,22 +261,15 @@ export default function ContatoPage() {
   }
 
   return (
-    <div className="flex flex-col min-h-screen bg-gradient-to-r from-[#121212] via-[#3a2f2f] to-[#121212] text-white">
-      <header className="sticky top-0 z-50 w-full bg-transparent backdrop-blur-sm">
-        <div className="flex items-center justify-between px-8 py-4 max-w-5xl mx-auto w-full">
-          <Link href="/" className="flex items-center gap-2 text-white hover:text-primary transition-colors">
-            <ArrowLeft className="h-5 w-5" />
-            <span>Voltar</span>
-          </Link>
-        </div>
-      </header>
+    <MainLayout>
       <main className="flex-1 flex flex-col items-center justify-center text-center px-4 py-12 sm:py-16">
         <div className="max-w-5xl w-full mx-auto">
           <div className="text-center mb-10">
-              <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight">
+              <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight relative inline-block">
                   Contato <span className="text-primary">Inteligente</span>
+                  <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/3 h-1 bg-primary"></span>
               </h1>
-              <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+              <p className="text-lg text-muted-foreground max-w-3xl mx-auto pt-8">
                   Preencha o formulário abaixo para iniciar seu orçamento. Nossa IA irá analisar sua solicitação para gerar uma mensagem personalizada e agilizar seu atendimento via WhatsApp.
               </p>
           </div>
@@ -587,6 +581,8 @@ export default function ContatoPage() {
           </div>
         </div>
       </main>
-    </div>
+    </MainLayout>
   );
 }
+
+    
