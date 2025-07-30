@@ -10,7 +10,7 @@ import WorkstationCard from '@/components/custom/WorkstationCard';
 import EquipmentCard from '@/components/custom/EquipmentCard';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Package } from 'lucide-react';
+import { PackagePlus } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Equipamentos - FastFilms',
@@ -119,7 +119,7 @@ export default function EquipamentosPage() {
           <div className="flex flex-col items-center text-center">
             <Card className="bg-secondary/30 border-border p-4 inline-flex items-center gap-4 rounded-xl mb-4">
               <div className="bg-primary/10 text-primary p-3 rounded-lg">
-                <Package className="h-8 w-8" />
+                <PackagePlus className="h-8 w-8" />
               </div>
               <h3 className="text-2xl font-bold">E Muito Mais</h3>
             </Card>
