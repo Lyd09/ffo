@@ -131,7 +131,7 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="relative bg-[#121212] py-28 sm:py-32">
+        <section id="equipamentos" className="relative bg-[#121212] py-28 sm:py-32">
           <Image
             src="/index/equipmentWALLPAPER.png"
             alt="Various professional camera equipment on a table"

@@ -25,7 +25,7 @@ export default function EquipmentCard({ icon: Icon, name, imageUrl, dataAiHint, 
           </div>
       </CardHeader>
       <CardContent>
-        <div className="relative aspect-square w-full mb-4">
+        <div className="relative aspect-square w-full mb-4 drop-shadow-[0_4px_4px_rgba(0,0,0,0.4)]">
           <Image
             src={imageUrl}
             alt={name}

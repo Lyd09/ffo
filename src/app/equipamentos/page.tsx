@@ -92,7 +92,7 @@ export default function EquipamentosPage() {
                                     </div>
                                     <h3 className="text-xl font-bold text-left">{soft.name}</h3>
                                   </div>
-                                  <div className="relative aspect-square w-32 mb-2">
+                                  <div className="relative aspect-square w-32 mb-2 drop-shadow-[0_4px_8px_hsl(var(--primary)/0.5)]">
                                       <Image
                                       src={soft.imageUrl}
                                       alt={soft.name}
