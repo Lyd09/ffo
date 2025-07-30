@@ -35,7 +35,7 @@ export default function Home() {
                 Se o visual prende, o som envolve. E a gente trata os dois com o mesmo cuidado. Afinal, audiovisual é uma experiência completa.
               </p>
               <div className="flex items-center space-x-4">
-                <Link href="/portfolio">
+                <Link href="/#equipe">
                   <LearnMoreButton />
                 </Link>
               </div>
