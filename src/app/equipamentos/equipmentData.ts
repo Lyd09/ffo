@@ -66,7 +66,7 @@ export const workstationData = [
   },
   {
     title: 'Apple Workstation',
-    imageUrl: '/index/Equipamentos/Macbook.png',
+    imageUrl: '/index/Equipamentos/2Macbook.png',
     dataAiHint: 'macbook air',
     description: 'MacBook Air M1: A eficiência e o ecossistema Apple para edições e gerenciamento de projetos em qualquer lugar',
     specs: [
