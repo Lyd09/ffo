@@ -67,7 +67,7 @@ export default function ServicosDetalhadosPage() {
             {whyVideoBenefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
-                <Card key={benefit.title} className="bg-secondary border-border text-center p-8">
+                <Card key={benefit.title} className="bg-secondary/30 border-border text-center p-8">
                   <CardContent className="flex flex-col items-center gap-4">
                     <div className="bg-primary/10 text-primary p-4 rounded-xl">
                       <Icon className="h-10 w-10" />
@@ -95,7 +95,7 @@ export default function ServicosDetalhadosPage() {
             <iframe 
               width="100%" 
               height="100%" 
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              src="https://www.youtube.com/embed/K4kzmQ9eP5k" 
               title="YouTube video player" 
               frameBorder="0" 
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
