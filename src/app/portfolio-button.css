@@ -71,3 +71,11 @@
   transform: scaleX(1.4) scaleY(1.6);
   opacity: 0;
 }
+
+.portfolio-btn .arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.portfolio-btn:hover .arrow-icon {
+    transform: translateX(5px);
+}
