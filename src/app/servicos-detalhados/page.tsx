@@ -14,17 +14,17 @@ const whyVideoBenefits = [
   {
     icon: Target,
     title: 'Conecta e Engaja',
-    description: 'Vídeos geram conexões emocionais mais fortes, mantendo seu público engajado por mais tempo.',
+    description: 'Vídeos geram conexões emocionais mais fortes, o que comprovadamente mantém seu público engajado por mais tempo.',
   },
   {
     icon: Sparkles,
     title: 'Aumenta a Conversão',
-    description: 'Páginas com vídeos podem aumentar as taxas de conversão em até 80%. A imagem em movimento vende.',
+    description: 'A imagem em movimento vende. Estudos de mercado mostram que páginas com vídeos tendem a ter taxas de conversão significativamente maiores.',
   },
   {
     icon: Video,
     title: 'Melhora a Retenção',
-    description: 'As pessoas retêm 95% de uma mensagem quando a assistem em um vídeo, em comparação com 10% quando a leem.',
+    description: 'A combinação de imagem e som faz com que sua mensagem seja muito mais memorável do que apenas um texto.',
   },
 ];
 
