@@ -79,14 +79,13 @@ export default function ServicosDetalhadosPage() {
         </div>
       </section>
       
-      {/* Video Player Section */}
       <section className="py-20 sm:py-24 bg-secondary/30">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
             Uma Mensagem dos <span className="text-primary">Fundadores</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-            Ninguém melhor para falar sobre nossa paixão do que <span className="text-primary font-semibold">Samuel</span> e <span className="text-primary font-semibold">Kléuver</span>. Veja o que nos move a transformar ideias em realidade.
+            Ninguém melhor para falar sobre nossa paixão do que <span className="font-semibold text-primary">Samuel</span> e <span className="font-semibold text-primary">Kléuver</span>. Veja o que nos move a transformar ideias em realidade.
           </p>
           <div className="mt-10 aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border">
             <iframe 
@@ -102,7 +101,6 @@ export default function ServicosDetalhadosPage() {
         </div>
       </section>
 
-      {/* Why FastFilms? Section */}
       <section className="py-20 sm:py-24">
         <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">A PARCERIA CERTA</p>
@@ -129,7 +127,6 @@ export default function ServicosDetalhadosPage() {
         </div>
       </section>
       
-      {/* Portfolio CTA Section */}
       <section className="pb-20 sm:pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <Card className="bg-gradient-to-r from-primary via-[#ff6b62] to-[#ff8e88] text-primary-foreground p-10 lg:p-12">
@@ -151,6 +148,27 @@ export default function ServicosDetalhadosPage() {
             </Card>
         </div>
       </section>
+
+      <section id="contato" className="bg-secondary/20 py-20 sm:py-24">
+          <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">VAMOS TIRAR SUA IDEIA DO PAPEL</p>
+            <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
+              Pronto para dar o <span className="text-primary">próximo passo</span>?
+            </h2>
+            <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
+              Você já viu o porquê, agora veja o como. Nossa equipe está pronta para transformar sua visão em um projeto audiovisual de impacto.
+            </p>
+            <div className="flex justify-center items-center gap-4 mt-8">
+              <Link href="/contato" passHref>
+                <button className="contact-button">
+                  <div className="blob1"></div>
+                  <div className="blob2"></div>
+                  <div className="inner">Iniciar Orçamento Inteligente</div>
+                </button>
+              </Link>
+            </div>
+          </div>
+        </section>
     </>
   );
 }
