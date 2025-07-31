@@ -13,18 +13,21 @@ export const metadata: Metadata = {
 const whyVideoBenefits = [
   {
     icon: Target,
-    title: 'Conecta e Engaja',
-    description: 'Vídeos geram conexões emocionais mais fortes, o que comprovadamente mantém seu público engajado por mais tempo.',
+    title: 'Aumenta a Conversão',
+    description: 'Páginas de destino com vídeo podem aumentar as taxas de conversão em mais de 80%.',
+    source: 'Fonte: WordStream',
   },
   {
     icon: Sparkles,
-    title: 'Aumenta a Conversão',
-    description: 'A imagem em movimento vende. Estudos de mercado mostram que páginas com vídeos tendem a ter taxas de conversão significativamente maiores.',
+    title: 'Melhora a Retenção',
+    description: 'Espectadores retêm 95% de uma mensagem ao assisti-la em vídeo, em comparação com 10% ao ler em texto.',
+    source: 'Fonte: Wyzowl',
   },
   {
     icon: Video,
-    title: 'Melhora a Retenção',
-    description: 'A combinação de imagem e som faz com que sua mensagem seja muito mais memorável do que apenas um texto.',
+    title: 'Conecta e Engaja',
+    description: 'Vídeos geram conexões emocionais mais fortes, mantendo seu público engajado e construindo confiança na sua marca.',
+    source: 'Fonte: Forbes',
   },
 ];
 
@@ -46,7 +49,6 @@ const whyFastFilmsPoints = [
 export default function ServicosDetalhadosPage() {
   return (
     <>
-      {/* Hero and Why Video Section */}
       <section className="pt-12 pb-20 sm:pt-16 sm:pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">MAIS QUE IMAGENS, RESULTADOS</p>
@@ -61,14 +63,15 @@ export default function ServicosDetalhadosPage() {
             {whyVideoBenefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
-                <Card key={benefit.title} className="bg-secondary/30 border-border text-center p-8">
-                  <CardContent className="flex flex-col items-center gap-4 p-0">
+                <Card key={benefit.title} className="bg-secondary/30 border-border text-center p-8 flex flex-col">
+                  <CardContent className="flex flex-col items-center gap-4 p-0 flex-grow">
                     <div className="bg-primary/10 text-primary p-4 rounded-xl">
                       <Icon className="h-10 w-10" />
                     </div>
                     <h3 className="text-2xl font-bold">{benefit.title}</h3>
-                    <p className="text-muted-foreground">{benefit.description}</p>
+                    <p className="text-muted-foreground flex-grow">{benefit.description}</p>
                   </CardContent>
+                  <p className="text-xs text-muted-foreground/50 mt-4">{benefit.source}</p>
                 </Card>
               );
             })}
