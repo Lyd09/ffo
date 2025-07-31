@@ -1,10 +1,10 @@
 
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check, ArrowRight, Video, Target, Sparkles } from 'lucide-react';
 import SparkleButton from '@/components/custom/SparkleButton';
+import PortfolioButton from '@/components/custom/PortfolioButton';
 
 export const metadata: Metadata = {
   title: 'O Poder do Vídeo - FastFilms',
@@ -137,13 +137,10 @@ export default function ServicosDetalhadosPage() {
                         <p className="mt-2 text-lg opacity-90 max-w-2xl">Veja como aplicamos tudo isso na prática. Explore nossos projetos e descubra o padrão de qualidade da FastFilms.</p>
                     </div>
                     <Link href="/portfolio" passHref>
-                        <Button
-                            size="lg"
-                            className="bg-white text-primary hover:bg-gray-200 font-bold transition-transform hover:scale-105 flex-shrink-0"
-                        >
+                        <PortfolioButton>
                             Ver nosso Portfólio
                             <ArrowRight className="ml-2 h-5 w-5" />
-                        </Button>
+                        </PortfolioButton>
                     </Link>
                 </div>
             </Card>
@@ -154,8 +151,8 @@ export default function ServicosDetalhadosPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">VAMOS TIRAR SUA IDEIA DO PAPEL</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
-              Vamos <span className="text-primary">começar</span>?
-              <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
+                Vamos <span className="text-primary">começar</span>?
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
               Você já viu o porquê, agora veja o como. Nossa equipe está pronta para transformar sua visão em um projeto audiovisual de impacto.
