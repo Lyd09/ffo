@@ -46,9 +46,9 @@ const whyFastFilmsPoints = [
 export default function ServicosDetalhadosPage() {
   return (
     <>
-      {/* Hero Section */}
-      <section className="pt-12 pb-20 sm:pt-16 sm:pb-24 text-center">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      {/* Hero and Why Video Section */}
+      <section className="pt-12 pb-20 sm:pt-16 sm:pb-24">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">MAIS QUE IMAGENS, RESULTADOS</p>
           <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight relative pb-4 inline-block">
             Por que investir em <span className="text-primary">Vídeo</span>?
@@ -57,13 +57,7 @@ export default function ServicosDetalhadosPage() {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
             Em um mundo digital saturado, um vídeo bem produzido não é apenas uma opção, é a ferramenta mais poderosa para capturar atenção, contar sua história e impulsionar seu negócio.
           </p>
-        </div>
-      </section>
-
-      {/* Why Video? Section */}
-      <section className="pb-20 sm:pb-24 bg-background">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyVideoBenefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
