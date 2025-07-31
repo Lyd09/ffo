@@ -71,7 +71,7 @@ export default function ServicosDetalhadosPage() {
                     <h3 className="text-2xl font-bold">{benefit.title}</h3>
                     <p className="text-muted-foreground flex-grow">{benefit.description}</p>
                   </CardContent>
-                  <p className="text-xs text-muted-foreground/50 mt-4">{benefit.source}</p>
+                  <p className="text-xs text-muted-foreground/50 mt-4 font-bold">{benefit.source}</p>
                 </Card>
               );
             })}
