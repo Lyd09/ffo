@@ -86,7 +86,7 @@ export default function ServicosDetalhadosPage() {
             Uma Mensagem dos <span className="text-primary">Fundadores</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-            Samuel e Kléuver compartilham um pouco da nossa filosofia e do que nos move a transformar ideias em realidade.
+            Ninguém melhor para falar sobre nossa paixão do que <span className="text-primary font-semibold">Samuel</span> e <span className="text-primary font-semibold">Kléuver</span>. Veja o que nos move a transformar ideias em realidade.
           </p>
           <div className="mt-10 aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border">
             <iframe 
