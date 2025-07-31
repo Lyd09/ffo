@@ -33,18 +33,18 @@ const whyVideoBenefits = [
 ];
 
 const whyFastFilmsPoints = [
-  {
-    title: 'Técnica e Criatividade',
-    description: 'Não apenas operamos equipamentos; nós contamos histórias. Nossa equipe une o melhor da técnica com uma visão criativa para criar vídeos que se destacam.',
-  },
-  {
-    title: 'Equipamentos de Ponta',
-    description: 'Investimos no que há de melhor em câmeras, lentes e softwares para garantir que seu projeto tenha a mais alta qualidade visual e sonora do mercado.',
-  },
-  {
-    title: 'Processo Colaborativo',
-    description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos junto com você, do briefing à entrega, para garantir que sua visão se torne realidade.',
-  },
+    {
+        title: 'Especialistas em Vídeos Curtos e Mercado Imobiliário',
+        description: 'Nosso nome não é sobre velocidade de entrega, é sobre a velocidade com que seu público consome conteúdo. Somos mestres em criar vídeos curtos e dinâmicos, com foco especial no mercado imobiliário, que capturam a atenção e não a soltam mais.',
+    },
+    {
+        title: 'Técnicas Modernas e Softwares de Ponta',
+        description: 'Sua ideia merece o melhor. Utilizamos as ferramentas mais avançadas do mercado, como Adobe Premiere Pro e After Effects, combinadas com técnicas cinematográficas modernas para garantir que seu projeto não seja apenas visto, mas lembrado.',
+    },
+    {
+        title: 'Processo Colaborativo',
+        description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos junto com você, do briefing à entrega, para garantir que sua visão se torne realidade e que o resultado final supere as expectativas.',
+    },
 ];
 
 export default function ServicosDetalhadosPage() {
@@ -60,23 +60,23 @@ export default function ServicosDetalhadosPage() {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
             Em um mundo digital saturado, um vídeo bem produzido não é apenas uma opção, é a ferramenta mais poderosa para capturar atenção, contar sua história e impulsionar seu negócio.
           </p>
-        </div>
-        <div className="mt-16 max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
-            {whyVideoBenefits.map((benefit) => {
-              const Icon = benefit.icon;
-              return (
-                <Card key={benefit.title} className="bg-secondary/30 border-border text-center p-8 flex flex-col">
-                  <CardContent className="flex flex-col items-center gap-4 p-0 flex-grow">
-                    <div className="bg-primary/10 text-primary p-4 rounded-xl">
-                      <Icon className="h-10 w-10" />
-                    </div>
-                    <h3 className="text-2xl font-bold">{benefit.title}</h3>
-                    <p className="text-muted-foreground flex-grow">{benefit.description}</p>
-                  </CardContent>
-                  <p className="text-xs text-muted-foreground/50 mt-4 font-bold">{benefit.source}</p>
-                </Card>
-              );
-            })}
+          <div className="mt-16 max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
+              {whyVideoBenefits.map((benefit) => {
+                const Icon = benefit.icon;
+                return (
+                  <Card key={benefit.title} className="bg-secondary/30 border-border text-center p-8 flex flex-col">
+                    <CardContent className="flex flex-col items-center gap-4 p-0 flex-grow">
+                      <div className="bg-primary/10 text-primary p-4 rounded-xl">
+                        <Icon className="h-10 w-10" />
+                      </div>
+                      <h3 className="text-2xl font-bold">{benefit.title}</h3>
+                      <p className="text-muted-foreground flex-grow">{benefit.description}</p>
+                    </CardContent>
+                    <p className="text-xs text-muted-foreground/50 mt-4 font-bold">{benefit.source}</p>
+                  </Card>
+                );
+              })}
+          </div>
         </div>
       </section>
       
@@ -86,7 +86,7 @@ export default function ServicosDetalhadosPage() {
             Uma Mensagem dos <span className="text-primary">Fundadores</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-            Ninguém melhor para falar sobre nossa paixão do que <strong className="font-semibold text-primary">Samuel</strong> e <strong className="font-semibold text-primary">Kléuver</strong>. Veja o que nos move a transformar ideias em realidade.
+             Ninguém melhor para falar sobre nossa paixão do que <strong className="font-semibold text-primary">Samuel</strong> e <strong className="font-semibold text-primary">Kléuver</strong>. Veja o que nos move a transformar ideias em realidade.
           </p>
           <div className="mt-10 aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border">
             <iframe 
@@ -139,7 +139,6 @@ export default function ServicosDetalhadosPage() {
                     <Link href="/portfolio" passHref>
                         <PortfolioButton>
                             Ver nosso Portfólio
-                            <ArrowRight className="ml-2 h-5 w-5" />
                         </PortfolioButton>
                     </Link>
                 </div>
