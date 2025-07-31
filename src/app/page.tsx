@@ -35,7 +35,7 @@ export default function Home() {
                 O visual chama, o som envolve, mas a edição é quem cria o ritmo e a narrativa. Audiovisual é a magia que une o que vemos e ouvimos.
               </p>
               <div className="flex items-center space-x-4">
-                <Link href="/#servicos">
+                <Link href="/servicos-detalhados">
                   <LearnMoreButton />
                 </Link>
               </div>
@@ -285,4 +285,5 @@ export default function Home() {
     
 
     
+
 
