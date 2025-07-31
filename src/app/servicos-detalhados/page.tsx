@@ -61,13 +61,13 @@ export default function ServicosDetalhadosPage() {
       </section>
 
       {/* Why Video? Section */}
-      <section className="pb-20 sm:pb-24 bg-[#1a1a1a]">
+      <section className="pb-20 sm:pb-24 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyVideoBenefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
-                <Card key={benefit.title} className="bg-secondary/50 border-border text-center p-8">
+                <Card key={benefit.title} className="bg-secondary border-border text-center p-8">
                   <CardContent className="flex flex-col items-center gap-4">
                     <div className="bg-primary/10 text-primary p-4 rounded-xl">
                       <Icon className="h-10 w-10" />
@@ -81,6 +81,29 @@ export default function ServicosDetalhadosPage() {
           </div>
         </div>
       </section>
+      
+      {/* Video Player Section */}
+      <section className="py-20 sm:py-24 bg-secondary/30">
+        <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+          <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
+            Uma Mensagem dos <span className="text-primary">Fundadores</span>
+          </h2>
+          <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
+            Samuel e Kléuver compartilham um pouco da nossa filosofia e do que nos move a transformar ideias em realidade.
+          </p>
+          <div className="mt-10 aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border">
+            <iframe 
+              width="100%" 
+              height="100%" 
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen>
+            </iframe>
+          </div>
+        </div>
+      </section>
 
       {/* Why FastFilms? Section */}
       <section className="py-20 sm:py-24">
@@ -88,6 +111,7 @@ export default function ServicosDetalhadosPage() {
           <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">A PARCERIA CERTA</p>
           <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
             Por que a <span className="text-primary">FastFilms</span>?
+            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
             Entendemos o poder do vídeo. Mas, mais importante, entendemos como traduzir sua visão em uma peça audiovisual que funciona.
@@ -95,7 +119,7 @@ export default function ServicosDetalhadosPage() {
           <div className="mt-12 text-left space-y-8">
             {whyFastFilmsPoints.map((point, index) => (
               <div key={index} className="flex items-start gap-4">
-                <div className="bg-primary text-primary-foreground rounded-full p-2 mt-1">
+                <div className="bg-primary text-primary-foreground rounded-full p-2 mt-1 flex-shrink-0">
                   <Check className="h-5 w-5" />
                 </div>
                 <div>
