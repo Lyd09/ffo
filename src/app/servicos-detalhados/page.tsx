@@ -68,7 +68,7 @@ export default function ServicosDetalhadosPage() {
               const Icon = benefit.icon;
               return (
                 <Card key={benefit.title} className="bg-secondary/30 border-border text-center p-8">
-                  <CardContent className="flex flex-col items-center gap-4">
+                  <CardContent className="flex flex-col items-center gap-4 p-0">
                     <div className="bg-primary/10 text-primary p-4 rounded-xl">
                       <Icon className="h-10 w-10" />
                     </div>
