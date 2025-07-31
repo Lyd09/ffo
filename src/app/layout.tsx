@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import './buttons.css';
 import './contact-button.css';
+import './sparkle-button.css';
 import { Toaster } from 'sonner';
 
 export const metadata: Metadata = {

@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Check, ArrowRight, Video, Target, Sparkles } from 'lucide-react';
+import SparkleButton from '@/components/custom/SparkleButton';
 
 export const metadata: Metadata = {
   title: 'O Poder do Vídeo - FastFilms',
@@ -59,7 +60,8 @@ export default function ServicosDetalhadosPage() {
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
             Em um mundo digital saturado, um vídeo bem produzido não é apenas uma opção, é a ferramenta mais poderosa para capturar atenção, contar sua história e impulsionar seu negócio.
           </p>
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+        </div>
+        <div className="mt-16 max-w-7xl mx-auto px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8">
             {whyVideoBenefits.map((benefit) => {
               const Icon = benefit.icon;
               return (
@@ -75,7 +77,6 @@ export default function ServicosDetalhadosPage() {
                 </Card>
               );
             })}
-          </div>
         </div>
       </section>
       
@@ -85,7 +86,7 @@ export default function ServicosDetalhadosPage() {
             Uma Mensagem dos <span className="text-primary">Fundadores</span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-            Ninguém melhor para falar sobre nossa paixão do que <span className="font-semibold text-primary">Samuel</span> e <span className="font-semibold text-primary">Kléuver</span>. Veja o que nos move a transformar ideias em realidade.
+            Ninguém melhor para falar sobre nossa paixão do que <strong className="font-semibold text-primary">Samuel</strong> e <strong className="font-semibold text-primary">Kléuver</strong>. Veja o que nos move a transformar ideias em realidade.
           </p>
           <div className="mt-10 aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border">
             <iframe 
@@ -153,18 +154,14 @@ export default function ServicosDetalhadosPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">VAMOS TIRAR SUA IDEIA DO PAPEL</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
-              Pronto para <span className="text-primary">começar</span>?
+              Vamos <span className="text-primary">começar</span>?
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
               Você já viu o porquê, agora veja o como. Nossa equipe está pronta para transformar sua visão em um projeto audiovisual de impacto.
             </p>
             <div className="flex justify-center items-center gap-4 mt-8">
               <Link href="/contato" passHref>
-                <button className="contact-button">
-                  <div className="blob1"></div>
-                  <div className="blob2"></div>
-                  <div className="inner">Iniciar Orçamento Inteligente</div>
-                </button>
+                <SparkleButton>Iniciar Orçamento Inteligente</SparkleButton>
               </Link>
             </div>
           </div>
