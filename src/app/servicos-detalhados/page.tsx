@@ -153,7 +153,7 @@ export default function ServicosDetalhadosPage() {
           <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">VAMOS TIRAR SUA IDEIA DO PAPEL</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
-              Pronto para dar o <span className="text-primary">próximo passo</span>?
+              Pronto para <span className="text-primary">começar</span>?
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
               Você já viu o porquê, agora veja o como. Nossa equipe está pronta para transformar sua visão em um projeto audiovisual de impacto.
