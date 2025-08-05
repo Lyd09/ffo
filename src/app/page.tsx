@@ -74,7 +74,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Gravação</h3>
-                  <p className="text-muted-foreground text-sm">Captação de imagem e som com alta qualidade para seus projetos.</p>
+                  <p className="text-muted-foreground text-sm">Contratação apenas para a captação de imagens. A edição não está inclusa neste serviço.</p>
                 </div>
               </div>
               {/* Card 2 */}
@@ -84,7 +84,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Produção de Vídeo</h3>
-                  <p className="text-foreground text-sm">Serviço completo, da gravação à edição final do seu vídeo.</p>
+                  <p className="text-foreground text-sm">Criação do vídeo do zero, incluindo gravação, edição e animações. A solução completa para sua ideia.</p>
                 </div>
               </div>
               {/* Card 3 */}
@@ -94,7 +94,7 @@ export default function Home() {
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">Edição</h3>
-                  <p className="text-foreground text-sm">Corte, ritmo e cor para contar sua história de forma impactante.</p>
+                  <p className="text-foreground text-sm">O cliente envia o material bruto e nós cuidamos da pós-produção, transformando-o em um vídeo finalizado.</p>
                 </div>
               </div>
               {/* Card 4 */}
@@ -287,3 +287,6 @@ export default function Home() {
     
 
 
+
+
+    
