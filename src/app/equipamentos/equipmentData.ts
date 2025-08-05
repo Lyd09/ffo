@@ -126,13 +126,13 @@ export const softwareData = [
       icon: Layers,
       imageUrl: '/index/Equipamentos/PS.svg',
       dataAiHint: 'software logo',
-      description: 'Para deixar tudo exatamente como imaginamos — ou melhor.',
+      description: 'Para deixar tudo exatamente como imaginamos, ou melhor.',
     },
     {
       name: 'Adobe Lightroom',
       icon: ImageIcon,
       imageUrl: '/index/Equipamentos/LR.svg',
       dataAiHint: 'software logo',
-      description: 'Um toque nas cores, um ajuste na luz — e pronto: identidade.',
+      description: 'Um toque nas cores, um ajuste na luz, e pronto: identidade.',
     },
   ];
