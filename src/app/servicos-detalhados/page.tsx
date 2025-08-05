@@ -34,8 +34,8 @@ const whyVideoBenefits = [
 
 const whyFastFilmsPoints = [
     {
-        title: 'Especialistas em Vídeos Curtos e Mercado Imobiliário',
-        description: 'Nosso nome não é sobre velocidade de entrega, é sobre a velocidade com que seu público consome conteúdo. Somos mestres em criar vídeos curtos e dinâmicos, com foco especial no mercado imobiliário, que capturam a atenção e não a soltam mais.',
+        title: 'Versatilidade Criativa para Todas as Plataformas',
+        description: 'Seja para o mercado imobiliário, gastronômico ou de entretenimento, sua ideia merece um tratamento único. Adaptamos nossa criatividade para qualquer segmento ou plataforma, garantindo que sua mensagem seja poderosa e impactante, onde quer que ela seja vista.',
     },
     {
         title: 'Equipamentos e Softwares de Ponta',
