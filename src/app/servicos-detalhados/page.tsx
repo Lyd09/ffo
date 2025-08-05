@@ -39,7 +39,7 @@ const whyFastFilmsPoints = [
     },
     {
         title: 'Equipamentos e Softwares de Ponta',
-        description: 'Sua ideia merece o melhor. Utilizamos as ferramentas mais avançadas do mercado, como Adobe Premiere Pro e After Effects, e equipamentos de ponta para garantir um resultado impecável. Quer conhecer nosso arsenal? Dê uma olhada em nossa página de equipamentos.',
+        description: <>Sua ideia merece o melhor. Utilizamos as ferramentas mais avançadas do mercado, como Adobe Premiere Pro e After Effects, e equipamentos de ponta para garantir um resultado impecável. Quer conhecer nosso arsenal? Dê uma olhada em nossa <Link href="/equipamentos" className="text-primary font-semibold hover:underline">página de equipamentos</Link>.</>,
     },
     {
         title: 'Processo Colaborativo',
