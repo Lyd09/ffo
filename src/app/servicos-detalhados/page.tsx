@@ -38,8 +38,8 @@ const whyFastFilmsPoints = [
         description: 'Nosso nome não é sobre velocidade de entrega, é sobre a velocidade com que seu público consome conteúdo. Somos mestres em criar vídeos curtos e dinâmicos, com foco especial no mercado imobiliário, que capturam a atenção e não a soltam mais.',
     },
     {
-        title: 'Técnicas Modernas e Softwares de Ponta',
-        description: 'Sua ideia merece o melhor. Utilizamos as ferramentas mais avançadas do mercado, como Adobe Premiere Pro e After Effects, combinadas com técnicas cinematográficas modernas para garantir que seu projeto não seja apenas visto, mas lembrado.',
+        title: 'Equipamentos e Softwares de Ponta',
+        description: 'Sua ideia merece o melhor. Utilizamos as ferramentas mais avançadas do mercado, como Adobe Premiere Pro e After Effects, e equipamentos de ponta para garantir um resultado impecável. Quer conhecer nosso arsenal? Dê uma olhada em nossa página de equipamentos.',
     },
     {
         title: 'Processo Colaborativo',
