@@ -34,8 +34,8 @@ const whyVideoBenefits = [
 
 const whyFastFilmsPoints = [
     {
-        title: 'Versatilidade Criativa para Todas as Plataformas',
-        description: 'Seja para o mercado imobiliário, gastronômico ou de entretenimento, sua ideia merece um tratamento único. Adaptamos nossa criatividade para qualquer segmento ou plataforma, garantindo que sua mensagem seja poderosa e impactante, onde quer que ela seja vista.',
+        title: 'Versatilidade',
+        description: 'Seja para o mercado imobiliário, gastronômico ou de entretenimento, cada projeto recebe um tratamento único. Adaptamos nossa criatividade para qualquer segmento ou plataforma, garantindo que sua mensagem seja poderosa e impactante, onde quer que ela seja vista.',
     },
     {
         title: 'Equipamentos e Softwares de Ponta',
