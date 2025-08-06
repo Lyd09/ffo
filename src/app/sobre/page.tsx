@@ -44,6 +44,12 @@ const teamData = {
       imageUrl: '/index/Equipe/guess.svg',
       dataAiHint: 'person portrait placeholder',
     },
+    {
+      name: 'Luis',
+      role: 'Editor de Vídeo',
+      imageUrl: '/index/Equipe/guess.svg',
+      dataAiHint: 'person portrait placeholder',
+    },
   ],
   filmmakers: [
     {
