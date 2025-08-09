@@ -88,16 +88,8 @@ export default function ServicosDetalhadosPage() {
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
              Ninguém melhor para falar sobre nossa paixão do que <strong className="font-semibold text-primary">Samuel</strong> e <strong className="font-semibold text-primary">Kléuver</strong>. Veja o que nos move a transformar ideias em realidade.
           </p>
-          <div className="mt-10 aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border">
-            <iframe 
-              width="100%" 
-              height="100%" 
-              src="https://www.youtube.com/embed/K4kzmQ9eP5k" 
-              title="YouTube video player" 
-              frameBorder="0" 
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-              allowFullScreen>
-            </iframe>
+          <div className="mt-10 aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border bg-black flex items-center justify-center">
+            <span className="text-2xl font-bold text-muted-foreground tracking-widest">EM BREVE</span>
           </div>
         </div>
       </section>
