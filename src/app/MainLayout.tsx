@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
-import { Menu, Briefcase, MessageSquareQuote } from 'lucide-react';
+import { Menu, Briefcase, MessageSquareQuote, Contact } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import {
   AlertDialog,
@@ -158,6 +158,15 @@ export default function MainLayout({
                     </Tooltip>
                   </TooltipProvider>
                 </div>
+              </div>
+              <div className="flex flex-col items-center">
+                <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-3">Contato</h4>
+                <Link href="/cartao" passHref>
+                  <Button variant="ghost" className="hover:bg-primary/10 hover:text-primary px-2">
+                    <Contact className="mr-2 h-5 w-5" />
+                    Cartão de Visita
+                  </Button>
+                </Link>
               </div>
               <div className="flex flex-col items-center">
                 <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-3">Associados</h4>
