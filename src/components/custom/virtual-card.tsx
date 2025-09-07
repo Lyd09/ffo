@@ -29,8 +29,8 @@ const contactActions = [
   { icon: Clapperboard, label: 'Portfolio', href: 'https://fastfilmsoficial.com.br/portfolio' },
 ];
 
-const Particle = () => (
-    <svg className="particle" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+const Particle = ({style}: {style: React.CSSProperties}) => (
+    <svg className="particle" style={style} viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M6.937 3.846L7.75 1L8.563 3.846C8.77313 4.58114 9.1671 5.25062 9.70774 5.79126C10.2484 6.3319 10.9179 6.72587 11.653 6.936L14.5 7.75L11.654 8.563C10.9189 8.77313 10.2494 9.1671 9.70874 9.70774C9.1681 10.2484 8.77413 10.9179 8.564 11.653L7.75 14.5L6.937 11.654C6.72687 10.9189 6.3329 10.2494 5.79226 9.70874C5.25162 9.1681 4.58214 8.77413 3.847 8.564L1 7.75L3.846 6.937C4.58114 6.72687 5.25062 6.3329 5.79126 5.79226C6.3319 5.25162 6.72587 4.58214 6.936 3.847L6.937 3.846Z" fill="currentColor" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"></path>
     </svg>
 );
@@ -106,12 +106,22 @@ export default function VirtualCard() {
                 <button className="sparkle-button">
                     <span className="spark"></span>
                     <span className="backdrop"></span>
-                    <Calendar className="sparkle" style={{ inlineSize: '1.25em', translate: '-25% -5%' }} />
+                    <Calendar style={{ inlineSize: '1.25em', translate: '-25% -5%' }} />
                     <span className="text">Marque uma reunião!</span>
                 </button>
                 <div className="bodydrop"></div>
                 <span aria-hidden="true" className="particle-pen">
-                    {Array.from({ length: 20 }).map((_, i) => <Particle key={i} />)}
+                    {Array.from({ length: 20 }).map((_, i) => (
+                        <Particle key={i} style={{
+                            '--x': Math.random(),
+                            '--y': Math.random(),
+                            '--size': Math.random() * 0.5 + 0.25,
+                            '--duration': Math.random() * 1.5 + 0.5,
+                            '--delay': Math.random() * -2,
+                            '--origin-x': Math.random() > 0.5 ? '50%' : '-50%',
+                            '--origin-y': Math.random() > 0.5 ? '50%' : '-50%',
+                        } as React.CSSProperties} />
+                    ))}
                 </span>
             </a>
         </div>
