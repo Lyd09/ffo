@@ -125,16 +125,18 @@ export default function PortfolioPage() {
                         </Link>
                         <Separator orientation="vertical" className="h-6" />
                         <span className="text-sm font-medium text-muted-foreground">Ver post:</span>
-                        <Link href="https://www.instagram.com/_fastfilms_/" target="_blank" rel="noopener noreferrer">
-                            <Button variant="ghost" size="icon">
-                                <Instagram className="h-5 w-5 text-primary" />
-                            </Button>
-                        </Link>
-                        <Link href="https://www.linkedin.com/company/fastfilmsoficial/" target="_blank" rel="noopener noreferrer">
-                            <Button variant="ghost" size="icon">
-                                <Linkedin className="h-5 w-5 text-primary" />
-                            </Button>
-                        </Link>
+                        <div className="flex items-center gap-1">
+                          <Link href="https://www.instagram.com/_fastfilms_/" target="_blank" rel="noopener noreferrer">
+                              <Button variant="ghost" size="icon" className="text-primary hover:bg-primary hover:text-primary-foreground">
+                                  <Instagram className="h-5 w-5" />
+                              </Button>
+                          </Link>
+                          <Link href="https://www.linkedin.com/company/fastfilmsoficial/" target="_blank" rel="noopener noreferrer">
+                              <Button variant="ghost" size="icon" className="text-primary hover:bg-primary hover:text-primary-foreground">
+                                  <Linkedin className="h-5 w-5" />
+                              </Button>
+                          </Link>
+                        </div>
                     </div>
                 </div>
             </Card>
