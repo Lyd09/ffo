@@ -116,13 +116,15 @@ export default function PortfolioPage() {
                     <p className="text-muted-foreground mt-2 mb-6">
                         Desenvolvemos uma landing page simples e direta para a corretora de imóveis Ana Araújo, focada em Lagoa Santa e região. O site foi criado para oferecer uma experiência de usuário fluida, com design moderno e totalmente responsivo para capturar leads de forma eficiente.
                     </p>
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 flex-wrap">
                         <Link href="https://corretoraanaaraujo.com.br/" target="_blank" rel="noopener noreferrer">
                             <Button variant="outline">
                                 Visitar Site
                                 <ExternalLink className="ml-2 h-4 w-4" />
                             </Button>
                         </Link>
+                        <Separator orientation="vertical" className="h-6" />
+                        <span className="text-sm font-medium text-muted-foreground">Ver post:</span>
                         <Link href="https://www.instagram.com/_fastfilms_/" target="_blank" rel="noopener noreferrer">
                             <Button variant="ghost" size="icon">
                                 <Instagram className="h-5 w-5 text-primary" />
