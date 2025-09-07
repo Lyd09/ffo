@@ -136,7 +136,9 @@ export default function VirtualCard() {
               <button className="sparkle-button">
                 <span className="spark"></span>
                 <span className="backdrop"></span>
-                <Calendar className="sparkle" />
+                <div className="sparkle">
+                  <Calendar />
+                </div>
                 <span className="text">Marque uma reunião!</span>
               </button>
               <div className="bodydrop"></div>
