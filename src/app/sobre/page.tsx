@@ -2,10 +2,11 @@
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
+import { Separator } from '@/components/ui/separator';
 
 export const metadata: Metadata = {
   title: 'Sobre - FastFilms',
-  description: 'Conheça a nossa rede de talentos. Profissionais parceiros prontos para transformar sua ideia em realidade.',
+  description: 'Conheça a nossa história, nossa filosofia e a rede de talentos parceiros prontos para transformar sua ideia em realidade.',
 };
 
 const teamData = {
@@ -115,6 +116,21 @@ export default function SobrePage() {
                 </p>
             </div>
         </section>
+
+        <section className="pb-20 sm:pb-24">
+            <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
+                <h2 className="text-3xl font-bold text-center mb-6 relative inline-block">
+                    Nossa <span className="text-primary">Filosofia</span>
+                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
+                </h2>
+                <p className="text-muted-foreground leading-relaxed">
+                    Acreditamos que todo projeto é, antes de tudo, uma história esperando para ser contada. Na FastFilms, unimos a paixão pela narrativa com a obsessão pela qualidade técnica. Não se trata apenas de apertar o play, mas de construir uma parceria com nossos clientes para dar vida às suas ideias, garantindo que cada frame, cada corte e cada linha de código tenha um propósito claro: impactar, engajar e, acima de tudo, comunicar.
+                </p>
+            </div>
+        </section>
+
+        <Separator className="my-12 sm:my-16 bg-border/50 max-w-4xl mx-auto" />
+
 
         <div className="pb-20 sm:pb-24">
             {Object.entries(teamData).map(([sectionKey, members]) => (
