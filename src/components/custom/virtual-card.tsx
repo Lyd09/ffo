@@ -34,7 +34,7 @@ export default function VirtualCard() {
     <Card className="w-full max-w-lg mx-auto shadow-2xl rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-500">
       <div className="relative h-48 bg-gradient-to-br from-accent to-[hsl(var(--primary)_/_0.3)]">
         <Image
-          src="/cartao/wallpaper.png"
+          src="/index/cartao/wallpaper.png"
           alt="Abstract background"
           fill
           style={{ objectFit: 'cover' }}
@@ -44,7 +44,7 @@ export default function VirtualCard() {
       </div>
       <CardContent className="p-6 text-center -mt-20">
         <Avatar className="w-36 h-36 mx-auto border-4 border-card shadow-lg">
-          <AvatarImage src="/cartao/logo.png" data-ai-hint="company logo" />
+          <AvatarImage src="/index/cartao/logo.png" data-ai-hint="company logo" />
           <AvatarFallback>FF</AvatarFallback>
         </Avatar>
         <h1 className="text-3xl font-bold mt-4 font-montserrat text-foreground">
@@ -57,7 +57,7 @@ export default function VirtualCard() {
 
         <div className="flex justify-center my-6">
           <Image
-            src="/cartao/QRCODE.svg"
+            src="/index/cartao/SITE FF QRCODE.svg"
             alt="QR Code"
             width={150}
             height={150}
