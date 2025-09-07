@@ -137,7 +137,7 @@ export default function VirtualCard() {
                 <span className="spark"></span>
                 <span className="backdrop"></span>
                 <div className="sparkle">
-                  <Calendar />
+                    <Calendar />
                 </div>
                 <span className="text">Marque uma reunião!</span>
               </button>
@@ -151,3 +151,4 @@ export default function VirtualCard() {
     </Card>
   );
 }
+
