@@ -124,7 +124,7 @@ export default function MainLayout({
                 Cada momento<br />Merece um bom take!
               </p>
             </div>
-            <div className="flex items-start gap-12 text-center md:text-left">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start gap-12 text-center md:text-left">
               <div className="flex flex-col items-center">
                 <h4 className="font-semibold text-sm uppercase tracking-wider text-muted-foreground mb-3">Redes Sociais</h4>
                 <div className="flex items-center gap-4">
