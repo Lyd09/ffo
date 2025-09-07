@@ -71,7 +71,7 @@ export default function VirtualCard() {
       className="w-full max-w-lg mx-auto shadow-2xl rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-500"
       style={{ backgroundColor: '#0a0a0a' }}
     >
-      <div className="relative h-48 bg-gradient-to-b from-accent to-[hsl(var(--primary)_/_0.3)]">
+      <div className="relative h-48 bg-gradient-to-b from-card to-[hsl(var(--primary)_/_0.3)]">
         <Image
           src="/index/cartao/wallpaper.png"
           alt="Abstract background"
@@ -151,4 +151,3 @@ export default function VirtualCard() {
     </Card>
   );
 }
-
