@@ -1,8 +1,13 @@
+
+'use client';
+
 import Image from 'next/image';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Mail, Linkedin, Instagram, Clapperboard, Calendar } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+
 
 const WhatsAppIcon = () => (
   <svg
@@ -36,6 +41,31 @@ const Particle = ({style}: {style: React.CSSProperties}) => (
 );
 
 export default function VirtualCard() {
+  const [particles, setParticles] = useState<React.ReactNode[]>([]);
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
+  useEffect(() => {
+    if (isClient) {
+        const newParticles = Array.from({ length: 20 }).map((_, i) => (
+            <Particle key={i} style={{
+                '--x': Math.random(),
+                '--y': Math.random(),
+                '--size': Math.random() * 0.5 + 0.25,
+                '--duration': Math.random() * 1.5 + 0.5,
+                '--delay': Math.random() * -2,
+                '--origin-x': Math.random() > 0.5 ? '50%' : '-50%',
+                '--origin-y': Math.random() > 0.5 ? '50%' : '-50%',
+            } as React.CSSProperties} />
+        ));
+        setParticles(newParticles);
+    }
+  }, [isClient]);
+
+
   return (
     <Card 
       className="w-full max-w-lg mx-auto shadow-2xl rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-500"
@@ -59,7 +89,7 @@ export default function VirtualCard() {
         <h1 className="text-3xl font-bold mt-4 font-montserrat text-foreground">
           FastFilms
         </h1>
-        <p className="text-accent-foreground font-medium">Produtora Audiovisual</p>
+        <p className="text-accent-foreground/80 font-medium">Produtora Audiovisual</p>
         <p className="text-muted-foreground mt-2 italic">Cada momento merece um bom take!</p>
         
         <Separator className="my-6" />
@@ -111,17 +141,7 @@ export default function VirtualCard() {
                 </button>
                 <div className="bodydrop"></div>
                 <span aria-hidden="true" className="particle-pen">
-                    {Array.from({ length: 20 }).map((_, i) => (
-                        <Particle key={i} style={{
-                            '--x': Math.random(),
-                            '--y': Math.random(),
-                            '--size': Math.random() * 0.5 + 0.25,
-                            '--duration': Math.random() * 1.5 + 0.5,
-                            '--delay': Math.random() * -2,
-                            '--origin-x': Math.random() > 0.5 ? '50%' : '-50%',
-                            '--origin-y': Math.random() > 0.5 ? '50%' : '-50%',
-                        } as React.CSSProperties} />
-                    ))}
+                    {particles}
                 </span>
             </a>
         </div>
@@ -129,3 +149,4 @@ export default function VirtualCard() {
     </Card>
   );
 }
+
