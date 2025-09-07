@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { PlayCircle, ExternalLink } from 'lucide-react';
+import { PlayCircle, ExternalLink, Instagram, Linkedin } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 
@@ -104,24 +104,36 @@ export default function PortfolioPage() {
            <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4 lg:items-center">
                 <div className="relative aspect-video lg:aspect-auto lg:h-full w-full">
                     <Image
-                        src="https://picsum.photos/1200/800"
-                        alt="Screenshot do site da Projetex"
+                        src="/index/Portfolio/sites/siteANA2.png"
+                        alt="Screenshot do site da Ana Araújo Corretora"
                         fill
                         className="object-cover"
-                        data-ai-hint="website screenshot"
+                        data-ai-hint="real estate website"
                     />
                 </div>
                 <div className="p-8">
-                    <h3 className="text-2xl font-bold text-primary">Projetex</h3>
-                    <p className="text-muted-foreground mt-2 mb-4">
-                        Desenvolvemos o site institucional da Projetex, uma plataforma moderna e intuitiva para apresentação de seus serviços e portfólio. O foco foi em uma experiência de usuário fluida e um design que reflete a identidade da marca.
+                    <h3 className="text-2xl font-bold text-primary">Ana Araújo Corretora</h3>
+                    <p className="text-muted-foreground mt-2 mb-6">
+                        Desenvolvemos uma landing page simples e direta para a corretora de imóveis Ana Araújo, focada em Lagoa Santa e região. O site foi criado para oferecer uma experiência de usuário fluida, com design moderno e totalmente responsivo para capturar leads de forma eficiente.
                     </p>
-                    <Link href="https://projetex.netlify.app/" target="_blank" rel="noopener noreferrer">
-                        <Button variant="outline">
-                            Visitar Site
-                            <ExternalLink className="ml-2 h-4 w-4" />
-                        </Button>
-                    </Link>
+                    <div className="flex items-center gap-4">
+                        <Link href="https://corretoraanaaraujo.com.br/" target="_blank" rel="noopener noreferrer">
+                            <Button variant="outline">
+                                Visitar Site
+                                <ExternalLink className="ml-2 h-4 w-4" />
+                            </Button>
+                        </Link>
+                        <Link href="https://www.instagram.com/_fastfilms_/" target="_blank" rel="noopener noreferrer">
+                            <Button variant="ghost" size="icon">
+                                <Instagram className="h-5 w-5 text-primary" />
+                            </Button>
+                        </Link>
+                        <Link href="https://www.linkedin.com/company/fastfilmsoficial/" target="_blank" rel="noopener noreferrer">
+                            <Button variant="ghost" size="icon">
+                                <Linkedin className="h-5 w-5 text-primary" />
+                            </Button>
+                        </Link>
+                    </div>
                 </div>
             </Card>
         </div>
