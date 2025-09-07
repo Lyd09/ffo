@@ -82,7 +82,7 @@ export default function VirtualCard() {
         />
       </div>
       <CardContent className="p-6 text-center -mt-20">
-        <Avatar className="w-36 h-36 mx-auto border-4 border-white drop-shadow-[0_4px_6px_hsl(var(--primary))] shadow-lg">
+        <Avatar className="w-36 h-36 mx-auto border-4 border-card shadow-lg">
           <AvatarImage src="/index/cartao/logo.png" data-ai-hint="company logo" />
           <AvatarFallback>FF</AvatarFallback>
         </Avatar>
@@ -137,7 +137,7 @@ export default function VirtualCard() {
                 <span className="spark"></span>
                 <span className="backdrop"></span>
                 <div className="sparkle">
-                    <Calendar />
+                  <Calendar />
                 </div>
                 <span className="text">Marque uma reunião!</span>
               </button>
