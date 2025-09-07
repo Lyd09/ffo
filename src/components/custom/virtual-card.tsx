@@ -89,7 +89,7 @@ export default function VirtualCard() {
         <h1 className="text-3xl font-bold mt-4 font-montserrat text-foreground">
           FastFilms
         </h1>
-        <p className="text-accent-foreground/80 font-medium">Produtora Audiovisual</p>
+        <p className="text-foreground/80 font-medium">Produtora Audiovisual</p>
         <p className="text-muted-foreground mt-2 italic">Cada momento merece um bom take!</p>
         
         <Separator className="my-6" />
@@ -132,21 +132,22 @@ export default function VirtualCard() {
         <Separator className="my-6" />
 
         <div className="flex justify-center">
-             <a href="https://calendly.com/fastfilmsoficial" target="_blank" rel="noopener noreferrer" className="sp">
-                <button className="sparkle-button">
-                    <span className="spark"></span>
-                    <span className="backdrop"></span>
-                    <Calendar style={{ inlineSize: '1.25em', translate: '-25% -5%' }} />
-                    <span className="text">Marque uma reunião!</span>
-                </button>
-                <div className="bodydrop"></div>
-                <span aria-hidden="true" className="particle-pen">
-                    {particles}
-                </span>
+            <a href="https://calendly.com/fastfilmsoficial" target="_blank" rel="noopener noreferrer" className="sp">
+              <button className="sparkle-button">
+                <span className="spark"></span>
+                <span className="backdrop"></span>
+                <svg className="sparkle" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <Calendar />
+                </svg>
+                <span className="text">Marque uma reunião!</span>
+              </button>
+              <div className="bodydrop"></div>
+              <span aria-hidden="true" className="particle-pen">
+                {particles}
+              </span>
             </a>
         </div>
       </CardContent>
     </Card>
   );
 }
-
