@@ -82,15 +82,15 @@ export default function VirtualCard() {
         />
       </div>
       <CardContent className="p-6 text-center -mt-20">
-        <Avatar className="w-36 h-36 mx-auto border-4 border-card shadow-lg">
+        <Avatar className="w-36 h-36 mx-auto border-4 border-white drop-shadow-[0_4px_6px_hsl(var(--primary))] shadow-lg">
           <AvatarImage src="/index/cartao/logo.png" data-ai-hint="company logo" />
           <AvatarFallback>FF</AvatarFallback>
         </Avatar>
-        <h1 className="text-3xl font-bold mt-4 font-montserrat text-foreground">
+        <h1 className="text-3xl font-bold mt-4 tracking-wide text-foreground">
           FastFilms
         </h1>
-        <p className="text-foreground/80 font-medium">Produtora Audiovisual</p>
-        <p className="text-muted-foreground mt-2 italic">Cada momento merece um bom take!</p>
+        <p className="text-foreground/80 font-medium tracking-wider uppercase">Produtora Audiovisual</p>
+        <p className="text-muted-foreground mt-2 italic text-sm">Cada momento merece um bom take!</p>
         
         <Separator className="my-6" />
 
