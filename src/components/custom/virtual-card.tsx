@@ -45,7 +45,10 @@ const Particle = () => (
 
 export default function VirtualCard() {
   return (
-    <Card className="w-full max-w-lg mx-auto shadow-2xl rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-500">
+    <Card 
+      className="w-full max-w-lg mx-auto shadow-2xl rounded-2xl overflow-hidden animate-in fade-in zoom-in-95 duration-500"
+      style={{ backgroundColor: '#0a0a0a' }}
+    >
       <div className="relative h-48 bg-gradient-to-br from-accent to-[hsl(var(--primary)_/_0.3)]">
         <Image
           src="/index/cartao/wallpaper.png"
@@ -107,11 +110,11 @@ export default function VirtualCard() {
         <Separator className="my-6" />
 
         <div className="flex justify-center">
-            <a href="https://calendly.com/fastfilmsoficial" target="_blank" rel="noopener noreferrer" className="sp">
+             <a href="https://calendly.com/fastfilmsoficial" target="_blank" rel="noopener noreferrer" className="sp">
                 <button className="sparkle-button">
                     <span className="spark"></span>
                     <span className="backdrop"></span>
-                    <SparkleIcon />
+                    <Calendar className="sparkle" style={{ inlineSize: '1.25em', translate: '-25% -5%' }} />
                     <span className="text">Marque uma reunião!</span>
                 </button>
                 <div className="bodydrop"></div>

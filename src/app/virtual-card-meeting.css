@@ -24,7 +24,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 			hsl(var(--primary) / calc(var(--active) * 0.5)),
 			transparent
 		),
-		hsl(var(--background));
+		#1a1a1a;
   background: var(--bg);
   font-size: 1.2rem;
   font-weight: 500;
@@ -173,6 +173,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .sparkle-button svg.sparkle {
   inline-size: 1.25em;
   translate: -25% -5%;
+}
+
+.sparkle-button svg.sparkle path {
+    fill: hsl(var(--foreground));
+    stroke: hsl(var(--foreground));
 }
 
 .sp {
