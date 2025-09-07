@@ -1,6 +1,6 @@
 'use client';
 
-import VirtualCard from '@/components/virtual-card';
+import VirtualCard from '@/components/custom/virtual-card';
 
 export default function CrimsonCardPage() {
   return (
