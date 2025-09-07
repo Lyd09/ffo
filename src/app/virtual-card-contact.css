@@ -19,7 +19,7 @@
   z-index: 9;
   border-radius: 0.375rem; /* 6px */
   border: 1px solid hsl(var(--border));
-  background-color: hsl(var(--background));
+  background-color: #1a1a1a;
   color: hsl(var(--foreground));
   text-decoration: none;
   transition: color 0.3s linear;
