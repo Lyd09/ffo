@@ -30,10 +30,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   font-weight: 500;
   border: 0;
   cursor: pointer;
-  padding: 1em 1em;
+  padding: 0.8em 1.2em;
   display: flex;
   align-items: center;
-  gap: 0.25em;
+  gap: 0.5em;
   white-space: nowrap;
   border-radius: 100px;
   position: relative;
@@ -49,8 +49,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   transition: .3s;
 }
 
-.sparkle path {
-  color: hsl(0 0% calc((var(--active, 0) * 70%) + 20%)); /* Adjusted for dark theme */
+.sparkle-button .sparkle {
+  color: hsl(0 0% calc((var(--active, 0) * 70%) + 30%)); /* Adjusted for dark theme */
   transform-box: fill-box;
   transform-origin: center;
   fill: currentColor;
@@ -64,33 +64,16 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   --active: 1;
 }
 
-.sparkle-button:is(:hover, :focus-visible) path {
+.sparkle-button:is(:hover, :focus-visible) .sparkle {
   animation-name: bounce;
 }
 
 @keyframes bounce {
   35%, 65% {
-    scale: var(--scale);
+    scale: 1.5;
   }
 }
 
-.sparkle path:nth-of-type(1) {
-  --scale: 0.5;
-  --delay: 0.1;
-  --base: 40%;
-}
-
-.sparkle path:nth-of-type(2) {
-  --scale: 1.5;
-  --delay: 0.2;
-  --base: 20%;
-}
-
-.sparkle path:nth-of-type(3) {
-  --scale: 2.5;
-  --delay: 0.35;
-  --base: 30%;
-}
 
 .sparkle-button:before {
   content: "";
