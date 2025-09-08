@@ -7,6 +7,7 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Mail, Linkedin, Instagram, Clapperboard, Calendar } from 'lucide-react';
 import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
 
 
 const WhatsAppIcon = () => (
@@ -95,14 +96,16 @@ export default function VirtualCard() {
         <Separator className="my-6" />
 
         <div className="flex justify-center my-6">
-          <Image
-            src="/index/cartao/SITE FF QRCODE.svg"
-            alt="QR Code"
-            width={150}
-            height={150}
-            className="rounded-lg [filter:drop-shadow(0_4px_6px_hsl(var(--primary)))]"
-            data-ai-hint="qr code"
-          />
+          <Link href="/">
+            <Image
+              src="/index/cartao/SITE FF QRCODE.svg"
+              alt="QR Code para o site da FastFilms"
+              width={150}
+              height={150}
+              className="rounded-lg [filter:drop-shadow(0_4px_6px_hsl(var(--primary)))]"
+              data-ai-hint="qr code"
+            />
+          </Link>
         </div>
 
         <div className="contact-actions">
