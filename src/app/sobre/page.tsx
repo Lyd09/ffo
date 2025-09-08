@@ -138,11 +138,12 @@ export default function SobrePage() {
 
         <section className="pb-20 sm:pb-24">
             <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
-                <h2 className="text-3xl font-bold text-center mb-12 relative inline-block">
+                <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">NOSSA IDENTIDADE</p>
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-center mb-12 relative inline-block">
                     Sobre <span className="text-primary">Nós</span>
                     <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
                     {aboutUsData.map((item) => {
                         const Icon = item.icon;
                         return (
@@ -167,6 +168,7 @@ export default function SobrePage() {
                 <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">CADA UM COM SUA ESPECIALIDADE</p>
                 <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
                     Mas todo mundo <span className="text-primary">resolve</span>.
+                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
                     Tem quem grava, quem edita, quem anima. Mas na dúvida, todo mundo põe a mão onde for preciso. Conheça as mentes por trás dos projetos.
