@@ -64,10 +64,13 @@ export default function PortfolioPage() {
 
       <section className="pb-16 sm:pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-center mb-12 relative inline-block">
-            Projetos de <span className="text-primary">Vídeo</span>
-            <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
-          </h2>
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">NOSSOS PROJETOS</p>
+            <h2 className="text-3xl font-bold relative inline-block">
+              Projetos de <span className="text-primary">Vídeo</span>
+              <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
+            </h2>
+          </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
             {portfolioProjects.map((project) => (
               <Link key={project.title} href={project.videoUrl} target="_blank" rel="noopener noreferrer" className="group">
