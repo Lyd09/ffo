@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
+import { Target, Eye, Gem } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Sobre - FastFilms',
@@ -75,6 +76,24 @@ const sectionTitles: { [key: string]: string } = {
     filmmakers: 'Filmmakers',
 };
 
+const aboutUsData = [
+    {
+        icon: Target,
+        title: 'Missão',
+        description: 'Criar vídeos autênticos e envolventes que ampliam a presença digital dos clientes.',
+    },
+    {
+        icon: Eye,
+        title: 'Visão',
+        description: 'Se tornar referência local e alcançar estabilidade no mercado em até 5 anos.',
+    },
+    {
+        icon: Gem,
+        title: 'Valores',
+        description: 'Qualidade, Criatividade e Experiência do Cliente.',
+    },
+]
+
 const ProfileCard = ({ name, role, imageUrl, dataAiHint }: { name: string; role: string | string[]; imageUrl: string; dataAiHint: string; }) => (
   <Card className="overflow-hidden text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/20 hover:shadow-lg w-[280px]">
     <CardContent className="p-0">
@@ -118,14 +137,25 @@ export default function SobrePage() {
         </section>
 
         <section className="pb-20 sm:pb-24">
-            <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-                <h2 className="text-3xl font-bold text-center mb-6 relative inline-block">
-                    Nossa <span className="text-primary">Filosofia</span>
+            <div className="max-w-5xl mx-auto px-6 lg:px-8">
+                <h2 className="text-3xl font-bold text-center mb-12 relative inline-block">
+                    Sobre <span className="text-primary">Nós</span>
                     <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
                 </h2>
-                <p className="text-muted-foreground leading-relaxed">
-                    Acreditamos que todo projeto é, antes de tudo, uma história esperando para ser contada. Na FastFilms, unimos a paixão pela narrativa com a obsessão pela qualidade técnica. Não se trata apenas de apertar o play, mas de construir uma parceria com nossos clientes para dar vida às suas ideias, garantindo que cada frame, cada corte e cada linha de código tenha um propósito claro: impactar, engajar e, acima de tudo, comunicar.
-                </p>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {aboutUsData.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <Card key={item.title} className="bg-secondary/30 border-border text-center p-8 flex flex-col items-center gap-4">
+                                <div className="bg-primary/10 text-primary p-4 rounded-full">
+                                    <Icon className="h-10 w-10" />
+                                </div>
+                                <h3 className="text-2xl font-bold">{item.title}</h3>
+                                <p className="text-muted-foreground">{item.description}</p>
+                            </Card>
+                        )
+                    })}
+                </div>
             </div>
         </section>
 
