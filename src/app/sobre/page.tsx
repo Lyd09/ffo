@@ -125,19 +125,19 @@ export default function SobrePage() {
     <>
         <section className="pt-12 pb-20 sm:pt-16 sm:pb-24 text-center">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">CADA UM COM SUA ESPECIALIDADE</p>
+                <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">NOSSA HISTÓRIA, NOSSA ESSÊNCIA</p>
                 <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight relative pb-4 inline-block">
-                    Mas todo mundo <span className="text-primary">resolve</span>.
+                    Unindo criatividade e <span className="text-primary">estratégia</span>.
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-primary"></span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
-                    Tem quem grava, quem edita, quem anima. Mas na dúvida, todo mundo põe a mão onde for preciso.
+                    Somos mais que uma produtora: somos parceiros na construção de narrativas que cativam, engajam e geram resultados.
                 </p>
             </div>
         </section>
 
         <section className="pb-20 sm:pb-24">
-            <div className="max-w-5xl mx-auto px-6 lg:px-8">
+            <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
                 <h2 className="text-3xl font-bold text-center mb-12 relative inline-block">
                     Sobre <span className="text-primary">Nós</span>
                     <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
@@ -163,13 +163,22 @@ export default function SobrePage() {
 
 
         <div className="pb-20 sm:pb-24">
+            <div className="text-center mb-16 px-6">
+                <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">CADA UM COM SUA ESPECIALIDADE</p>
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
+                    Mas todo mundo <span className="text-primary">resolve</span>.
+                </h2>
+                <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
+                    Tem quem grava, quem edita, quem anima. Mas na dúvida, todo mundo põe a mão onde for preciso. Conheça as mentes por trás dos projetos.
+                </p>
+            </div>
             {Object.entries(teamData).map(([sectionKey, members]) => (
                  <section key={sectionKey} className="mb-16">
                     <div className="max-w-7xl mx-auto px-6 lg:px-8 text-center">
-                        <h2 className="text-3xl font-bold text-center mb-12 relative inline-block">
+                        <h3 className="text-3xl font-bold text-center mb-12 relative inline-block">
                             {sectionTitles[sectionKey]}
                             <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
-                        </h2>
+                        </h3>
                         <div className="flex flex-wrap justify-center gap-8">
                             {members.map(member => (
                                 <ProfileCard key={member.name} {...member} />
