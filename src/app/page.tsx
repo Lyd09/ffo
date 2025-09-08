@@ -169,6 +169,7 @@ export default function Home() {
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight relative pb-4 inline-block">
               Quem <span className="text-primary">Faz</span> Acontecer
               <span className="text-white">.</span>
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
               Conheça as mentes criativas por trás dos projetos incríveis que entregamos.
