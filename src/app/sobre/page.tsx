@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Target, Eye, Gem } from 'lucide-react';
+import { Target, Eye, Gem, HeartHandshake, Tv, Wrench } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Sobre - FastFilms',
@@ -92,7 +92,25 @@ const aboutUsData = [
         title: 'Valores',
         description: 'Qualidade, Criatividade e Experiência do Cliente.',
     },
-]
+];
+
+const differentialsData = [
+    {
+        icon: Tv,
+        title: 'Foco em Redes Sociais',
+        description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar, engajar e ampliar a presença digital dos nossos clientes.',
+    },
+    {
+        icon: Wrench,
+        title: 'Técnicas e Equipamentos de Ponta',
+        description: 'Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para garantir a excelência técnica e visual em cada entrega final.',
+    },
+    {
+        icon: HeartHandshake,
+        title: 'Processo Colaborativo',
+        description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos lado a lado com você para garantir que sua visão se torne realidade.',
+    },
+];
 
 const ProfileCard = ({ name, role, imageUrl, dataAiHint }: { name: string; role: string | string[]; imageUrl: string; dataAiHint: string; }) => (
   <Card className="overflow-hidden text-center transition-transform duration-300 ease-in-out hover:scale-105 hover:shadow-primary/20 hover:shadow-lg w-[280px]">
@@ -159,6 +177,30 @@ export default function SobrePage() {
                 </div>
             </div>
         </section>
+        
+        <section className="pb-20 sm:pb-24">
+            <div className="max-w-5xl mx-auto px-6 lg:px-8 text-center">
+                <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">NOSSO JEITO DE FAZER</p>
+                <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-center mb-12 relative inline-block">
+                    Nossos <span className="text-primary">Diferenciais</span>
+                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
+                </h2>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                    {differentialsData.map((item) => {
+                        const Icon = item.icon;
+                        return (
+                            <Card key={item.title} className="bg-secondary/30 border-border text-center p-8 flex flex-col items-center gap-4">
+                                <div className="bg-primary/10 text-primary p-4 rounded-full">
+                                    <Icon className="h-10 w-10" />
+                                </div>
+                                <h3 className="text-2xl font-bold">{item.title}</h3>
+                                <p className="text-muted-foreground">{item.description}</p>
+                            </Card>
+                        )
+                    })}
+                </div>
+            </div>
+        </section>
 
         <Separator className="my-12 sm:my-16 bg-border/50 max-w-4xl mx-auto" />
 
@@ -193,3 +235,5 @@ export default function SobrePage() {
     </>
   );
 }
+
+    
