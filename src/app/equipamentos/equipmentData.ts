@@ -30,7 +30,7 @@ export const workstationData = [
       { icon: MemoryStick, label: 'RAM', value: '32GB Asgard' },
       { icon: Monitor, label: 'Monitor 1', value: 'ASRock Phantom Gaming PG27FF1A 27" 165Hz IPS' },
       { icon: Monitor, label: 'Monitor 2', value: 'LG 23.8" 75Hz' },
-      { icon: Keyboard, label: 'Teclado', value: 'SuperFrame PLAYER 1 Mecânico Switch Blue' },
+      { icon: Keyboard, label: 'Teclado', value: 'Husky Anchorage Mecânico Gamer' },
       { icon: Mouse, label: 'Mouse', value: 'RED Dragon King Cobra M711-FPS-1' },
       { icon: Mic, label: 'Microfone', value: 'FIFINE A6T' },
       { icon: Headphones, label: 'Headset', value: 'Hyperx Cloud Stinger' },
