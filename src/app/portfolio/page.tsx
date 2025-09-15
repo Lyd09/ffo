@@ -42,6 +42,12 @@ const portfolioProjects = [
         imageUrl: '/index/Portfolio/GRAVACAO.png',
         videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
         dataAiHint: 'videography session',
+    },
+    {
+        title: 'Novo Projeto',
+        imageUrl: 'https://picsum.photos/seed/1/360/640',
+        videoUrl: '#',
+        dataAiHint: 'new project',
     }
 ];
 
@@ -126,20 +132,6 @@ export default function PortfolioPage() {
                                 <ExternalLink className="ml-2 h-4 w-4" />
                             </Button>
                         </Link>
-                        <Separator orientation="vertical" className="h-6" />
-                        <span className="text-sm font-medium text-muted-foreground">Ver post:</span>
-                        <div className="flex items-center gap-1">
-                          <Link href="https://www.instagram.com/_fastfilms_/" target="_blank" rel="noopener noreferrer">
-                              <Button variant="ghost" size="icon" className="text-primary hover:bg-primary hover:text-primary-foreground">
-                                  <Instagram className="h-5 w-5" />
-                              </Button>
-                          </Link>
-                          <Link href="https://www.linkedin.com/company/fastfilmsoficial/" target="_blank" rel="noopener noreferrer">
-                              <Button variant="ghost" size="icon" className="text-primary hover:bg-primary hover:text-primary-foreground">
-                                  <Linkedin className="h-5 w-5" />
-                              </Button>
-                          </Link>
-                        </div>
                     </div>
                 </div>
             </Card>
