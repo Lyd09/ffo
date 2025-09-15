@@ -14,13 +14,13 @@ export const metadata: Metadata = {
 
 const portfolioProjects = [
     {
-        title: 'Produção para Redes Sociais',
+        title: 'A TRANSCRIÇÃO DE UM LUGAR Para a tela condomínio mirante do fidalgo',
         imageUrl: '/index/Portfolio/TELA.png',
         videoUrl: 'https://www.instagram.com/reel/DOZNsJCER89/?utm_source=ig_web_button_share_sheet&igsh=ZjF0eHhtb3Y4YnRt',
         dataAiHint: 'social media video',
     },
     {
-        title: 'Evento em Lagoa Santa/MG - powered by Housi',
+        title: 'NOVO CONCEITO DE Investimento Lagoa Santa-MG',
         imageUrl: '/index/Portfolio/INVESTIMENTO.png',
         videoUrl: 'https://www.instagram.com/reel/DLaHI3LuUg7/?utm_source=ig_web_copy_link&igsh=MXdqazN3cmpnejVxMA==',
         dataAiHint: 'corporate event',
