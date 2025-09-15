@@ -113,7 +113,7 @@ export default function PortfolioPage() {
            <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4 lg:items-center">
                 <div className="relative aspect-video lg:aspect-auto lg:h-full w-full">
                     <Image
-                        src="/index/Portfolio/sites/siteana2.png"
+                        src="/index/Portfolio/siteana2.png"
                         alt="Screenshot do site da Ana Araújo Corretora"
                         fill
                         className="object-cover"
