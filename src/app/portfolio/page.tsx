@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { PlayCircle, ExternalLink, Instagram, Linkedin } from 'lucide-react';
+import { PlayCircle, ExternalLink } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
 
@@ -13,6 +13,12 @@ export const metadata: Metadata = {
 };
 
 const portfolioProjects = [
+    {
+        title: 'Produção para Redes Sociais',
+        imageUrl: '/index/Portfolio/TELA.png',
+        videoUrl: 'https://www.instagram.com/reel/DOZNsJCER89/?utm_source=ig_web_button_share_sheet&igsh=ZjF0eHhtb3Y4YnRt',
+        dataAiHint: 'social media video',
+    },
     {
         title: 'Evento em Lagoa Santa/MG - powered by Housi',
         imageUrl: '/index/Portfolio/INVESTIMENTO.png',
@@ -43,12 +49,6 @@ const portfolioProjects = [
         videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
         dataAiHint: 'videography session',
     },
-    {
-        title: 'Novo Projeto',
-        imageUrl: 'https://picsum.photos/seed/1/360/640',
-        videoUrl: '#',
-        dataAiHint: 'new project',
-    }
 ];
 
 
@@ -113,7 +113,7 @@ export default function PortfolioPage() {
            <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4 lg:items-center">
                 <div className="relative aspect-video lg:aspect-auto lg:h-full w-full">
                     <Image
-                        src="/index/Portfolio/sites/siteANA2.png"
+                        src="/index/Portfolio/sites/siteana2.png"
                         alt="Screenshot do site da Ana Araújo Corretora"
                         fill
                         className="object-cover"
