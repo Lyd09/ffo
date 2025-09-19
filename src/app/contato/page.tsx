@@ -159,24 +159,6 @@ export default function ContatoPage() {
   const showDroneOption = serviceType === 'producao';
   const showEventSwitch = serviceType !== 'site' && serviceType !== 'software';
 
-  const fillFormForTesting = () => {
-    form.setValue("name", "Cliente de Teste");
-    form.setValue("email", "teste@fastfilms.com.br");
-    form.setValue("phone", "31999998888");
-    form.setValue("serviceType", "producao");
-    form.setValue("projectType", "institucional");
-    form.setValue("quantity", 5);
-    form.setValue("droneOption", true);
-    const tomorrow = new Date();
-    tomorrow.setDate(tomorrow.getDate() + 1);
-    form.setValue("recordingDate", tomorrow);
-    form.setValue("recordingLocation", "Belo Horizonte, MG");
-    form.setValue("isEvent", false);
-    form.setValue("projectDetails", "Este é um projeto de teste para demonstrar a capacidade da IA em resumir os detalhes. Gostaria de um vídeo moderno para minha marca, com foco nos bastidores da produção e depoimentos de clientes. A ideia é transmitir confiança e profissionalismo.");
-    form.setValue("references", "https://www.youtube.com/watch?v=exemploVideo");
-    toast.info("Formulário preenchido com dados de teste.");
-  };
-
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     const toastId = toast.loading("Analisando sua solicitação...", {
@@ -559,10 +541,6 @@ export default function ContatoPage() {
                   )}
                 />
                 <div className="flex justify-end items-center gap-4">
-                  <Button type="button" size="lg" variant="outline" onClick={fillFormForTesting} disabled={isLoading}>
-                    <TestTube2 className="mr-2 h-5 w-5" />
-                    Preencher para Teste
-                  </Button>
                   <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-transform hover:scale-105" disabled={isLoading}>
                     {isLoading ? (
                         <>
@@ -583,5 +561,7 @@ export default function ContatoPage() {
         </div>
       </main>
   );
+
+    
 
     
