@@ -163,7 +163,7 @@ export default function ContatoPage() {
     form.reset({
       name: "João da Silva (Exemplo)",
       email: "joao.silva.exemplo@email.com",
-      phone: "31999998888",
+      phone: "123456789",
       serviceType: "producao",
       projectType: "institucional",
       quantity: 3,
@@ -585,11 +585,4 @@ export default function ContatoPage() {
         </div>
       </main>
   );
-
-    
-
-    
-
-    
-
-    
+}
