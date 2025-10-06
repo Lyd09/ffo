@@ -159,6 +159,26 @@ export default function ContatoPage() {
   const showDroneOption = serviceType === 'producao';
   const showEventSwitch = serviceType !== 'site' && serviceType !== 'software';
 
+  function handleFillWithExample() {
+    form.reset({
+      name: "João da Silva (Exemplo)",
+      email: "joao.silva.exemplo@email.com",
+      phone: "31999998888",
+      serviceType: "producao",
+      projectType: "institucional",
+      quantity: 3,
+      recordingDate: new Date(),
+      recordingLocation: "Belo Horizonte, MG",
+      isEvent: false,
+      droneOption: true,
+      projectDetails: "Gostaria de criar 3 vídeos institucionais para minha empresa. O objetivo é mostrar a cultura da empresa, o dia a dia da equipe e apresentar nosso novo produto. Busco uma estética moderna e profissional, com takes cinematográficos.",
+      references: "https://www.youtube.com/watch?v=exemplo1\nhttps://vimeo.com/exemplo2",
+    });
+    toast.info("Formulário preenchido com dados de exemplo.", {
+      description: "Agora você pode enviar para ver como funciona!",
+    });
+  }
+
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsLoading(true);
     const toastId = toast.loading("Analisando sua solicitação...", {
@@ -541,6 +561,10 @@ export default function ContatoPage() {
                   )}
                 />
                 <div className="flex justify-end items-center gap-4">
+                  <Button type="button" variant="outline" size="lg" onClick={handleFillWithExample} disabled={isLoading}>
+                    Preencher com um Exemplo
+                    <TestTube2 className="ml-2 h-5 w-5" />
+                  </Button>
                   <Button type="submit" size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold transition-transform hover:scale-105" disabled={isLoading}>
                     {isLoading ? (
                         <>
@@ -561,6 +585,8 @@ export default function ContatoPage() {
         </div>
       </main>
   );
+
+    
 
     
 
