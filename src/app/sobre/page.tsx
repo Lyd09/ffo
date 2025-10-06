@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Target, Eye, Gem, HeartHandshake, Tv, Wrench } from 'lucide-react';
+import { Target, Eye, Gem, HeartHandshake, Tv, Wrench, PackageCheck } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Sobre - FastFilms',
@@ -101,14 +101,19 @@ const differentialsData = [
         description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar, engajar e ampliar a presença digital dos nossos clientes.',
     },
     {
-        icon: Wrench,
-        title: 'Técnicas e Equipamentos de Ponta',
+        icon: PackageCheck,
+        title: 'Equipamentos de Ponta',
         description: 'Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para garantir a excelência técnica e visual em cada entrega final.',
     },
     {
         icon: HeartHandshake,
         title: 'Processo Colaborativo',
         description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos lado a lado com você para garantir que sua visão se torne realidade.',
+    },
+    {
+        icon: Wrench,
+        title: 'Ajustes Sem Custo Adicional',
+        description: 'O cliente não paga por alterações, desde que as modificações solicitadas não alterem fundamentalmente o escopo do projeto acordado inicialmente.',
     },
 ];
 
@@ -185,7 +190,7 @@ export default function SobrePage() {
                     Nossos <span className="text-primary">Diferenciais</span>
                     <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
                 </h2>
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
                     {differentialsData.map((item) => {
                         const Icon = item.icon;
                         return (
