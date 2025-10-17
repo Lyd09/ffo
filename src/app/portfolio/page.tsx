@@ -79,7 +79,7 @@ export default function PortfolioPage() {
       <section className="pb-16 sm:pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">NOSSOS PROJETOS</p>
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">AÇÃO, CÂMERA, PLAY</p>
             <h2 className="text-3xl font-bold relative inline-block">
               Projetos de <span className="text-primary">Vídeo</span>
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
@@ -113,6 +113,7 @@ export default function PortfolioPage() {
       <section className="pb-16 sm:pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">A PRIMEIRA IMPRESSÃO</p>
             <h2 className="text-3xl font-bold relative inline-block">
               Animação de <span className="text-primary">Logomarca</span>
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
@@ -142,8 +143,9 @@ export default function PortfolioPage() {
 
       <section className="pb-20 sm:pb-24">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-           <div className="text-center">
-             <h2 className="text-3xl font-bold text-center mb-12 relative inline-block">
+           <div className="text-center mb-12">
+             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">PRESENÇA DIGITAL</p>
+             <h2 className="text-3xl font-bold text-center relative inline-block">
                 Desenvolvimento de <span className="text-primary">Sites</span>
                 <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
              </h2>
