@@ -51,6 +51,14 @@ const portfolioProjects = [
     },
 ];
 
+const logoAnimations = [
+  {
+    title: 'Animação de Logo para Exemplo',
+    youtubeVideoId: 'dQw4w9WgXcQ', // ID de um vídeo de exemplo
+  },
+  // Adicione mais animações aqui quando tiver os links
+];
+
 
 export default function PortfolioPage() {
   return (
@@ -95,6 +103,36 @@ export default function PortfolioPage() {
                   </div>
                 </Card>
               </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Separator className="my-12 sm:my-16 bg-border/50 max-w-4xl mx-auto" />
+
+      <section className="pb-16 sm:pb-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold relative inline-block">
+              Animação de <span className="text-primary">Logomarca</span>
+              <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {logoAnimations.map((animation) => (
+              <div key={animation.title}>
+                <div className="aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border bg-black">
+                  <iframe
+                    src={`https://www.youtube.com/embed/${animation.youtubeVideoId}`}
+                    title={animation.title}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="w-full h-full"
+                  ></iframe>
+                </div>
+                <h3 className="text-center font-bold mt-4 text-lg">{animation.title}</h3>
+              </div>
             ))}
           </div>
         </div>
