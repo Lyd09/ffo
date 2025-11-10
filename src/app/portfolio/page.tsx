@@ -59,6 +59,33 @@ const logoAnimations = [
   // Adicione mais animações aqui quando tiver os links
 ];
 
+const socialMediaPosts = [
+    {
+        client: 'Cliente Exemplo 1',
+        imageUrl: 'https://picsum.photos/seed/post1/1080/1080',
+        postUrl: '#',
+        dataAiHint: 'social media post',
+    },
+    {
+        client: 'Cliente Exemplo 2',
+        imageUrl: 'https://picsum.photos/seed/post2/1080/1080',
+        postUrl: '#',
+        dataAiHint: 'instagram post',
+    },
+    {
+        client: 'Cliente Exemplo 3',
+        imageUrl: 'https://picsum.photos/seed/post3/1080/1080',
+        postUrl: '#',
+        dataAiHint: 'facebook post',
+    },
+    {
+        client: 'Cliente Exemplo 4',
+        imageUrl: 'https://picsum.photos/seed/post4/1080/1080',
+        postUrl: '#',
+        dataAiHint: 'graphic design',
+    },
+];
+
 
 export default function PortfolioPage() {
   return (
@@ -134,6 +161,42 @@ export default function PortfolioPage() {
                 </div>
                 <h3 className="text-center font-bold mt-4 text-lg">{animation.title}</h3>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Separator className="my-12 sm:my-16 bg-border/50 max-w-4xl mx-auto" />
+
+      <section className="pb-16 sm:pb-20">
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">DESIGN E CONTEÚDO</p>
+            <h2 className="text-3xl font-bold relative inline-block">
+              Posts para <span className="text-primary">Redes Sociais</span>
+              <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {socialMediaPosts.map((post) => (
+              <Link key={post.client} href={post.postUrl} target="_blank" rel="noopener noreferrer" className="group">
+                <Card className="relative aspect-square overflow-hidden rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
+                  <Image
+                    src={post.imageUrl}
+                    alt={`Post para ${post.client}`}
+                    width={1080}
+                    height={1080}
+                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                    data-ai-hint={post.dataAiHint}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                    <h3 className="text-white font-bold text-lg drop-shadow-md">{post.client}</h3>
+                  </div>
+                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <ExternalLink className="h-16 w-16 text-white drop-shadow-lg" />
+                  </div>
+                </Card>
+              </Link>
             ))}
           </div>
         </div>
