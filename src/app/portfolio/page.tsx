@@ -104,11 +104,8 @@ const socialMediaPosts = [
     },
 ];
 
-// Array para as 40 fotos do evento.
-// IMPORTANTE: Você precisará substituir estes caminhos pelos nomes dos seus arquivos.
 const eventPhotos = Array.from({ length: 40 }, (_, i) => ({
     alt: `Foto do evento ${i + 1}`,
-    // O caminho deve corresponder à pasta que você criou em `public`
     imageUrl: `/index/Portfolio/Fotografia/evento-${String(i + 1).padStart(2, '0')}.jpg`, 
     dataAiHint: `event photography ${i + 1}`
 }));
@@ -199,7 +196,7 @@ export default function PortfolioPage() {
             <div className="text-center mb-12">
                 <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">MOMENTOS E DETALHES</p>
                 <h2 className="text-3xl font-bold relative inline-block">
-                    Fotografia de <span className="text-primary">Eventos</span>
+                    <span className="text-primary">Fotografia</span>
                     <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
                 </h2>
                 <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
@@ -214,25 +211,28 @@ export default function PortfolioPage() {
                 className="w-full"
             >
                 <CarouselContent>
-                    {eventPhotos.map((photo, index) => (
-                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                        <div className="p-1">
-                            <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent group">
-                            <Image
-                                src={photo.imageUrl}
-                                alt={photo.alt}
-                                width={500}
-                                height={625}
-                                className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
-                                data-ai-hint={photo.dataAiHint}
-                            />
-                            <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                <Camera className="h-16 w-16 text-white drop-shadow-lg" />
-                            </div>
-                            </Card>
-                        </div>
-                    </CarouselItem>
-                    ))}
+                    {eventPhotos.map((photo, index) => {
+                        console.log("Image URL being rendered:", photo.imageUrl);
+                        return (
+                            <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                                <div className="p-1">
+                                    <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent group">
+                                    <Image
+                                        src={photo.imageUrl}
+                                        alt={photo.alt}
+                                        width={500}
+                                        height={625}
+                                        className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                        data-ai-hint={photo.dataAiHint}
+                                    />
+                                    <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <Camera className="h-16 w-16 text-white drop-shadow-lg" />
+                                    </div>
+                                    </Card>
+                                </div>
+                            </CarouselItem>
+                        );
+                    })}
                 </CarouselContent>
                 <CarouselPrevious className="ml-14" />
                 <CarouselNext className="mr-14" />
