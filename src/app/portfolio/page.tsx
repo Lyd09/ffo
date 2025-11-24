@@ -104,10 +104,21 @@ const socialMediaPosts = [
     },
 ];
 
-const eventPhotos = Array.from({ length: 40 }, (_, i) => ({
-    alt: `Foto do evento ${i + 1}`,
-    imageUrl: `/index/Portfolio/Fotografia/evento-${String(i + 1).padStart(2, '0')}.jpg`, 
-    dataAiHint: `event photography ${i + 1}`
+const photoFileNames = [
+    "DSC03865.jpg", "DSC03867.jpg", "DSC03880.jpg", "DSC03911.jpg", "DSC03913.jpg", 
+    "DSC03914.jpg", "DSC03922.jpg", "DSC03926.jpg", "DSC03928.jpg", "DSC03933.jpg", 
+    "DSC03934.jpg", "DSC03935.jpg", "DSC03936.jpg", "DSC03942.jpg", "DSC03961.jpg", 
+    "DSC03970.jpg", "DSC03984.jpg", "DSC03990.jpg", "DSC04016.jpg", "DSC04030.jpg", 
+    "DSC04048.jpg", "DSC04056.jpg", "DSC04062.jpg", "DSC04064.jpg", "DSC04069.jpg", 
+    "DSC04085.jpg", "DSC04099.jpg", "DSC04124.jpg", "DSC04144.jpg", "DSC04222.jpg", 
+    "DSC04250.jpg", "DSC04317.jpg", "DSC04332.jpg", "DSC04341.jpg", "DSC04374.jpg", 
+    "DSC04394.jpg", "DSC04422.jpg", "DSC04530.jpg", "DSC04546.jpg", "DSC04556.jpg"
+];
+
+const eventPhotos = photoFileNames.map((fileName, index) => ({
+    alt: `Foto do evento ${index + 1}`,
+    imageUrl: `/index/Portfolio/Fotografia/${fileName}`,
+    dataAiHint: `event photography ${index + 1}`
 }));
 
 
