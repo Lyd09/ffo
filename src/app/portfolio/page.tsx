@@ -112,6 +112,12 @@ const eventPhotos = Array.from({ length: 40 }, (_, i) => ({
 
 
 export default function PortfolioPage() {
+  console.log('--- LOG INICIAL: RENDERIZAÇÃO DA PÁGINA DE PORTFÓLIO INICIADA ---');
+  if (eventPhotos && eventPhotos.length > 0) {
+    console.log(`[LOG DE FOTOS] O array 'eventPhotos' foi encontrado e contém ${eventPhotos.length} fotos.`);
+  } else {
+    console.error("[ERRO DE FOTOS] O array 'eventPhotos' está vazio ou não foi definido!");
+  }
   return (
     <>
       <section className="pt-12 pb-20 sm:pt-16 sm:pb-24 text-center">
@@ -212,7 +218,13 @@ export default function PortfolioPage() {
             >
                 <CarouselContent>
                     {eventPhotos.map((photo, index) => {
-                        console.log("Image URL being rendered:", photo.imageUrl);
+                        console.log(`--- INICIANDO RENDER DO ITEM DE FOTO Nº ${index + 1} ---`);
+                        console.log(`[LOG DETALHADO ${index + 1}] Objeto completo da foto:`, photo);
+                        console.log(`[LOG DETALHADO ${index + 1}] URL da imagem a ser renderizada: ${photo.imageUrl}`);
+                        const width = 500;
+                        const height = 625;
+                        console.log(`[LOG DETALHADO ${index + 1}] Props para o <Image>: width=${width}, height=${height}`);
+                        
                         return (
                             <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                                 <div className="p-1">
@@ -220,8 +232,8 @@ export default function PortfolioPage() {
                                     <Image
                                         src={photo.imageUrl}
                                         alt={photo.alt}
-                                        width={500}
-                                        height={625}
+                                        width={width}
+                                        height={height}
                                         className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
                                         data-ai-hint={photo.dataAiHint}
                                     />
@@ -230,6 +242,7 @@ export default function PortfolioPage() {
                                     </div>
                                     </Card>
                                 </div>
+                                {console.log(`--- FIM DO RENDER DO ITEM DE FOTO Nº ${index + 1} ---`)}
                             </CarouselItem>
                         );
                     })}
