@@ -222,8 +222,8 @@ export default function PortfolioPage() {
                 className="w-full"
             >
                 <CarouselContent>
-                    {eventPhotos.map((photo, index) => (
-                        <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    {eventPhotos.map((photo) => (
+                        <CarouselItem key={photo.imageUrl} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                             <div className="p-1">
                                 <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent group">
                                 <Image
@@ -267,8 +267,8 @@ export default function PortfolioPage() {
                 className="w-full"
             >
                 <CarouselContent>
-                    {socialMediaPosts.map((post, index) => (
-                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                    {socialMediaPosts.map((post) => (
+                    <CarouselItem key={post.imageUrl} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                         <div className="p-1">
                             <Link href={post.postUrl} target="_blank" rel="noopener noreferrer" className="group">
                                 <Card className="relative aspect-square overflow-hidden rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
