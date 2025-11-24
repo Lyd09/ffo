@@ -3,9 +3,16 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { PlayCircle, ExternalLink } from 'lucide-react';
+import { PlayCircle, ExternalLink, ArrowLeft, ArrowRight } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
+import {
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
+} from "@/components/ui/carousel"
 
 export const metadata: Metadata = {
   title: 'Portfólio - FastFilms',
@@ -84,6 +91,18 @@ const socialMediaPosts = [
         postUrl: '#',
         dataAiHint: 'graphic design',
     },
+    {
+        client: 'Cliente Exemplo 5',
+        imageUrl: 'https://picsum.photos/seed/post5/1080/1080',
+        postUrl: '#',
+        dataAiHint: 'social media content',
+    },
+    {
+        client: 'Cliente Exemplo 6',
+        imageUrl: 'https://picsum.photos/seed/post6/1080/1080',
+        postUrl: '#',
+        dataAiHint: 'brand design',
+    },
 ];
 
 
@@ -92,7 +111,6 @@ export default function PortfolioPage() {
     <>
       <section className="pt-12 pb-20 sm:pt-16 sm:pb-24 text-center">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">NOSSO TRABALHO</p>
             <h1 className="text-5xl lg:text-7xl font-extrabold mb-4 leading-tight relative pb-4 inline-block">
                 Nosso <span className="text-primary">Portfólio</span>
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-3/4 h-1 bg-primary"></span>
@@ -170,35 +188,49 @@ export default function PortfolioPage() {
 
       <section className="pb-16 sm:pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">DESIGN E CONTEÚDO</p>
-            <h2 className="text-3xl font-bold relative inline-block">
-              Posts para <span className="text-primary">Redes Sociais</span>
-              <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {socialMediaPosts.map((post) => (
-              <Link key={post.client} href={post.postUrl} target="_blank" rel="noopener noreferrer" className="group">
-                <Card className="relative aspect-square overflow-hidden rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
-                  <Image
-                    src={post.imageUrl}
-                    alt={`Post para ${post.client}`}
-                    width={1080}
-                    height={1080}
-                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
-                    data-ai-hint={post.dataAiHint}
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
-                    <h3 className="text-white font-bold text-lg drop-shadow-md">{post.client}</h3>
-                  </div>
-                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <ExternalLink className="h-16 w-16 text-white drop-shadow-lg" />
-                  </div>
-                </Card>
-              </Link>
-            ))}
-          </div>
+            <div className="text-center mb-12">
+                <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">DESIGN E CONTEÚDO</p>
+                <h2 className="text-3xl font-bold relative inline-block">
+                Posts para <span className="text-primary">Redes Sociais</span>
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
+                </h2>
+            </div>
+            <Carousel
+                opts={{
+                    align: "start",
+                    loop: true,
+                }}
+                className="w-full"
+            >
+                <CarouselContent>
+                    {socialMediaPosts.map((post, index) => (
+                    <CarouselItem key={index} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                        <div className="p-1">
+                            <Link href={post.postUrl} target="_blank" rel="noopener noreferrer" className="group">
+                                <Card className="relative aspect-square overflow-hidden rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
+                                <Image
+                                    src={post.imageUrl}
+                                    alt={`Post para ${post.client}`}
+                                    width={1080}
+                                    height={1080}
+                                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                    data-ai-hint={post.dataAiHint}
+                                />
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                    <h3 className="text-white font-bold text-lg drop-shadow-md">{post.client}</h3>
+                                </div>
+                                <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <ExternalLink className="h-16 w-16 text-white drop-shadow-lg" />
+                                </div>
+                                </Card>
+                            </Link>
+                        </div>
+                    </CarouselItem>
+                    ))}
+                </CarouselContent>
+                <CarouselPrevious className="ml-14" />
+                <CarouselNext className="mr-14" />
+            </Carousel>
         </div>
       </section>
 
@@ -243,3 +275,5 @@ export default function PortfolioPage() {
     </>
   );
 }
+
+    
