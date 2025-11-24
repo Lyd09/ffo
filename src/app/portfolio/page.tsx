@@ -109,7 +109,7 @@ const socialMediaPosts = [
 const eventPhotos = Array.from({ length: 40 }, (_, i) => ({
     alt: `Foto do evento ${i + 1}`,
     // O caminho deve corresponder à pasta que você criou em `public`
-    imageUrl: `/portfolio/fotografia-evento/evento-${String(i + 1).padStart(2, '0')}.jpg`, 
+    imageUrl: `/index/Portfolio/Fotografia/evento-${String(i + 1).padStart(2, '0')}.jpg`, 
     dataAiHint: `event photography ${i + 1}`
 }));
 
