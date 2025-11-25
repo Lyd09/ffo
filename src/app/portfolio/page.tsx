@@ -66,6 +66,8 @@ const logoAnimations = [
   { title: 'LOGO 4', youtubeVideoId: 'dQw4w9WgXcQ' },
   { title: 'LOGO 4.2', youtubeVideoId: 'dQw4w9WgXcQ' },
   { title: 'LOGO 5', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 6', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 7', youtubeVideoId: 'dQw4w9WgXcQ' },
 ];
 
 const socialMediaPosts = [
@@ -338,5 +340,6 @@ export default function PortfolioPage() {
     
 
     
+
 
 
