@@ -66,66 +66,16 @@ const logoAnimations = [
 ];
 
 const socialMediaPosts = [
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/BURGUER-HALLOWEEN.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/CONTRATO.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/DENTES.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/FF-BLACKFRIDAY.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/MADEIRA.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/MYBK-GERENTE.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/MYBK-GERENTE2.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/MYBK-GERENTE3.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/NATAL.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
-    {
-        client: 'Criativo',
-        imageUrl: '/index/Criativos/DIEGO.png',
-        postUrl: '#',
-        dataAiHint: 'creative social media post',
-    },
+    { client: 'Criativo', imageUrl: '/index/Criativos/BURGUER-HALLOWEEN.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/CONTRATO.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/DENTES.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/FF-BLACKFRIDAY.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/MADEIRA.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/MYBK-GERENTE.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/MYBK-GERENTE2.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/MYBK-GERENTE3.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/NATAL.png', dataAiHint: 'creative social media post' },
+    { client: 'Criativo', imageUrl: '/index/Criativos/DIEGO.png', dataAiHint: 'creative social media post' },
 ];
 
 const photoFileNames = [
@@ -291,8 +241,8 @@ export default function PortfolioPage() {
                     {socialMediaPosts.map((post) => (
                     <CarouselItem key={post.imageUrl} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
                         <div className="p-1">
-                            <Link href={post.postUrl} target="_blank" rel="noopener noreferrer" className="group">
-                                <Card className="relative aspect-square overflow-hidden rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
+                            <div className="group">
+                                <Card className="relative aspect-square overflow-hidden rounded-xl border-2 border-transparent group-hover:border-primary transition-all duration-300">
                                 <Image
                                     src={post.imageUrl}
                                     alt={`Post para ${post.client}`}
@@ -304,11 +254,8 @@ export default function PortfolioPage() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
                                     <h3 className="text-white font-bold text-lg drop-shadow-md">{post.client}</h3>
                                 </div>
-                                <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <ExternalLink className="h-16 w-16 text-white drop-shadow-lg" />
-                                </div>
                                 </Card>
-                            </Link>
+                            </div>
                         </div>
                     </CarouselItem>
                     ))}
