@@ -123,7 +123,7 @@ export default function PortfolioPage() {
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {portfolioProjects.map((project) => (
               <Link key={project.title} href={project.videoUrl} target="_blank" rel="noopener noreferrer" className="group">
                 <Card className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-transparent hover:border-primary transition-all duration-300">
@@ -338,3 +338,4 @@ export default function PortfolioPage() {
     
 
     
+
