@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { PlayCircle, ExternalLink, Camera } from 'lucide-react';
+import { PlayCircle, ExternalLink, Camera, Link2Off } from 'lucide-react';
 import { Separator } from '@/components/ui/separator';
 import {
     Carousel,
@@ -115,10 +115,10 @@ const photoFileNames = [
     "DSC04394.jpg", "DSC04422.jpg", "DSC04530.jpg", "DSC04546.jpg", "DSC04556.jpg"
 ];
 
-const eventPhotos = photoFileNames.map((fileName, index) => ({
-    alt: `Foto do evento ${index + 1}`,
+const eventPhotos = photoFileNames.map((fileName) => ({
+    alt: `Foto do evento - ${fileName}`,
     imageUrl: `/index/Portfolio/Fotografia/${fileName}`,
-    dataAiHint: `event photography ${index + 1}`
+    dataAiHint: `event photography`
 }));
 
 
@@ -210,9 +210,6 @@ export default function PortfolioPage() {
                     <span className="text-primary">Fotografia</span>
                     <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
                 </h2>
-                <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-                    Capturando a energia e a emoção de cada momento. Explore a galeria para ver nosso olhar sobre eventos.
-                </p>
             </div>
             <Carousel
                 opts={{
@@ -309,31 +306,56 @@ export default function PortfolioPage() {
                 <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
              </h2>
            </div>
-           <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden lg:grid lg:grid-cols-2 lg:gap-4 lg:items-center">
-                <div className="relative aspect-video lg:aspect-auto lg:h-full w-full">
-                    <Image
-                        src="/index/Portfolio/siteana2.png"
-                        alt="Screenshot do site da Ana Araújo Corretora"
-                        fill
-                        className="object-cover"
-                        data-ai-hint="real estate website"
-                    />
-                </div>
-                <div className="p-8">
-                    <h3 className="text-2xl font-bold text-primary">Ana Araújo Corretora</h3>
-                    <p className="text-muted-foreground mt-2 mb-6">
-                        Desenvolvemos uma landing page simples e direta para a corretora de imóveis Ana Araújo, focada em Lagoa Santa e região. O site foi criado para oferecer uma experiência de usuário fluida, com design moderno e totalmente responsivo para capturar leads de forma eficiente.
-                    </p>
-                    <div className="flex items-center gap-4 flex-wrap">
-                        <Link href="https://corretoraanaaraujo.com.br/" target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline">
-                                Visitar Site
-                                <ExternalLink className="ml-2 h-4 w-4" />
-                            </Button>
-                        </Link>
+           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
+                    <div className="relative aspect-video w-full">
+                        <Image
+                            src="/index/Portfolio/siteana2.png"
+                            alt="Screenshot do site da Ana Araújo Corretora"
+                            fill
+                            className="object-cover"
+                            data-ai-hint="real estate website"
+                        />
                     </div>
-                </div>
-            </Card>
+                    <div className="p-8 flex flex-col flex-grow">
+                        <h3 className="text-2xl font-bold text-primary">Ana Araújo | Corretora</h3>
+                        <p className="text-muted-foreground mt-2 mb-6 flex-grow">
+                            Desenvolvemos uma landing page simples e direta para a corretora de imóveis Ana Araújo, focada em Lagoa Santa e região. O site foi criado para oferecer uma experiência de usuário fluida, com design moderno e totalmente responsivo para capturar leads de forma eficiente.
+                        </p>
+                        <div className="flex items-center gap-4 flex-wrap">
+                            <Link href="https://corretoraanaaraujo.com.br/" target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline">
+                                    Visitar Site
+                                    <ExternalLink className="ml-2 h-4 w-4" />
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+                </Card>
+                <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
+                    <div className="relative aspect-video w-full">
+                        <Image
+                            src="https://picsum.photos/seed/kenia-site/1280/720"
+                            alt="Screenshot do site da Kênia Michelle"
+                            fill
+                            className="object-cover"
+                            data-ai-hint="marketing specialist website"
+                        />
+                    </div>
+                    <div className="p-8 flex flex-col flex-grow">
+                        <h3 className="text-2xl font-bold text-primary">Kênia Michelle | Especialista em Marketing</h3>
+                        <p className="text-muted-foreground mt-2 mb-6 flex-grow">
+                            Criamos um site moderno e uma landing page otimizada para a especialista em marketing Kênia Michelle. O projeto foi focado em fortalecer sua marca pessoal, capturar leads e apresentar seus serviços de consultoria e gestão de tráfego de forma clara e profissional.
+                        </p>
+                        <div className="flex items-center gap-4 flex-wrap">
+                           <Button variant="outline" disabled>
+                                Site em Breve
+                                <Link2Off className="ml-2 h-4 w-4" />
+                            </Button>
+                        </div>
+                    </div>
+                </Card>
+           </div>
         </div>
       </section>
     </>
