@@ -67,40 +67,64 @@ const logoAnimations = [
 
 const socialMediaPosts = [
     {
-        client: 'Cliente Exemplo 1',
-        imageUrl: 'https://picsum.photos/seed/post1/1080/1080',
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/BURGUER-HALLOWEEN.png',
         postUrl: '#',
-        dataAiHint: 'social media post',
+        dataAiHint: 'creative social media post',
     },
     {
-        client: 'Cliente Exemplo 2',
-        imageUrl: 'https://picsum.photos/seed/post2/1080/1080',
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/CONTRATO.png',
         postUrl: '#',
-        dataAiHint: 'instagram post',
+        dataAiHint: 'creative social media post',
     },
     {
-        client: 'Cliente Exemplo 3',
-        imageUrl: 'https://picsum.photos/seed/post3/1080/1080',
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/DENTES.png',
         postUrl: '#',
-        dataAiHint: 'facebook post',
+        dataAiHint: 'creative social media post',
     },
     {
-        client: 'Cliente Exemplo 4',
-        imageUrl: 'https://picsum.photos/seed/post4/1080/1080',
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/FF-BLACKFRIDAY.png',
         postUrl: '#',
-        dataAiHint: 'graphic design',
+        dataAiHint: 'creative social media post',
     },
     {
-        client: 'Cliente Exemplo 5',
-        imageUrl: 'https://picsum.photos/seed/post5/1080/1080',
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/MADEIRA.png',
         postUrl: '#',
-        dataAiHint: 'social media content',
+        dataAiHint: 'creative social media post',
     },
     {
-        client: 'Cliente Exemplo 6',
-        imageUrl: 'https://picsum.photos/seed/post6/1080/1080',
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/MYBK-GERENTE.png',
         postUrl: '#',
-        dataAiHint: 'brand design',
+        dataAiHint: 'creative social media post',
+    },
+    {
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/MYBK-GERENTE2.png',
+        postUrl: '#',
+        dataAiHint: 'creative social media post',
+    },
+    {
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/MYBK-GERENTE3.png',
+        postUrl: '#',
+        dataAiHint: 'creative social media post',
+    },
+    {
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/NATAL.png',
+        postUrl: '#',
+        dataAiHint: 'creative social media post',
+    },
+    {
+        client: 'Criativo',
+        imageUrl: '/index/Criativos/DIEGO.png',
+        postUrl: '#',
+        dataAiHint: 'creative social media post',
     },
 ];
 
@@ -204,44 +228,44 @@ export default function PortfolioPage() {
 
       <section className="pb-16 sm:pb-20">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-            <div className="text-center mb-12">
-                <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">MOMENTOS E DETALHES</p>
-                <h2 className="text-3xl font-bold relative inline-block">
-                    <span className="text-primary">Fotografia</span>
-                    <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
-                </h2>
-            </div>
-            <Carousel
-                opts={{
-                    align: "start",
-                    loop: true,
-                }}
-                className="w-full"
-            >
-                <CarouselContent>
-                    {eventPhotos.map((photo) => (
-                        <CarouselItem key={photo.imageUrl} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
-                            <div className="p-1">
-                                <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent group">
-                                <Image
-                                    src={photo.imageUrl}
-                                    alt={photo.alt}
-                                    width={500}
-                                    height={625}
-                                    className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
-                                    data-ai-hint={photo.dataAiHint}
-                                />
-                                <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                    <Camera className="h-16 w-16 text-white drop-shadow-lg" />
-                                </div>
-                                </Card>
-                            </div>
-                        </CarouselItem>
-                    ))}
-                </CarouselContent>
-                <CarouselPrevious className="ml-14" />
-                <CarouselNext className="mr-14" />
-            </Carousel>
+          <div className="text-center mb-12">
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">MOMENTOS E DETALHES</p>
+            <h2 className="text-3xl font-bold relative inline-block">
+                <span className="text-primary">Fotografia</span>
+                <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
+            </h2>
+          </div>
+          <Carousel
+              opts={{
+                  align: "start",
+                  loop: true,
+              }}
+              className="w-full"
+          >
+              <CarouselContent>
+                  {eventPhotos.map((photo) => (
+                      <CarouselItem key={photo.imageUrl} className="sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                          <div className="p-1">
+                              <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent group">
+                              <Image
+                                  src={photo.imageUrl}
+                                  alt={photo.alt}
+                                  width={500}
+                                  height={625}
+                                  className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                  data-ai-hint={photo.dataAiHint}
+                              />
+                              <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                  <Camera className="h-16 w-16 text-white drop-shadow-lg" />
+                              </div>
+                              </Card>
+                          </div>
+                      </CarouselItem>
+                  ))}
+              </CarouselContent>
+              <CarouselPrevious className="ml-14" />
+              <CarouselNext className="mr-14" />
+          </Carousel>
         </div>
       </section>
 
