@@ -59,10 +59,13 @@ const portfolioProjects = [
 ];
 
 const logoAnimations = [
-  {
-    title: 'Animação de Logo para Exemplo',
-    youtubeVideoId: 'dQw4w9WgXcQ', // ID de um vídeo de exemplo
-  },
+  { title: 'LOGO 1', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 2', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 2.2', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 3', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 4', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 4.2', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 5', youtubeVideoId: 'dQw4w9WgXcQ' },
 ];
 
 const socialMediaPosts = [
@@ -154,7 +157,7 @@ export default function PortfolioPage() {
               <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {logoAnimations.map((animation) => (
               <div key={animation.title}>
                 <div className="aspect-video w-full rounded-xl overflow-hidden shadow-2xl border border-border bg-black">
@@ -181,7 +184,7 @@ export default function PortfolioPage() {
           <div className="text-center mb-12">
             <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">MOMENTOS E DETALHES</p>
             <h2 className="text-3xl font-bold relative inline-block">
-                <span className="text-primary">Fotografia</span>
+                Fotografia
                 <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
             </h2>
           </div>
