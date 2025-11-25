@@ -319,7 +319,7 @@ export default function PortfolioPage() {
                     <div className="p-8 flex flex-col flex-grow">
                         <h3 className="text-2xl font-bold text-primary">Kênia Michelle | Especialista em Marketing</h3>
                         <p className="text-muted-foreground mt-2 mb-6 flex-grow">
-                            Criamos um site moderno e uma landing page otimizada para a especialista em marketing Kênia Michelle. O projeto foi focado em fortalecer sua marca pessoal, capturar leads e apresentar seus serviços de consultoria e gestão de tráfego de forma clara e profissional.
+                            O Desafio: Kênia Michelle, uma talentosa estrategista de marketing, precisava de uma plataforma digital que refletisse seu profissionalismo, sua experiência e sua abordagem moderna. O objetivo era criar um site que não apenas funcionasse como um portfólio, mas também como uma poderosa ferramenta de captação de clientes, transmitindo elegância e autoridade.
                         </p>
                         <div className="flex items-center gap-4 flex-wrap">
                            <Button variant="outline" disabled>
@@ -338,4 +338,5 @@ export default function PortfolioPage() {
     
 
     
+
 
