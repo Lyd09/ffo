@@ -242,16 +242,16 @@ export default function PortfolioPage() {
                     <CarouselItem key={post.imageUrl} className="basis-full sm:basis-1/2 lg:basis-1/3">
                         <div className="p-1">
                             <div className="group">
-                                <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent group-hover:border-primary transition-all duration-300">
+                                <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent bg-black group-hover:border-primary transition-all duration-300">
                                 <Image
                                     src={post.imageUrl}
                                     alt={`Post para ${post.client}`}
                                     width={1080}
                                     height={1350}
-                                    className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                    className="object-contain w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
                                     data-ai-hint={post.dataAiHint}
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+                                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
                                     <h3 className="text-white font-bold text-lg drop-shadow-md">{post.client}</h3>
                                 </div>
                                 </Card>
@@ -331,4 +331,5 @@ export default function PortfolioPage() {
       </section>
     </>
   );
-}
+
+    
