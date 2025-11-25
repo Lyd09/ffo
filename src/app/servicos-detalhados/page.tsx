@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ArrowRight, Video, Target, Sparkles } from 'lucide-react';
+import { Check, ArrowRight, Video, Target, Sparkles, Tv, Wrench, PackageCheck, HeartHandshake } from 'lucide-react';
 import SparkleButton from '@/components/custom/SparkleButton';
 import PortfolioButton from '@/components/custom/PortfolioButton';
 
@@ -34,16 +34,24 @@ const whyVideoBenefits = [
 
 const whyFastFilmsPoints = [
     {
-        title: 'Versatilidade',
-        description: 'Seja para o mercado imobiliário, gastronômico ou de entretenimento, cada projeto recebe um tratamento único. Adaptamos nossa criatividade para qualquer segmento ou plataforma, garantindo que sua mensagem seja poderosa e impactante, onde quer que ela seja vista.',
+        icon: Tv,
+        title: 'Foco em Redes Sociais',
+        description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar, engajar e ampliar a presença digital dos nossos clientes.',
     },
     {
-        title: 'Equipamentos e Softwares de Ponta',
-        description: <>Sua ideia merece o melhor. Utilizamos as ferramentas mais avançadas do mercado, como Adobe Premiere Pro e After Effects, e equipamentos de ponta para garantir um resultado impecável. Quer conhecer nosso arsenal? Dê uma olhada em nossa <Link href="/equipamentos" className="text-primary font-semibold hover:underline">página de equipamentos</Link>.</>,
+        icon: PackageCheck,
+        title: 'Equipamentos de Ponta',
+        description: <>Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para garantir a excelência técnica e visual em cada entrega final. Quer conhecer nosso arsenal? Dê uma olhada em nossa <Link href="/equipamentos" className="text-primary font-semibold hover:underline">página de equipamentos</Link>.</>,
     },
     {
+        icon: HeartHandshake,
         title: 'Processo Colaborativo',
-        description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos junto com você, do briefing à entrega, para garantir que sua visão se torne realidade e que o resultado final supere as expectativas.',
+        description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos lado a lado com você para garantir que sua visão se torne realidade.',
+    },
+    {
+        icon: Wrench,
+        title: 'Ajustes Sem Custo Adicional',
+        description: 'O cliente não paga por alterações, desde que as modificações solicitadas não alterem fundamentalmente o escopo do projeto acordado inicialmente.',
     },
 ];
 
@@ -105,17 +113,19 @@ export default function ServicosDetalhadosPage() {
             Entendemos o poder do vídeo. Mas, mais importante, entendemos como traduzir sua visão em uma peça audiovisual que funciona.
           </p>
           <div className="mt-12 text-left space-y-8">
-            {whyFastFilmsPoints.map((point, index) => (
+            {whyFastFilmsPoints.map((point, index) => {
+              const Icon = point.icon;
+              return (
               <div key={index} className="flex items-start gap-4">
                 <div className="bg-primary text-primary-foreground rounded-full p-2 mt-1 flex-shrink-0">
-                  <Check className="h-5 w-5" />
+                  <Icon className="h-5 w-5" />
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-foreground">{point.title}</h4>
                   <p className="text-muted-foreground">{point.description}</p>
                 </div>
               </div>
-            ))}
+            )})}
           </div>
         </div>
       </section>
