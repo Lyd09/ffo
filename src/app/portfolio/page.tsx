@@ -196,12 +196,12 @@ export default function PortfolioPage() {
                   {eventPhotos.map((photo) => (
                       <CarouselItem key={photo.imageUrl} className="basis-full sm:basis-1/2 lg:basis-1/3">
                           <div className="p-1">
-                              <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent group">
+                              <Card className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-transparent group">
                               <Image
                                   src={photo.imageUrl}
                                   alt={photo.alt}
                                   width={500}
-                                  height={625}
+                                  height={889}
                                   className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
                                   data-ai-hint={photo.dataAiHint}
                               />
@@ -242,12 +242,12 @@ export default function PortfolioPage() {
                     <CarouselItem key={post.imageUrl} className="basis-full sm:basis-1/2 lg:basis-1/3">
                         <div className="p-1">
                             <div className="group">
-                                <Card className="relative aspect-square overflow-hidden rounded-xl border-2 border-transparent group-hover:border-primary transition-all duration-300">
+                                <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent group-hover:border-primary transition-all duration-300">
                                 <Image
                                     src={post.imageUrl}
                                     alt={`Post para ${post.client}`}
                                     width={1080}
-                                    height={1080}
+                                    height={1350}
                                     className="object-cover transition-transform duration-300 ease-in-out group-hover:scale-105"
                                     data-ai-hint={post.dataAiHint}
                                 />
