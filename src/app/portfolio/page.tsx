@@ -59,15 +59,15 @@ const portfolioProjects = [
 ];
 
 const logoAnimations = [
-  { title: 'LOGO 1', youtubeVideoId: 'dQw4w9WgXcQ' },
-  { title: 'LOGO 2', youtubeVideoId: 'dQw4w9WgXcQ' },
-  { title: 'LOGO 2.2', youtubeVideoId: 'dQw4w9WgXcQ' },
-  { title: 'LOGO 3', youtubeVideoId: 'dQw4w9WgXcQ' },
-  { title: 'LOGO 4', youtubeVideoId: 'dQw4w9WgXcQ' },
-  { title: 'LOGO 4.2', youtubeVideoId: 'dQw4w9WgXcQ' },
-  { title: 'LOGO 5', youtubeVideoId: 'dQw4w9WgXcQ' },
-  { title: 'LOGO 6', youtubeVideoId: 'dQw4w9WgXcQ' },
-  { title: 'LOGO 7', youtubeVideoId: 'dQw4w9WgXcQ' },
+  { title: 'LOGO 1', youtubeVideoId: 'qgCDfWAKYms' },
+  { title: 'LOGO 2', youtubeVideoId: 'OHTmhYbkGGo' },
+  { title: 'LOGO 3', youtubeVideoId: 'kgE_IZtC2bg' },
+  { title: 'LOGO 4', youtubeVideoId: 'ayjontxDtJA' },
+  { title: 'LOGO 5', youtubeVideoId: 'WKUUjCIYYF4' },
+  { title: 'LOGO 6', youtubeVideoId: 'MH-9Ow_gxU0' },
+  { title: 'LOGO 7', youtubeVideoId: 'pN1h6mSSeVE' },
+  { title: 'LOGO 8', youtubeVideoId: 'mxrLwa-nW7Y' },
+  { title: 'LOGO 9', youtubeVideoId: '0IRmDP8XZ3k' },
 ];
 
 const socialMediaPosts = [
@@ -340,6 +340,7 @@ export default function PortfolioPage() {
     
 
     
+
 
 
 
