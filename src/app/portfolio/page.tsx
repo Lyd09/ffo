@@ -286,7 +286,7 @@ export default function PortfolioPage() {
                 <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
                     <div className="relative aspect-video w-full">
                         <Image
-                            src="/index/Portfolio/siteana2.png"
+                            src="/index/Portfolio/Sites/siteana2.png"
                             alt="Screenshot do site da Ana Araújo Corretora"
                             fill
                             className="object-cover"
@@ -334,7 +334,7 @@ export default function PortfolioPage() {
                 <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
                     <div className="relative aspect-video w-full">
                         <Image
-                            src="https://picsum.photos/seed/my-broker/1280/720"
+                            src="/index/Portfolio/Sites/beija-flores.png"
                             alt="Screenshot do site da My Broker"
                             fill
                             className="object-cover"
@@ -365,6 +365,7 @@ export default function PortfolioPage() {
     
 
     
+
 
 
 
