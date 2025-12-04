@@ -331,6 +331,31 @@ export default function PortfolioPage() {
                         </div>
                     </div>
                 </Card>
+                <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
+                    <div className="relative aspect-video w-full">
+                        <Image
+                            src="https://picsum.photos/seed/my-broker/1280/720"
+                            alt="Screenshot do site da My Broker"
+                            fill
+                            className="object-cover"
+                            data-ai-hint="real estate website"
+                        />
+                    </div>
+                    <div className="p-8 flex flex-col flex-grow">
+                        <h3 className="text-2xl font-bold text-primary">Landingpage | My Broker</h3>
+                        <p className="text-muted-foreground mt-2 mb-6 flex-grow">
+                            Uma landing page de alta conversão projetada para capturar leads no competitivo mercado imobiliário. Focada em uma experiência de usuário direta e um design limpo para maximizar os resultados.
+                        </p>
+                        <div className="flex items-center gap-4 flex-wrap">
+                            <Link href="https://mybrokerlagoasanta.com.br/" target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline">
+                                    Visitar Site
+                                    <ExternalLink className="ml-2 h-4 w-4" />
+                                </Button>
+                            </Link>
+                        </div>
+                    </div>
+                </Card>
            </div>
         </div>
       </section>
@@ -340,6 +365,7 @@ export default function PortfolioPage() {
     
 
     
+
 
 
 
