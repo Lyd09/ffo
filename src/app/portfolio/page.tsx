@@ -199,7 +199,7 @@ export default function PortfolioPage() {
           >
               <CarouselContent>
                   {eventPhotos.map((photo) => (
-                      <CarouselItem key={photo.imageUrl} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                      <CarouselItem key={photo.imageUrl} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                           <div className="p-1">
                               <Card className="relative aspect-[9/16] overflow-hidden rounded-xl border-2 border-transparent group">
                               <Image
@@ -244,16 +244,16 @@ export default function PortfolioPage() {
             >
                 <CarouselContent>
                     {socialMediaPosts.map((post) => (
-                    <CarouselItem key={post.imageUrl} className="basis-full sm:basis-1/2 lg:basis-1/3">
+                    <CarouselItem key={post.imageUrl} className="md:basis-1/2 lg:basis-1/3 xl:basis-1/4">
                         <div className="p-1">
                             <div className="group">
-                                <Card className="relative aspect-[4/5] overflow-hidden rounded-xl border-2 border-transparent bg-black group-hover:border-primary transition-all duration-300">
+                                <Card className="relative aspect-square overflow-hidden rounded-xl border-2 border-transparent bg-black group-hover:border-primary transition-all duration-300">
                                 <Image
                                     src={post.imageUrl}
                                     alt={`Post para ${post.client}`}
                                     width={1080}
-                                    height={1350}
-                                    className="object-contain w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
+                                    height={1080}
+                                    className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
                                     data-ai-hint={post.dataAiHint}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4 opacity-0 group-hover:opacity-100 transition-opacity">
@@ -286,7 +286,7 @@ export default function PortfolioPage() {
                 <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
                     <div className="relative aspect-video w-full">
                         <Image
-                            src="/index/Portfolio/Sites/siteana2.png"
+                            src="/index/Portfolio/Sites/ana.png"
                             alt="Screenshot do site da Ana Araújo Corretora"
                             fill
                             className="object-cover"
@@ -311,7 +311,7 @@ export default function PortfolioPage() {
                 <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
                     <div className="relative aspect-video w-full">
                         <Image
-                            src="https://picsum.photos/seed/kenia-site/1280/720"
+                            src="/index/Portfolio/Sites/kenia.png"
                             alt="Screenshot do site da Kênia Michelle"
                             fill
                             className="object-cover"
@@ -324,17 +324,19 @@ export default function PortfolioPage() {
                             O Desafio: Kênia Michelle, uma talentosa estrategista de marketing, precisava de uma plataforma digital que refletisse seu profissionalismo, sua experiência e sua abordagem moderna. O objetivo era criar um site que não apenas funcionasse como um portfólio, mas também como uma poderosa ferramenta de captação de clientes, transmitindo elegância e autoridade.
                         </p>
                         <div className="flex items-center gap-4 flex-wrap">
-                           <Button variant="outline" disabled>
-                                Site em Breve
-                                <Link2Off className="ml-2 h-4 w-4" />
-                            </Button>
+                           <Link href="https://keniamichelle.netlify.app" target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline">
+                                    Visitar Site
+                                    <ExternalLink className="ml-2 h-4 w-4" />
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </Card>
                 <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
                     <div className="relative aspect-video w-full">
                         <Image
-                            src="/index/Portfolio/Sites/beija-flores.png"
+                            src="/index/Portfolio/Sites/beija-flores1.png"
                             alt="Screenshot do site da My Broker"
                             fill
                             className="object-cover"
@@ -365,6 +367,7 @@ export default function PortfolioPage() {
     
 
     
+
 
 
 
