@@ -56,6 +56,12 @@ const portfolioProjects = [
         videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
         dataAiHint: 'videography session',
     },
+    {
+        title: 'Casa de alto padrão no condomínio vitória tennis prime residence',
+        imageUrl: '/index/Portfolio/CONECTAM.png',
+        videoUrl: '#',
+        dataAiHint: 'luxury real estate',
+    },
 ];
 
 const logoAnimations = [
