@@ -21,6 +21,12 @@ export const metadata: Metadata = {
 
 const portfolioProjects = [
     {
+        title: 'Casa de alto padrão no condomínio vitória tennis prime residence',
+        imageUrl: '/index/Portfolio/CONECTAM.png',
+        videoUrl: '#',
+        dataAiHint: 'luxury real estate',
+    },
+    {
         title: 'A TRANSCRIÇÃO DE UM LUGAR Para a tela condomínio mirante do fidalgo',
         imageUrl: '/index/Portfolio/TELA.png',
         videoUrl: 'https://www.instagram.com/reel/DOZNsJCER89/?utm_source=ig_web_button_share_sheet&igsh=ZjF0eHhtb3Y4YnRt',
@@ -55,12 +61,6 @@ const portfolioProjects = [
         imageUrl: '/index/Portfolio/GRAVACAO.png',
         videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
         dataAiHint: 'videography session',
-    },
-    {
-        title: 'Casa de alto padrão no condomínio vitória tennis prime residence',
-        imageUrl: '/index/Portfolio/CONECTAM.png',
-        videoUrl: '#',
-        dataAiHint: 'luxury real estate',
     },
 ];
 
