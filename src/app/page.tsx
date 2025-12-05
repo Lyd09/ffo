@@ -185,10 +185,9 @@ export default function Home() {
                   data-ai-hint="man portrait"
                 />
                 <h3 className="mt-6 text-2xl font-bold text-primary">Samuel</h3>
-                <p
-                  className="text-muted-foreground text-center"
-                  dangerouslySetInnerHTML={{ __html: 'Co-Fundador <br /> Diretor Criativo' }}
-                />
+                <p className="text-muted-foreground text-center">
+                  Co-Fundador <br /> Diretor Criativo
+                </p>
               </div>
               <div className="flex flex-col items-center">
                 <Image
@@ -200,10 +199,9 @@ export default function Home() {
                   data-ai-hint="man portrait"
                 />
                 <h3 className="mt-6 text-2xl font-bold text-primary">Kléuver</h3>
-                <p 
-                  className="text-muted-foreground text-center"
-                  dangerouslySetInnerHTML={{ __html: 'Co-Fundador <br /> Diretor de Produção' }}
-                />
+                <p className="text-muted-foreground text-center">
+                  Co-Fundador <br /> Diretor de Produção
+                </p>
               </div>
             </div>
             <Link href="/sobre" passHref>
@@ -282,12 +280,3 @@ export default function Home() {
     </MainLayout>
   );
 }
-
-    
-
-    
-
-
-
-
-    
