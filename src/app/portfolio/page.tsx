@@ -363,14 +363,4 @@ export default function PortfolioPage() {
       </section>
     </>
   );
-
-    
-
-    
-
-
-
-
-
-
-
+}
