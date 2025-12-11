@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -25,7 +24,7 @@ const WhatsAppIcon = () => (
 
 
 const socialLinks = [
-  { icon: Instagram, href: 'https://www.instagram.com/_fastfilms_?utm_source=ig_web_button_share_sheet&igsh=YWMxZ2U2OXZ1b2ps', label: 'Instagram' },
+  { icon: Instagram, href: 'https://www.instagram.com/fastfilmsoficial.com.br/', label: 'Instagram' },
   { icon: Linkedin, href: 'https://www.linkedin.com/company/fastfilmsoficial/?viewAsMember=true', label: 'LinkedIn' },
 ];
 

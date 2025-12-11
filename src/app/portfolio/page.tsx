@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -41,25 +40,25 @@ const portfolioProjects = [
     {
         title: 'Vídeo "Onde o tempo respira" para Fazenda do Moinho',
         imageUrl: '/index/Portfolio/RESPIRA.png',
-        videoUrl: 'https://www.instagram.com/p/DLSZ3--u8Ze/',
+        videoUrl: 'https://www.instagram.com/fastfilmsoficial.com.br/',
         dataAiHint: 'nature cinematic',
     },
     {
         title: 'Gravação no mercado imobiliário no Condomínio Retiro das Águas',
         imageUrl: '/index/Portfolio/IMOBILIARIO.png',
-        videoUrl: 'https://www.instagram.com/p/DHlmBdQRDy3/',
+        videoUrl: 'https://www.instagram.com/fastfilmsoficial.com.br/',
         dataAiHint: 'real estate videography',
     },
     {
         title: 'Gravação de uma casa de R$15.000.000,00 no Condomínio Estâncias das Amendoeiras',
         imageUrl: '/index/Portfolio/CASA-15M.png',
-        videoUrl: 'https://www.instagram.com/p/DGipg9IRg5g/',
+        videoUrl: 'https://www.instagram.com/fastfilmsoficial.com.br/',
         dataAiHint: 'luxury real estate',
     },
     {
         title: 'Dia de gravação no Condomínio Estância das Amendoeiras',
         imageUrl: '/index/Portfolio/GRAVACAO.png',
-        videoUrl: 'https://www.instagram.com/_fastfilms_/reel/DGGx-zExFu4/',
+        videoUrl: 'https://www.instagram.com/fastfilmsoficial.com.br/',
         dataAiHint: 'videography session',
     },
 ];
@@ -350,7 +349,7 @@ export default function PortfolioPage() {
                         />
                     </div>
                     <div className="p-8 flex flex-col flex-grow">
-                        <h3 className="text-2xl font-bold text-primary">Landingpage | My Broker</h3>
+                        <h3 className="text-2xl font-bold text-primary">Landing page | My Broker</h3>
                         <p className="text-muted-foreground mt-2 mb-6 flex-grow">
                             Uma landing page de alta conversão projetada para capturar leads no competitivo mercado imobiliário. Focada em uma experiência de usuário direta e um design limpo para maximizar os resultados.
                         </p>
