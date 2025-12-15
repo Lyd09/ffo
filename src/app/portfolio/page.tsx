@@ -21,16 +21,16 @@ export const metadata: Metadata = {
 
 const portfolioProjects = [
     {
-        title: 'VÍDEOS QUE CONECTAM',
-        imageUrl: '/index/Portfolio/CONECTAM.png',
-        videoUrl: 'https://www.instagram.com/p/DSI2IUckc45/',
-        dataAiHint: 'luxury real estate',
-    },
-    {
         title: 'Animação de landing page para My Broker Lagoa Santa',
         imageUrl: '/index/Portfolio/ALGORITMO.png',
         videoUrl: 'https://www.instagram.com/p/DSKy1ZaEamv/',
         dataAiHint: 'landing page animation',
+    },
+    {
+        title: 'VÍDEOS QUE CONECTAM',
+        imageUrl: '/index/Portfolio/CONECTAM.png',
+        videoUrl: 'https://www.instagram.com/p/DSI2IUckc45/',
+        dataAiHint: 'luxury real estate',
     },
     {
         title: 'A TRANSCRIÇÃO DE UM LUGAR Para a tela condomínio mirante do fidalgo',
@@ -376,5 +376,3 @@ export default function PortfolioPage() {
     </>
   );
 }
-
-    
