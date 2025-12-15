@@ -1,3 +1,4 @@
+
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -20,6 +21,12 @@ export const metadata: Metadata = {
 
 const portfolioProjects = [
     {
+        title: 'Animação de landing page para My Broker Lagoa Santa',
+        imageUrl: '/index/Portfolio/ALGORITMO.png',
+        videoUrl: 'https://www.instagram.com/p/DSKy1ZaEamv/',
+        dataAiHint: 'landing page animation',
+    },
+    {
         title: 'Casa de alto padrão no condomínio vitória tennis prime residence',
         imageUrl: '/index/Portfolio/CONECTAM.png',
         videoUrl: '#',
@@ -40,25 +47,25 @@ const portfolioProjects = [
     {
         title: 'Vídeo "Onde o tempo respira" para Fazenda do Moinho',
         imageUrl: '/index/Portfolio/RESPIRA.png',
-        videoUrl: 'https://www.instagram.com/fastfilmsoficial.com.br/',
+        videoUrl: 'https://www.instagram.com/p/DLSZ3--u8Ze/',
         dataAiHint: 'nature cinematic',
     },
     {
         title: 'Gravação no mercado imobiliário no Condomínio Retiro das Águas',
         imageUrl: '/index/Portfolio/IMOBILIARIO.png',
-        videoUrl: 'https://www.instagram.com/fastfilmsoficial.com.br/',
+        videoUrl: 'https://www.instagram.com/p/DHlmBdQRDy3/',
         dataAiHint: 'real estate videography',
     },
     {
         title: 'Gravação de uma casa de R$15.000.000,00 no Condomínio Estâncias das Amendoeiras',
         imageUrl: '/index/Portfolio/CASA-15M.png',
-        videoUrl: 'https://www.instagram.com/fastfilmsoficial.com.br/',
+        videoUrl: 'https://www.instagram.com/p/DGipg9IRg5g/',
         dataAiHint: 'luxury real estate',
     },
     {
         title: 'Dia de gravação no Condomínio Estância das Amendoeiras',
         imageUrl: '/index/Portfolio/GRAVACAO.png',
-        videoUrl: 'https://www.instagram.com/fastfilmsoficial.com.br/',
+        videoUrl: 'https://www.instagram.com/p/DGGx-zExFu4/',
         dataAiHint: 'videography session',
     },
 ];
@@ -369,3 +376,5 @@ export default function PortfolioPage() {
     </>
   );
 }
+
+    
