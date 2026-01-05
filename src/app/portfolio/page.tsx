@@ -150,7 +150,7 @@ export default function PortfolioPage() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent"></div>
                   
-                  <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <PlayCircle className="h-20 w-20 text-white drop-shadow-lg" />
                   </div>
                 </Card>
@@ -222,7 +222,7 @@ export default function PortfolioPage() {
                                   className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-105"
                                   data-ai-hint={photo.dataAiHint}
                               />
-                              <div className="absolute inset-0 bg-black/60 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                              <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                                   <Camera className="h-16 w-16 text-white drop-shadow-lg" />
                               </div>
                               </Card>
@@ -336,7 +336,7 @@ export default function PortfolioPage() {
                             O Desafio: Kênia Michelle, uma talentosa estrategista de marketing, precisava de uma plataforma digital que refletisse seu profissionalismo, sua experiência e sua abordagem moderna. O objetivo era criar um site que não apenas funcionasse como um portfólio, mas também como uma poderosa ferramenta de captação de clientes, transmitindo elegância e autoridade.
                         </p>
                         <div className="flex items-center gap-4 flex-wrap">
-                           <Link href="https://keniamichelle.netlify.app" target="_blank" rel="noopener noreferrer">
+                           <Link href="https://keniamichelle.com.br/" target="_blank" rel="noopener noreferrer">
                                 <Button variant="outline">
                                     Visitar Site
                                     <ExternalLink className="ml-2 h-4 w-4" />
@@ -367,6 +367,30 @@ export default function PortfolioPage() {
                                     <ExternalLink className="ml-2 h-4 w-4" />
                                 </Button>
                             </Link>
+                        </div>
+                    </div>
+                </Card>
+                <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
+                    <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+                        <Image
+                            src="/index/LOGO-ICON.svg"
+                            alt="Em breve"
+                            width={80}
+                            height={80}
+                            className="object-contain opacity-50"
+                            data-ai-hint="logo"
+                        />
+                    </div>
+                    <div className="p-8 flex flex-col flex-grow">
+                        <h3 className="text-2xl font-bold text-primary">GSP Engenharia | Lançamento</h3>
+                        <p className="text-muted-foreground mt-2 mb-6 flex-grow">
+                            Landing page estratégica para o lançamento de um imóvel em condomínio fechado. O design foi pensado para gerar expectativa e capturar leads qualificados antes mesmo do lançamento oficial.
+                        </p>
+                        <div className="flex items-center gap-4 flex-wrap">
+                            <Button variant="outline" disabled>
+                                Em breve
+                                <Link2Off className="ml-2 h-4 w-4" />
+                            </Button>
                         </div>
                     </div>
                 </Card>
