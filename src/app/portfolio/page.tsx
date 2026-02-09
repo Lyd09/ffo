@@ -336,7 +336,7 @@ export default function PortfolioPage() {
                             O Desafio: Kênia Michelle, uma talentosa estrategista de marketing, precisava de uma plataforma digital que refletisse seu profissionalismo, sua experiência e sua abordagem moderna. O objetivo era criar um site que não apenas funcionasse como um portfólio, mas também como uma poderosa ferramenta de captação de clientes, transmitindo elegância e autoridade.
                         </p>
                         <div className="flex items-center gap-4 flex-wrap">
-                           <Link href="https://keniamichelle.com.br/" target="_blank" rel="noopener noreferrer">
+                           <Link href="http://keniamichelle.com.br/" target="_blank" rel="noopener noreferrer">
                                 <Button variant="outline">
                                     Visitar Site
                                     <ExternalLink className="ml-2 h-4 w-4" />
@@ -371,26 +371,27 @@ export default function PortfolioPage() {
                     </div>
                 </Card>
                 <Card className="bg-secondary/30 border-border shadow-lg overflow-hidden flex flex-col">
-                    <div className="relative aspect-video w-full bg-black flex items-center justify-center">
+                    <div className="relative aspect-video w-full">
                         <Image
-                            src="/index/LOGO-ICON.svg"
-                            alt="Em breve"
-                            width={80}
-                            height={80}
-                            className="object-contain opacity-50"
-                            data-ai-hint="logo"
+                            src="/index/Portfolio/Sites/vitoriaTPrime.png"
+                            alt="Screenshot do site da GSP Engenharia"
+                            fill
+                            className="object-cover"
+                            data-ai-hint="real estate website"
                         />
                     </div>
                     <div className="p-8 flex flex-col flex-grow">
-                        <h3 className="text-2xl font-bold text-primary">GSP Engenharia | Lançamento</h3>
+                        <h3 className="text-2xl font-bold text-primary">GSP Engenharia | Imóvel em condo. fechado</h3>
                         <p className="text-muted-foreground mt-2 mb-6 flex-grow">
                             Landing page estratégica para o lançamento de um imóvel em condomínio fechado. O design foi pensado para gerar expectativa e capturar leads qualificados antes mesmo do lançamento oficial.
                         </p>
                         <div className="flex items-center gap-4 flex-wrap">
-                            <Button variant="outline" disabled>
-                                Em breve
-                                <Link2Off className="ml-2 h-4 w-4" />
-                            </Button>
+                            <Link href="http://xn--gspengenhariaservios-l1b.com.br/" target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline">
+                                    Visitar Site
+                                    <ExternalLink className="ml-2 h-4 w-4" />
+                                </Button>
+                            </Link>
                         </div>
                     </div>
                 </Card>
