@@ -111,7 +111,7 @@ export const fieldEquipmentData = [
     name: 'Suporte Magnético',
     imageUrl: '/index/Equipamentos/suporte-magnetico.png',
     dataAiHint: 'smartphone neck mount',
-    description: 'Ponto de vista imersivo. Grave vídeos em primeira pessoa com total estabilidade e as mãos livres.',
+    description: 'Visão real, movimento honesto. Porque estar dentro da cena muda tudo.',
   },
   {
     category: 'Estabilização',
@@ -119,7 +119,7 @@ export const fieldEquipmentData = [
     name: 'Cage Gaiola Ulanzi',
     imageUrl: '/index/Equipamentos/cage.png',
     dataAiHint: 'smartphone cage',
-    description: 'A base sólida para o seu setup mobile. Firmeza no movimento e suporte para múltiplos acessórios.',
+    description: 'Controle na pegada, precisão no movimento. Porque vídeo bom começa na base.',
   },
 ];
 
