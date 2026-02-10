@@ -18,6 +18,7 @@ import {
   Sparkles,
   Image as ImageIcon,
   Axis3d,
+  Smartphone,
 } from 'lucide-react';
 
 export const workstationData = [
@@ -103,6 +104,22 @@ export const fieldEquipmentData = [
     imageUrl: '/index/Equipamentos/GIMBAL.png',
     dataAiHint: 'camera gimbal',
     description: 'Firmeza nos passos, liberdade no movimento. Porque a câmera também merece dançar sem tropeçar.',
+  },
+  {
+    category: 'Acessório',
+    icon: Smartphone,
+    name: 'Suporte Magnético',
+    imageUrl: '/index/Equipamentos/suporte-magnetico.png',
+    dataAiHint: 'smartphone neck mount',
+    description: 'Ponto de vista imersivo. Grave vídeos em primeira pessoa com total estabilidade e as mãos livres.',
+  },
+  {
+    category: 'Estabilização',
+    icon: Smartphone,
+    name: 'Cage Gaiola Ulanzi',
+    imageUrl: '/index/Equipamentos/cage.png',
+    dataAiHint: 'smartphone cage',
+    description: 'A base sólida para o seu setup mobile. Firmeza no movimento e suporte para múltiplos acessórios.',
   },
 ];
 
