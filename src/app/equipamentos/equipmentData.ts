@@ -1,4 +1,3 @@
-
 import {
   Cpu,
   MemoryStick,
@@ -20,6 +19,7 @@ import {
   Axis3d,
   Smartphone,
 } from 'lucide-react';
+import DroneIcon from '@/components/custom/DroneIcon';
 
 export const workstationData = [
   {
@@ -91,7 +91,7 @@ export const fieldEquipmentData = [
   },
   {
     category: 'Drone',
-    icon: Video,
+    icon: DroneIcon,
     name: 'DJI Mini 3',
     imageUrl: '/index/Equipamentos/drone.png',
     dataAiHint: 'dji drone',

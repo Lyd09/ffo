@@ -1,13 +1,11 @@
-
 import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import type { LucideProps } from 'lucide-react';
 import React from 'react';
 import { Separator } from '@/components/ui/separator';
 
 interface EquipmentCardProps {
   category: string;
-  icon: React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>;
+  icon: React.ComponentType<{ className?: string }>;
   name: string;
   imageUrl: string;
   dataAiHint: string;
