@@ -16,7 +16,7 @@ import {
   Scissors,
   Layers,
   Sparkles,
-  Image as ImageIcon,
+  ImageIcon,
   Axis3d,
   Smartphone,
 } from 'lucide-react';
@@ -88,6 +88,14 @@ export const fieldEquipmentData = [
     imageUrl: '/index/Equipamentos/A6500.png',
     dataAiHint: 'sony camera',
     description: 'Pequena no tamanho, gigante na entrega. Estabilização no corpo e 4K na veia pra capturar cada detalhe.',
+  },
+  {
+    category: 'Drone',
+    icon: Video,
+    name: 'DJI Mini 3',
+    imageUrl: '/index/Equipamentos/drone.png',
+    dataAiHint: 'dji drone',
+    description: 'Perspectiva do alto, liberdade no olhar. Porque o céu não é o limite, é o cenário.',
   },
   {
     category: 'Áudio',
