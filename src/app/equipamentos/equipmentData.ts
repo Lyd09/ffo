@@ -34,7 +34,7 @@ export const workstationData = [
       { icon: Keyboard, label: 'Teclado', value: 'Husky Anchorage Mecânico Gamer' },
       { icon: Mouse, label: 'Mouse', value: 'RED Dragon King Cobra M711-FPS-1' },
       { icon: Mic, label: 'Microfone', value: 'FIFINE A6T' },
-      { icon: Headphones, label: 'Headset', value: 'Hyperx Cloud Stinger' },
+      { icon: Headphones, label: 'Headset', value: 'Logitech G435' },
     ],
   },
   {
