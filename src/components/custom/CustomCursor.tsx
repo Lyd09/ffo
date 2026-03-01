@@ -66,18 +66,18 @@ const CustomCursor = () => {
 
   return (
     <>
-      {/* Círculo Externo (com delay suave) */}
+      {/* Círculo Externo (Totalmente Branco) */}
       <div
         className={cn(
-          "fixed top-0 left-0 w-10 h-10 border border-primary rounded-full pointer-events-none z-[9999] transition-transform duration-300 ease-out -translate-x-1/2 -translate-y-1/2 will-change-transform",
-          isHovering && "scale-[1.6] bg-primary/10 border-white/50"
+          "fixed top-0 left-0 w-10 h-10 border border-white rounded-full pointer-events-none z-[9999] transition-transform duration-300 ease-out -translate-x-1/2 -translate-y-1/2 will-change-transform",
+          isHovering && "scale-[1.6] bg-white/10 border-white"
         )}
         style={{
           left: `${position.x}px`,
           top: `${position.y}px`,
         }}
       />
-      {/* Ponto Central (preciso) */}
+      {/* Ponto Central (Branco) */}
       <div
         className="fixed top-0 left-0 w-1.5 h-1.5 bg-white rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 will-change-transform"
         style={{
