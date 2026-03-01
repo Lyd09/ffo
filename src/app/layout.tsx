@@ -5,6 +5,7 @@ import './contact-button.css';
 import './sparkle-button.css';
 import './portfolio-button.css';
 import { Toaster } from 'sonner';
+import CustomCursor from '@/components/custom/CustomCursor';
 
 export const metadata: Metadata = {
   title: 'FastFilms',
@@ -27,7 +28,8 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="font-body antialiased">
+      <body className="font-body antialiased overflow-x-hidden">
+        <CustomCursor />
         {children}
         <Toaster />
       </body>

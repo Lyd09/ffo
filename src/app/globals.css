@@ -83,6 +83,19 @@
     @apply bg-background text-foreground;
   }
 
+  /* Esconder cursor padrão quando o customizado estiver ativo */
+  @media (min-width: 768px) {
+    body.custom-cursor-active,
+    body.custom-cursor-active a,
+    body.custom-cursor-active button,
+    body.custom-cursor-active [role="button"],
+    body.custom-cursor-active label,
+    body.custom-cursor-active input,
+    body.custom-cursor-active textarea {
+      cursor: none !important;
+    }
+  }
+
   /* Custom Scrollbar */
   ::-webkit-scrollbar {
     width: 12px;
@@ -102,29 +115,7 @@
 /*
   Logo Box Card by dylanharriscameron (Dylan)
   Source: https://uiverse.io/dylanharriscameron/old-crane-23
-
-  MIT License
-  Copyright (c) 2025 dylanharriscameron (Dylan)
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
 */
-/* Estilos do Card para o LogoBox */
 .card {
   position: relative;
   width: 330px;
@@ -164,60 +155,24 @@
   width: 225px;
   height: 225px;
   border-radius: 50%;
-  background-color: #ff0000; /* Cor para o tema claro */
+  background-color: #ff0000;
   opacity: 1;
   filter: blur(18px);
   animation: blob-bounce 8s infinite ease;
 }
 
-/* Adaptação para o tema escuro */
 .dark .blob {
   background-color: hsl(var(--primary));
 }
 
 @keyframes blob-bounce {
-  0% {
-    transform: translate(-100%, -100%) translate3d(0, 0, 0);
-  }
-  25% {
-    transform: translate(-100%, -100%) translate3d(100%, 0, 0);
-  }
-  50% {
-    transform: translate(-100%, -100%) translate3d(100%, 100%, 0);
-  }
-  75% {
-    transform: translate(-100%, -100%) translate3d(0, 100%, 0);
-  }
-  100% {
-    transform: translate(-100%, -100%) translate3d(0, 0, 0);
-  }
+  0% { transform: translate(-100%, -100%) translate3d(0, 0, 0); }
+  25% { transform: translate(-100%, -100%) translate3d(100%, 0, 0); }
+  50% { transform: translate(-100%, -100%) translate3d(100%, 100%, 0); }
+  75% { transform: translate(-100%, -100%) translate3d(0, 100%, 0); }
+  100% { transform: translate(-100%, -100%) translate3d(0, 0, 0); }
 }
 
-/*
-  Learn More Button from cssbuttons.io
-  Source: https://cssbuttons.io/buttons/4
-
-  MIT License
-  Copyright (c) 2025 cssbuttons-io
-
-  Permission is hereby granted, free of charge, to any person obtaining a copy
-  of this software and associated documentation files (the "Software"), to deal
-  in the Software without restriction, including without limitation the rights
-  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-  copies of the Software, and to permit persons to whom the Software is
-  furnished to do so, subject to the following conditions:
-
-  The above copyright notice and this permission notice shall be included in all
-  copies or substantial portions of the Software.
-
-  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-  SOFTWARE.
-*/
 /* Learn More Button */
 .learn-more-button {
  position: relative;
