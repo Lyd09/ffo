@@ -37,7 +37,7 @@ const whyFastFilmsPoints = [
         title: 'TrackFilms: Experiência Premium',
         description: (
           <>
-            Exclusivo da FastFilms, o TrackFilms é o pilar da nossa <strong className="font-bold text-primary">Experiência do Cliente</strong>. Ele permite que você acompanhe o progresso do projeto em tempo real com espaço para comentários e aprovações, eliminando ruídos de comunicação e centralizando o feedback, garantindo segurança e transparência total.
+            Exclusivo da FastFilms, o TrackFilms é o pilar da nossa <strong className="font-bold text-primary">Experiência do Cliente</strong>. Através dele, você acompanha o progresso do projeto em tempo real, com espaço para comentários e aprovações que eliminam ruídos de comunicação e centralizam o feedback, garantindo total segurança e transparência.
           </>
         ),
     },
@@ -130,7 +130,7 @@ export default function ServicosDetalhadosPage() {
                 </div>
                 <div>
                   <h4 className="text-xl font-bold text-foreground">{point.title}</h4>
-                  <p className="text-muted-foreground">{point.description}</p>
+                  <div className="text-muted-foreground">{point.description}</div>
                 </div>
               </div>
             )})}

@@ -99,7 +99,7 @@ const differentialsData = [
         title: 'TrackFilms',
         description: (
             <>
-                Nosso compromisso com a <strong className="font-bold text-primary">Experiência do Cliente</strong>: acompanhe o progresso do projeto em tempo real com espaço para comentários e aprovações, eliminando ruídos de comunicação e centralizando o feedback, garantindo transparência total da gravação à entrega.
+                Nosso compromisso com a <strong className="font-bold text-primary">Experiência do Cliente</strong>: acompanhe o progresso do projeto em tempo real, com ferramentas de comentário e aprovação que eliminam ruídos de comunicação e centralizam o feedback, garantindo transparência total da gravação à entrega.
             </>
         ),
     },
@@ -202,7 +202,7 @@ export default function SobrePage() {
                                     <Icon className="h-10 w-10" />
                                 </div>
                                 <h3 className="text-2xl font-bold">{item.title}</h3>
-                                <p className="text-muted-foreground">{item.description}</p>
+                                <div className="text-muted-foreground">{item.description}</div>
                             </Card>
                         )
                     })}
