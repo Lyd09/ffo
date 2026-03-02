@@ -89,7 +89,7 @@ const aboutUsData = [
     {
         icon: Gem,
         title: 'Valores',
-        description: 'Qualidade, Criatividade e Experiência do Cliente (potencializada pela transparência do TrackFilms).',
+        description: 'Qualidade, Criatividade e Experiência do Cliente.',
     },
 ];
 
