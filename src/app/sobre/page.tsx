@@ -3,7 +3,7 @@ import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
-import { Target, Eye, Gem, HeartHandshake, Tv, Wrench, PackageCheck } from 'lucide-react';
+import { Target, Eye, Gem, HeartHandshake, Tv, Wrench, PackageCheck, LayoutDashboard } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'Sobre - FastFilms',
@@ -96,24 +96,24 @@ const aboutUsData = [
 
 const differentialsData = [
     {
+        icon: LayoutDashboard,
+        title: 'TrackFilms',
+        description: 'Acompanhe o seu projeto em tempo real com o nosso sistema exclusivo. Transparência total da gravação à entrega.',
+    },
+    {
         icon: Tv,
         title: 'Foco em Redes Sociais',
-        description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar, engajar e ampliar a presença digital dos nossos clientes.',
+        description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar e engajar.',
     },
     {
         icon: PackageCheck,
         title: 'Equipamentos de Ponta',
-        description: 'Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para garantir a excelência técnica e visual em cada entrega final.',
-    },
-    {
-        icon: HeartHandshake,
-        title: 'Processo Colaborativo',
-        description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos lado a lado com você para garantir que sua visão se torne realidade.',
+        description: 'Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para excelência visual.',
     },
     {
         icon: Wrench,
-        title: 'Ajustes Sem Custo Adicional',
-        description: 'O cliente não paga por alterações, desde que as modificações solicitadas não alterem fundamentalmente o escopo do projeto acordado inicialmente.',
+        title: 'Ajustes Flexíveis',
+        description: 'Acreditamos na parceria. Oferecemos ajustes para garantir que o resultado final seja exatamente o que você sonhou.',
     },
 ];
 
@@ -240,5 +240,3 @@ export default function SobrePage() {
     </>
   );
 }
-
-    

@@ -2,7 +2,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
-import { Check, ArrowRight, Video, Target, Sparkles, Tv, Wrench, PackageCheck, HeartHandshake } from 'lucide-react';
+import { Check, ArrowRight, Video, Target, Sparkles, Tv, Wrench, PackageCheck, HeartHandshake, LayoutDashboard } from 'lucide-react';
 import SparkleButton from '@/components/custom/SparkleButton';
 import PortfolioButton from '@/components/custom/PortfolioButton';
 
@@ -39,9 +39,14 @@ const whyFastFilmsPoints = [
         description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar, engajar e ampliar a presença digital dos nossos clientes.',
     },
     {
+        icon: LayoutDashboard,
+        title: 'TrackFilms: Transparência Total',
+        description: 'Exclusivo da FastFilms, o TrackFilms (dentro do nosso ecossistema FH) permite que você acompanhe o progresso do seu vídeo em tempo real, como o rastreio de uma encomenda.',
+    },
+    {
         icon: PackageCheck,
         title: 'Equipamentos de Ponta',
-        description: <>Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para garantir a excelência técnica e visual em cada entrega final. Quer conhecer nosso arsenal? Dê uma olhada em nossa <Link href="/equipamentos" className="text-primary font-semibold hover:underline">página de equipamentos</Link>.</>,
+        description: <>Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para garantir a excelência técnica e visual em cada entrega final. Quer conhecer nosso arsenal? Dê uma olhado em nossa <Link href="/equipamentos" className="text-primary font-semibold hover:underline">página de equipamentos</Link>.</>,
     },
     {
         icon: HeartHandshake,

@@ -5,7 +5,7 @@ import Image from 'next/image';
 import LogoBox from '@/components/custom/LogoBox';
 import LearnMoreButton from '@/components/custom/LearnMoreButton';
 import { Button } from '@/components/ui/button';
-import { Camera, ArrowRight, Monitor, Code, Clapperboard, Film } from 'lucide-react';
+import { Camera, ArrowRight, Monitor, Code, Clapperboard, Film, LayoutDashboard } from 'lucide-react';
 import DroneIcon from '@/components/custom/DroneIcon';
 import {
   AlertDialog,
@@ -217,24 +217,24 @@ export default function Home() {
 
         <section id="associados" className="bg-[#121212] py-20 sm:py-24">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Área do Associado</p>
+            <p className="text-sm font-semibold text-primary tracking-wider uppercase mb-5">Ecossistema FastFilms</p>
             <h2 className="text-4xl md:text-5xl font-extrabold tracking-tight text-white relative pb-4 inline-block">
-              <span className="text-primary">Ferramenta Exclusiva</span> para Nossa Equipe.
+              Tecnologia e <span className="text-primary">Transparência</span>.
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-                Para garantir a máxima eficiência e transparência, desenvolvemos o <strong className="font-bold text-primary">Projetex</strong>, nosso sistema de gestão proprietário. Esta ferramenta centraliza a comunicação, organiza prazos e simplifica o acompanhamento de cada projeto, do briefing à entrega final. Para nossa equipe, isso significa menos tempo em planilhas e mais tempo para criar.
+                Para garantir a máxima eficiência, desenvolvemos o <strong className="font-bold text-primary">FastHUB (FH)</strong>, nosso "cérebro" operacional. Dentro dele, nossos clientes contam com o <strong className="font-bold text-primary">TrackFilms</strong>: uma ferramenta inspirada em rastreio de encomendas que permite acompanhar cada "take" do seu projeto em tempo real, garantindo uma experiência profissional e sem ruídos.
             </p>
             
             <AlertDialog>
               <AlertDialogTrigger asChild>
                 <Button className="w-fit bg-primary text-primary-foreground hover:bg-primary/90 font-bold py-3 px-6 rounded-lg transition-transform hover:scale-105 mt-10">
-                  Acessar Sistema Interno
+                  Acessar Sistema Interno (FH)
                   <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
-                  <AlertDialogTitle>Acesso Restrito</AlertDialogTitle>
+                  <AlertDialogTitle>Acesso Restrito ao FastHUB</AlertDialogTitle>
                   <AlertDialogDescription>
                     Esta ferramenta é de uso exclusivo para associados e colaboradores autorizados. Você será redirecionado para uma página de login.
                   </AlertDialogDescription>
@@ -249,9 +249,9 @@ export default function Home() {
             </AlertDialog>
 
             <div className="mt-12 bg-secondary/30 border border-border rounded-xl p-6 max-w-2xl mx-auto">
-              <h3 className="text-lg font-bold text-primary">É um novo associado?</h3>
+              <h3 className="text-lg font-bold text-primary">Quer saber mais sobre o TrackFilms?</h3>
               <p className="text-muted-foreground mt-2 text-sm">
-                Para acessar nossa ferramenta interna, por favor, solicite suas credenciais de acesso entrando em contato com a nossa equipe.
+                Nossos clientes recebem um link exclusivo para acompanhar a linha do tempo do seu vídeo, desde o backup até a entrega final.
               </p>
             </div>
           </div>
