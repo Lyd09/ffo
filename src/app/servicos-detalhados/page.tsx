@@ -37,7 +37,7 @@ const whyFastFilmsPoints = [
         title: 'TrackFilms: Experiência Premium',
         description: (
           <>
-            Exclusivo da FastFilms, o TrackFilms é o pilar da nossa <strong className="font-bold text-primary">Experiência do Cliente</strong>. Através dele, você acompanha o progresso do projeto em tempo real, com espaço para comentários e aprovações que eliminam ruídos de comunicação e centralizam o feedback, garantindo total segurança e transparência.
+            Exclusivo da FastFilms, o TrackFilms é o pilar da nossa <strong className="font-bold text-primary">Experiência do Cliente</strong>. Através dele, você acompanha o progresso do seu projeto em tempo real, com espaço para comentários e aprovações que eliminam ruídos de comunicação e centralizam o feedback, garantindo total segurança e transparência.
           </>
         ),
     },

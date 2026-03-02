@@ -99,7 +99,7 @@ const differentialsData = [
         title: 'TrackFilms',
         description: (
             <>
-                Nosso compromisso com a <strong className="font-bold text-primary">Experiência do Cliente</strong>: acompanhe o progresso do projeto em tempo real, com ferramentas de comentário e aprovação que eliminam ruídos de comunicação e centralizam o feedback, garantindo transparência total da gravação à entrega.
+                Nosso compromisso com a <strong className="font-bold text-primary">Experiência do Cliente</strong>: acompanhe o progresso do seu projeto em tempo real, com ferramentas de comentário e aprovação que eliminam ruídos de comunicação e centralizam o feedback, garantindo transparência total da gravação à entrega.
             </>
         ),
     },
