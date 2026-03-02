@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
@@ -90,7 +89,7 @@ const aboutUsData = [
     {
         icon: Gem,
         title: 'Valores',
-        description: 'Qualidade, Criatividade e Experiência do Cliente.',
+        description: 'Qualidade, Criatividade e Experiência do Cliente (potencializada pela transparência do TrackFilms).',
     },
 ];
 
@@ -98,22 +97,22 @@ const differentialsData = [
     {
         icon: LayoutDashboard,
         title: 'TrackFilms',
-        description: 'Acompanhe o seu projeto em tempo real com o nosso sistema exclusivo. Transparência total da gravação à entrega.',
+        description: 'Nosso compromisso com a Experiência do Cliente: acompanhe o progresso do seu vídeo em tempo real, garantindo transparência total da gravação à entrega.',
     },
     {
         icon: Tv,
         title: 'Foco em Redes Sociais',
-        description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar e engajar.',
+        description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar e engajar seu público de forma autêntica.',
     },
     {
         icon: PackageCheck,
         title: 'Equipamentos de Ponta',
-        description: 'Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para excelência visual.',
+        description: 'Utilizamos as mais modernas técnicas de produção e um arsenal técnico de alta qualidade para garantir excelência visual em cada frame.',
     },
     {
         icon: Wrench,
         title: 'Ajustes Flexíveis',
-        description: 'Acreditamos na parceria. Oferecemos ajustes para garantir que o resultado final seja exatamente o que você sonhou.',
+        description: 'Acreditamos na parceria. Oferecemos ajustes para garantir que o resultado final supere suas expectativas e reflita sua visão original.',
     },
 ];
 
@@ -154,7 +153,7 @@ export default function SobrePage() {
                     <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-1 bg-primary"></span>
                 </h1>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto mt-8">
-                    Somos mais que uma produtora: somos parceiros na construção de narrativas que cativam, engajam e geram resultados.
+                    Somos mais que uma produtora: somos parceiros na construção de narrativas que cativam, engajam e geram resultados através de uma experiência tecnológica e transparente.
                 </p>
             </div>
         </section>

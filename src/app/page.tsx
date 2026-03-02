@@ -1,4 +1,3 @@
-
 'use client';
 
 import Image from 'next/image';
@@ -222,7 +221,7 @@ export default function Home() {
               Tecnologia e <span className="text-primary">Transparência</span>.
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-                Para garantir a máxima eficiência, desenvolvemos o <strong className="font-bold text-primary">FastHUB (FH)</strong>, nosso "cérebro" operacional. Dentro dele, nossos clientes contam com o <strong className="font-bold text-primary">TrackFilms</strong>: uma ferramenta inspirada em rastreio de encomendas que permite acompanhar cada "take" do seu projeto em tempo real, garantindo uma experiência profissional e sem ruídos.
+                Para garantir a máxima eficiência e honrar nosso valor de <strong className="font-bold text-primary">Experiência do Cliente</strong>, desenvolvemos o <strong className="font-bold text-primary">FastHUB (FH)</strong>, nosso "cérebro" operacional. Dentro dele, nossos clientes contam com o <strong className="font-bold text-primary">TrackFilms</strong>: uma ferramenta inspirada em rastreio de encomendas que permite acompanhar cada "take" do seu projeto em tempo real, garantindo uma jornada profissional e sem ruídos.
             </p>
             
             <AlertDialog>
@@ -251,7 +250,7 @@ export default function Home() {
             <div className="mt-12 bg-secondary/30 border border-border rounded-xl p-6 max-w-2xl mx-auto">
               <h3 className="text-lg font-bold text-primary">Quer saber mais sobre o TrackFilms?</h3>
               <p className="text-muted-foreground mt-2 text-sm">
-                Nossos clientes recebem um link exclusivo para acompanhar a linha do tempo do seu vídeo, desde o backup até a entrega final.
+                Nossos clientes recebem um link exclusivo para acompanhar a linha do tempo do seu vídeo, desde o backup até a entrega final. É a tecnologia garantindo que sua experiência seja impecável.
               </p>
             </div>
           </div>

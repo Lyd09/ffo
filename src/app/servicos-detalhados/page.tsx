@@ -1,4 +1,3 @@
-
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { Card, CardContent } from '@/components/ui/card';
@@ -34,29 +33,29 @@ const whyVideoBenefits = [
 
 const whyFastFilmsPoints = [
     {
-        icon: Tv,
-        title: 'Foco em Redes Sociais',
-        description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar, engajar e ampliar a presença digital dos nossos clientes.',
+        icon: LayoutDashboard,
+        title: 'TrackFilms: Experiência Premium',
+        description: 'Exclusivo da FastFilms, o TrackFilms é o pilar da nossa Experiência do Cliente. Ele permite que você acompanhe o progresso do seu vídeo em tempo real, garantindo segurança e transparência total.',
     },
     {
-        icon: LayoutDashboard,
-        title: 'TrackFilms: Transparência Total',
-        description: 'Exclusivo da FastFilms, o TrackFilms (dentro do nosso ecossistema FH) permite que você acompanhe o progresso do seu vídeo em tempo real, como o rastreio de uma encomenda.',
+        icon: Tv,
+        title: 'Foco em Redes Sociais',
+        description: 'Somos especialistas em criar vídeos otimizados para as redes sociais, projetados para conectar, engajar e ampliar a presença digital dos nossos clientes de forma estratégica.',
     },
     {
         icon: PackageCheck,
         title: 'Equipamentos de Ponta',
-        description: <>Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para garantir a excelência técnica e visual em cada entrega final. Quer conhecer nosso arsenal? Dê uma olhado em nossa <Link href="/equipamentos" className="text-primary font-semibold hover:underline">página de equipamentos</Link>.</>,
+        description: <>Utilizamos as mais modernas técnicas de produção e equipamentos de alta qualidade para garantir a excelência técnica em cada entrega. Quer conhecer nosso arsenal? Dê uma olhado em nossa <Link href="/equipamentos" className="text-primary font-semibold hover:underline">página de equipamentos</Link>.</>,
     },
     {
         icon: HeartHandshake,
         title: 'Processo Colaborativo',
-        description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos lado a lado com você para garantir que sua visão se torne realidade.',
+        description: 'Acreditamos que os melhores projetos nascem da parceria. Trabalhamos lado a lado com você para garantir que sua visão se torne realidade com o máximo de cuidado.',
     },
     {
         icon: Wrench,
         title: 'Ajustes Sem Custo Adicional',
-        description: 'O cliente não paga por alterações, desde que as modificações solicitadas não alterem fundamentalmente o escopo do projeto acordado inicialmente.',
+        description: 'O cliente não paga por alterações, desde que as modificações solicitadas não alterem fundamentalmente o escopo do projeto acordado inicialmente. Sua satisfação é nossa prioridade.',
     },
 ];
 
@@ -115,7 +114,7 @@ export default function ServicosDetalhadosPage() {
             <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
           </h2>
           <p className="text-muted-foreground leading-relaxed mt-4 max-w-3xl mx-auto">
-            Entendemos o poder do vídeo. Mas, mais importante, entendemos como traduzir sua visão em uma peça audiovisual que funciona.
+            Entendemos o poder do vídeo. Mas, mais importante, entendemos como traduzir sua visão em uma peça audiovisual que funciona, focando sempre em uma experiência excepcional para você.
           </p>
           <div className="mt-12 text-left space-y-8">
             {whyFastFilmsPoints.map((point, index) => {
@@ -161,7 +160,7 @@ export default function ServicosDetalhadosPage() {
                 <span className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-1/2 h-0.5 bg-primary"></span>
             </h2>
             <p className="text-muted-foreground leading-relaxed mt-4 max-w-2xl mx-auto">
-              Você já viu o porquê, agora veja o como. Nossa equipe está pronta para transformar sua visão em um projeto audiovisual de impacto.
+              Você já viu o porquê, agora veja o como. Nossa equipe está pronta para transformar sua visão em um projeto audiovisual de impacto, com acompanhamento em tempo real.
             </p>
             <div className="flex justify-center items-center gap-4 mt-8">
               <Link href="/contato" passHref>
