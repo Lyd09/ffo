@@ -35,7 +35,11 @@ const whyFastFilmsPoints = [
     {
         icon: LayoutDashboard,
         title: 'TrackFilms: Experiência Premium',
-        description: 'Exclusivo da FastFilms, o TrackFilms é o pilar da nossa Experiência do Cliente. Ele permite que você acompanhe o progresso do seu vídeo em tempo real, garantindo segurança e transparência total.',
+        description: (
+          <>
+            Exclusivo da FastFilms, o TrackFilms é o pilar da nossa <strong className="font-bold text-primary">Experiência do Cliente</strong>. Ele permite que você acompanhe o progresso do projeto em tempo real com espaço para comentários e aprovações, eliminando ruídos de comunicação e centralizando o feedback, garantindo segurança e transparência total.
+          </>
+        ),
     },
     {
         icon: Tv,

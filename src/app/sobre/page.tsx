@@ -97,7 +97,11 @@ const differentialsData = [
     {
         icon: LayoutDashboard,
         title: 'TrackFilms',
-        description: 'Nosso compromisso com a Experiência do Cliente: acompanhe o progresso do seu vídeo em tempo real, garantindo transparência total da gravação à entrega.',
+        description: (
+            <>
+                Nosso compromisso com a <strong className="font-bold text-primary">Experiência do Cliente</strong>: acompanhe o progresso do projeto em tempo real com espaço para comentários e aprovações, eliminando ruídos de comunicação e centralizando o feedback, garantindo transparência total da gravação à entrega.
+            </>
+        ),
     },
     {
         icon: Tv,
